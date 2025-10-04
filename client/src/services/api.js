@@ -1,5 +1,8 @@
 import axios from 'axios';
 
+// Base URL from environment variable or fallback to proxy
+const API_BASE_URL = process.env.REACT_APP_API_URL || '/.netlify/functions/proxy';
+
 // Fallback data
 const fallbackCourses = [
   {
@@ -139,29 +142,66 @@ const fallbackLeaderboard = [
 ];
 
 // Use a mock API in development or when the real API is not available
-const useMockAPI = !process.env.NODE_ENV || process.env.NODE_ENV === 'development' || 
-                  !process.env.REACT_APP_API_URL || 
-                  process.env.REACT_APP_API_URL.includes('localhost');
+const useMockAPI = process.env.NODE_ENV === 'development' || 
+                 !process.env.REACT_APP_API_URL || 
+                 process.env.REACT_APP_API_URL.includes('localhost');
 
+// Create axios instance with base URL
 const api = axios.create({
-  baseURL: useMockAPI ? '' : process.env.REACT_APP_API_URL,
+  baseURL: API_BASE_URL,
+  timeout: 10000, // Increased timeout to 10 seconds
+  withCredentials: false,
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 3000, // 3 second timeout
 });
+
+// Add request interceptor to handle errors
+api.interceptors.request.use(
+  (config) => {
+    // You can add auth headers here if needed
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+// Add response interceptor to handle errors
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response) {
+      // The request was made and the server responded with a status code
+      console.error('API Error Response:', {
+        status: error.response.status,
+        data: error.response.data,
+        headers: error.response.headers,
+      });
+    } else if (error.request) {
+      // The request was made but no response was received
+      console.error('API Error Request:', error.request);
+    } else {
+      // Something happened in setting up the request
+      console.error('API Error:', error.message);
+    }
+    return Promise.reject(error);
+  }
+);
 
 // Helper function to handle API calls with fallback
 export const fetchWithFallback = async (apiCall, fallbackData) => {
   try {
-    if (!useMockAPI) {
+    if (process.env.NODE_ENV !== 'development') {
       const response = await apiCall();
       return response?.data || fallbackData;
     }
-    // In development or when using mock data
+    // In development, use fallback data
+    console.log('Using fallback data for development');
     return fallbackData;
   } catch (error) {
     console.error('API Error:', error.message);
+    console.log('Falling back to default data');
     return fallbackData;
   }
 };
@@ -170,33 +210,33 @@ export const fetchWithFallback = async (apiCall, fallbackData) => {
 export const getCourses = async (category = null) => {
   const params = category ? { category } : {};
   return fetchWithFallback(
-    () => api.get('/courses', { params }),
+    () => api.get('/api/courses', { params }),
     fallbackCourses
   );
 };
 
 export const getBlogs = () => fetchWithFallback(
-  () => api.get('/blogs'),
+  () => api.get('/api/blogs'),
   fallbackBlogs
 );
 
 export const getLeaderboard = () => fetchWithFallback(
-  () => api.get('/leaderboard'),
+  () => api.get('/api/leaderboard'),
   fallbackLeaderboard
 );
 
 export const getQuizzes = () => fetchWithFallback(
-  () => api.get('/quizzes'),
+  () => api.get('/api/quizzes'),
   fallbackQuizzes
 );
 
 export const getTestimonials = () => fetchWithFallback(
-  () => api.get('/testimonials'),
+  () => api.get('/api/testimonials'),
   fallbackTestimonials
 );
 
 export const getTeam = () => fetchWithFallback(
-  () => api.get('/team'),
+  () => api.get('/api/team'),
   fallbackTeam
 );
 
