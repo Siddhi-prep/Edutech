@@ -49,14 +49,14 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
           {/* Contact Info */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
                 Let's Connect
               </h3>
-              <p className="text-gray-600 mb-8">
+              <p className="text-sm text-gray-500 mb-6">
                 Whether you have a question about courses, pricing, or anything else,
                 our team is ready to answer all your questions.
               </p>
@@ -64,33 +64,33 @@ const Contact = () => {
 
             {/* Contact Cards */}
             <div className="space-y-4">
-              <div className="card p-6 flex items-start space-x-4">
-                <div className="bg-blue-50 p-3 rounded-lg text-primary">
-                  <Mail size={24} />
+              <div className="bg-white border border-gray-100 rounded-xl p-4 flex items-start space-x-3 hover:shadow-sm hover:border-gray-200 transition-all duration-300">
+                <div className="bg-blue-50 p-2.5 rounded-lg text-primary flex-shrink-0">
+                  <Mail size={18} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Email Us</h4>
-                  <p className="text-gray-600">support@edutech.com</p>
+                  <h4 className="text-sm font-semibold text-gray-900 mb-0.5">Email Us</h4>
+                  <p className="text-sm text-gray-500">support@edutech.com</p>
                 </div>
               </div>
 
-              <div className="card p-6 flex items-start space-x-4">
-                <div className="bg-green-50 p-3 rounded-lg text-secondary">
-                  <Phone size={24} />
+              <div className="bg-white border border-gray-100 rounded-xl p-4 flex items-start space-x-3 hover:shadow-sm hover:border-gray-200 transition-all duration-300">
+                <div className="bg-green-50 p-2.5 rounded-lg text-secondary flex-shrink-0">
+                  <Phone size={18} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Call Us</h4>
-                  <p className="text-gray-600">+1 (555) 123-4567</p>
+                  <h4 className="text-sm font-semibold text-gray-900 mb-0.5">Call Us</h4>
+                  <p className="text-sm text-gray-500">+1 (555) 123-4567</p>
                 </div>
               </div>
 
-              <div className="card p-6 flex items-start space-x-4">
-                <div className="bg-purple-50 p-3 rounded-lg text-purple-600">
-                  <MapPin size={24} />
+              <div className="bg-white border border-gray-100 rounded-xl p-4 flex items-start space-x-3 hover:shadow-sm hover:border-gray-200 transition-all duration-300">
+                <div className="bg-purple-50 p-2.5 rounded-lg text-purple-600 flex-shrink-0">
+                  <MapPin size={18} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Visit Us</h4>
-                  <p className="text-gray-600">
+                  <h4 className="text-sm font-semibold text-gray-900 mb-0.5">Visit Us</h4>
+                  <p className="text-sm text-gray-500">
                     123 Learning Street, Tech City, TC 12345
                   </p>
                 </div>
@@ -98,30 +98,30 @@ const Contact = () => {
             </div>
 
             {/* WhatsApp CTA */}
-            <div className="card p-6 bg-gradient-to-r from-green-500 to-green-600 text-white">
+            <div className="rounded-xl p-4 bg-gradient-to-r from-green-500 to-green-600 text-white">
               <div className="flex items-center justify-between">
                 <div>
-                  <h4 className="font-semibold mb-1">Quick Support</h4>
-                  <p className="text-sm opacity-90">Chat with us on WhatsApp</p>
+                  <h4 className="text-sm font-semibold mb-0.5">Quick Support</h4>
+                  <p className="text-xs opacity-90">Chat with us on WhatsApp</p>
                 </div>
                 <a
                   href="https://wa.me/917013706173?text=Hello%20EduTech%20Team%2C%20I%20need%20assistance."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white text-green-600 p-3 rounded-full hover:scale-110 transition-transform flex items-center justify-center"
+                  className="bg-white text-green-600 p-2.5 rounded-full hover:scale-110 transition-transform flex items-center justify-center"
                   aria-label="Chat with us on WhatsApp"
                 >
-                  <MessageCircle size={24} />
+                  <MessageCircle size={18} />
                 </a>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="card p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="bg-white border border-gray-100 rounded-xl p-5 sm:p-6">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-xs font-medium text-gray-600 mb-1.5">
                   Full Name *
                 </label>
                 <input
@@ -130,13 +130,13 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  className="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   placeholder="John Doe"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-xs font-medium text-gray-600 mb-1.5">
                   Email Address *
                 </label>
                 <input
@@ -145,13 +145,13 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  className="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   placeholder="john@example.com"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-xs font-medium text-gray-600 mb-1.5">
                   Phone Number
                 </label>
                 <input
@@ -159,13 +159,13 @@ const Contact = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  className="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   placeholder="+1 (555) 123-4567"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-xs font-medium text-gray-600 mb-1.5">
                   Subject
                 </label>
                 <input
@@ -173,13 +173,13 @@ const Contact = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  className="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   placeholder="How can we help?"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-xs font-medium text-gray-600 mb-1.5">
                   Message *
                 </label>
                 <textarea
@@ -188,7 +188,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="4"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
+                  className="w-full px-3.5 py-2.5 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"
                   placeholder="Tell us more about your inquiry..."
                 ></textarea>
               </div>

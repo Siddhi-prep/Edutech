@@ -106,54 +106,54 @@ const Courses = () => {
             <p className="text-gray-600 text-lg">No courses available at the moment.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 max-w-5xl mx-auto">
             {filteredCourses.map((course) => (
-            <div key={course.id} className="card overflow-hidden group">
+            <div key={course.id} className="bg-white border border-gray-100 rounded-xl overflow-hidden group hover:shadow-md hover:border-gray-200 transition-all duration-300">
               {/* Thumbnail */}
-              <div className="relative overflow-hidden h-48">
+              <div className="relative overflow-hidden h-36 sm:h-40">
                 <img
                   src={course.thumbnail}
                   alt={course.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-semibold text-primary">
+                <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2.5 py-0.5 rounded-full text-xs font-semibold text-primary">
                   {course.category}
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors">
+              <div className="p-4 sm:p-5">
+                <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-1.5 group-hover:text-primary transition-colors leading-tight">
                   {course.title}
                 </h3>
-                <p className="text-gray-600 mb-4 line-clamp-2">
+                <p className="text-xs sm:text-sm text-gray-500 mb-3 line-clamp-2 leading-relaxed">
                   {course.description}
                 </p>
 
                 {/* Meta Info */}
-                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                <div className="flex items-center justify-between text-xs text-gray-400 mb-3">
                   <div className="flex items-center space-x-1">
-                    <Clock size={16} />
+                    <Clock size={13} />
                     <span>{course.duration}</span>
                   </div>
                   <div className="flex items-center space-x-1">
-                    <Users size={16} />
+                    <Users size={13} />
                     <span>{course.students.toLocaleString()}</span>
                   </div>
                   <div className="flex items-center space-x-1">
-                    <Star size={16} className="text-yellow-400 fill-current" />
+                    <Star size={13} className="text-yellow-400 fill-current" />
                     <span>{course.rating}</span>
                   </div>
                 </div>
 
                 {/* Footer */}
-                <div className="flex items-center justify-between pt-4 border-t">
-                  <span className="text-2xl font-bold text-gray-900">
+                <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                  <span className="text-lg font-bold text-gray-900">
                     {course.price}
                   </span>
-                  <button className="flex items-center space-x-2 text-primary font-semibold hover:gap-3 transition-all group">
+                  <button className="flex items-center space-x-1.5 text-primary text-sm font-semibold hover:gap-2 transition-all">
                     <span>Enroll Now</span>
-                    <ArrowRight size={18} />
+                    <ArrowRight size={14} />
                   </button>
                 </div>
               </div>

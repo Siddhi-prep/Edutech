@@ -41,32 +41,31 @@ const Team = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 max-w-5xl mx-auto">
           {team.map((member) => (
             <div
               key={member.id}
-              className="card p-6 text-center group"
+              className="bg-white border border-gray-100 rounded-xl p-4 sm:p-5 text-center group hover:shadow-md hover:border-gray-200 transition-all duration-300"
             >
-              <div className="relative mb-4 inline-block">
+              <div className="relative mb-3 inline-block">
                 <img
                   src={member.avatar}
                   alt={member.name}
-                  className="w-32 h-32 rounded-full mx-auto object-cover group-hover:scale-105 transition-transform"
+                  className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto object-cover ring-2 ring-gray-100 group-hover:ring-primary/20 transition-all"
                 />
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
 
-              <h3 className="text-xl font-semibold text-gray-900 mb-1">
+              <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-0.5 leading-tight">
                 {member.name}
               </h3>
-              <p className="text-primary font-medium mb-2">{member.role}</p>
-              <p className="text-sm text-gray-600 mb-4">{member.tagline}</p>
+              <p className="text-xs sm:text-sm text-primary font-medium mb-1.5">{member.role}</p>
+              <p className="text-xs text-gray-500 mb-3 line-clamp-2 leading-relaxed">{member.tagline}</p>
 
               <a
                 href={member.linkedin}
-                className="inline-flex items-center justify-center w-10 h-10 bg-blue-50 rounded-full text-primary hover:bg-primary hover:text-white transition-all"
+                className="inline-flex items-center justify-center w-8 h-8 bg-gray-50 rounded-full text-gray-400 hover:bg-primary hover:text-white transition-all duration-200"
               >
-                <Linkedin size={18} />
+                <Linkedin size={14} />
               </a>
             </div>
           ))}
