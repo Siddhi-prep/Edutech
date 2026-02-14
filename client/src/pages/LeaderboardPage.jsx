@@ -1,69 +1,32 @@
 import React, { useState } from 'react';
 import { 
-  Search, Download, TrendingUp, Award, Target, Zap, Users
+  Search, Download, TrendingUp, Award, Target, Zap, CheckCircle, Star, Info
 } from 'react-feather';
 import GradientBackground from '../components/GradientBackground';
 
 const LeaderboardPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedTab, setSelectedTab] = useState('Global');
-  const [selectedMetric, setSelectedMetric] = useState('Points');
   const [selectedPeriod, setSelectedPeriod] = useState('This Week');
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [selectedRegion, setSelectedRegion] = useState('Global');
-  const [currentPage, setCurrentPage] = useState(1);
 
-  // Your stats (dummy data)
-  const yourStats = {
-    rank: 18,
-    points: 4320,
-    streak: 12
+  // Calculate current week range (Monday to Sunday)
+  const getCurrentWeekRange = () => {
+    const today = new Date();
+    const currentDay = today.getDay();
+    const diff = currentDay === 0 ? -6 : 1 - currentDay; // Adjust to get Monday
+    
+    const monday = new Date(today);
+    monday.setDate(today.getDate() + diff);
+    
+    const sunday = new Date(monday);
+    sunday.setDate(monday.getDate() + 6);
+    
+    const formatDate = (date) => {
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      return `${months[date.getMonth()]} ${date.getDate()}`;
+    };
+    
+    return `${formatDate(monday)} - ${formatDate(sunday)}, ${today.getFullYear()}`;
   };
-
-  // Top 3 winners
-  const topThree = [
-    {
-      rank: 1,
-      name: 'Ava Patel',
-      avatar: 'https://i.pravatar.cc/150?img=47',
-      points: 7820,
-      category: 'AI/ML'
-    },
-    {
-      rank: 2,
-      name: 'Liam Chen',
-      avatar: 'https://i.pravatar.cc/150?img=33',
-      points: 7540,
-      category: 'Cloud'
-    },
-    {
-      rank: 3,
-      name: 'Sofia Gomez',
-      avatar: 'https://i.pravatar.cc/150?img=45',
-      points: 7210,
-      category: 'Design'
-    }
-  ];
-
-  // Leaderboard data
-  const allUsers = [
-    { rank: 4, name: 'Noah Smith', avatar: 'https://i.pravatar.cc/150?img=12', category: 'UI/UX', categoryColor: 'bg-purple-500', quizzes: 24, points: 6980 },
-    { rank: 5, name: 'Mia Wilson', avatar: 'https://i.pravatar.cc/150?img=48', category: 'Web', categoryColor: 'bg-blue-500', quizzes: 20, points: 6530 },
-    { rank: 6, name: 'Ethan Park', avatar: 'https://i.pravatar.cc/150?img=15', category: 'Analytics', categoryColor: 'bg-green-500', quizzes: 18, points: 6240 },
-    { rank: 7, name: 'Liam Chen', avatar: 'https://i.pravatar.cc/150?img=33', category: 'DevOps', categoryColor: 'bg-orange-500', quizzes: 17, points: 6010 },
-    { rank: 8, name: 'Ava Patel', avatar: 'https://i.pravatar.cc/150?img=47', category: 'AI/ML', categoryColor: 'bg-indigo-500', quizzes: 21, points: 5880 },
-    { rank: 9, name: 'Oliver Brown', avatar: 'https://i.pravatar.cc/150?img=11', category: 'Security', categoryColor: 'bg-red-500', quizzes: 19, points: 5650 },
-    { rank: 10, name: 'Emma Davis', avatar: 'https://i.pravatar.cc/150?img=44', category: 'Data', categoryColor: 'bg-teal-500', quizzes: 22, points: 5420 }
-  ];
-
-  const tabs = ['Global', 'Friends', 'My Class'];
-  const metrics = ['Points', 'Quizzes', 'Streaks'];
-  const categories = ['All', 'Design', 'Web', 'AI/ML', 'DevOps', 'Analytics', 'Security', 'Data'];
-
-  const filteredUsers = allUsers.filter(user => 
-    user.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-    (selectedCategory === 'All' || user.category === selectedCategory)
-  );
 
   return (
     <div className="min-h-screen bg-white relative">
@@ -91,21 +54,12 @@ const LeaderboardPage = () => {
               />
             </div>
 
-            {/* Tabs */}
+            {/* Motivational Quote */}
             <div className="flex items-center gap-2">
-              {tabs.map(tab => (
-                <button
-                  key={tab}
-                  onClick={() => setSelectedTab(tab)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all ${
-                    selectedTab === tab
-                      ? 'bg-primary text-white shadow-lg'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-                >
-                  {tab}
-                </button>
-              ))}
+              <TrendingUp className="text-primary flex-shrink-0" size={18} />
+              <p className="text-sm font-medium text-gray-600 italic">
+                Excellence is not a destination, it's a continuous journey
+              </p>
             </div>
 
             {/* Period */}
@@ -121,208 +75,175 @@ const LeaderboardPage = () => {
           </div>
 
           <div className="grid lg:grid-cols-4 gap-6">
-            {/* Sidebar */}
+            {/* Sidebar - How to Get Featured */}
             <div className="lg:col-span-1 space-y-6">
-              {/* Your Stats */}
-              <div className="bg-white border border-gray-200 rounded-2xl p-6">
-                <h3 className="font-semibold text-gray-900 mb-4">Your Stats</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between p-3 bg-blue-50 rounded-xl">
-                    <span className="text-sm text-gray-700">Current Rank</span>
-                    <span className="text-lg font-bold text-primary">#{yourStats.rank}</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 bg-green-50 rounded-xl">
-                    <span className="text-sm text-gray-700">Total Points</span>
-                    <span className="text-lg font-bold text-secondary">{yourStats.points.toLocaleString()}</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 bg-amber-50 rounded-xl">
-                    <span className="text-sm text-gray-700">Streak</span>
-                    <span className="text-lg font-bold text-amber-600">{yourStats.streak} days</span>
-                  </div>
+              <div className="bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/20 rounded-2xl p-6">
+                <div className="flex items-center space-x-2 mb-4">
+                  <Star className="text-amber-500" size={24} />
+                  <h3 className="font-bold text-gray-900 text-lg">Get Featured!</h3>
                 </div>
-              </div>
-
-              {/* Filters */}
-              <div className="bg-white border border-gray-200 rounded-2xl p-6">
-                <h3 className="font-semibold text-gray-900 mb-4">Filters</h3>
+                <p className="text-sm text-gray-600 mb-6">Follow these steps to become a top performer</p>
                 
-                {/* Category */}
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-700 mb-2">Category: {selectedCategory}</h4>
-                  <select
-                    value={selectedCategory}
-                    onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
-                  >
-                    {categories.map(cat => (
-                      <option key={cat} value={cat}>{cat}</option>
-                    ))}
-                  </select>
+                <div className="space-y-5">
+                  {/* Step 1 */}
+                  <div className="bg-white rounded-xl p-4 shadow-sm">
+                    <div className="flex items-start space-x-3">
+                      <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">
+                        1
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">Complete Courses</h4>
+                        <p className="text-xs text-gray-600">Finish multiple courses to earn points and boost your rank</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Step 2 */}
+                  <div className="bg-white rounded-xl p-4 shadow-sm">
+                    <div className="flex items-start space-x-3">
+                      <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">
+                        2
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">Take Quizzes</h4>
+                        <p className="text-xs text-gray-600">Score high on quizzes to accumulate more points faster</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Step 3 */}
+                  <div className="bg-white rounded-xl p-4 shadow-sm">
+                    <div className="flex items-start space-x-3">
+                      <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">
+                        3
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">Stay Consistent</h4>
+                        <p className="text-xs text-gray-600">Maintain daily learning streaks to maximize your progress</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Step 4 */}
+                  <div className="bg-white rounded-xl p-4 shadow-sm">
+                    <div className="flex items-start space-x-3">
+                      <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">
+                        4
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">Engage with Community</h4>
+                        <p className="text-xs text-gray-600">Participate in discussions and help fellow learners</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Step 5 */}
+                  <div className="bg-white rounded-xl p-4 shadow-sm">
+                    <div className="flex items-start space-x-3">
+                      <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">
+                        5
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-1">Aim for Excellence</h4>
+                        <p className="text-xs text-gray-600">Strive for high completion rates and quiz scores</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Metric */}
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-700 mb-2">Metric: {selectedMetric}</h4>
-                  <select
-                    value={selectedMetric}
-                    onChange={(e) => setSelectedMetric(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
-                  >
-                    {metrics.map(metric => (
-                      <option key={metric} value={metric}>{metric}</option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Region */}
-                <div>
-                  <h4 className="text-sm font-semibold text-gray-700 mb-2">Region: {selectedRegion}</h4>
-                  <select
-                    value={selectedRegion}
-                    onChange={(e) => setSelectedRegion(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
-                  >
-                    <option>Global</option>
-                    <option>North America</option>
-                    <option>Europe</option>
-                    <option>Asia</option>
-                  </select>
-                </div>
-              </div>
-
-              {/* Legend */}
-              <div className="bg-white border border-gray-200 rounded-2xl p-6">
-                <h3 className="font-semibold text-gray-900 mb-3">Legend</h3>
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span className="text-sm text-gray-700">Top 10</span>
+                <div className="mt-6 p-4 bg-gradient-to-r from-primary to-secondary rounded-xl text-white text-center">
+                  <div className="flex items-center justify-center space-x-2 mb-1">
+                    <Award className="text-white" size={18} />
+                    <p className="text-sm font-semibold">Your Goal</p>
+                  </div>
+                  <p className="text-xs opacity-90">Rank in Top 10 to get featured!</p>
                 </div>
               </div>
             </div>
 
             {/* Main Content */}
             <div className="lg:col-span-3">
-              {/* Top 3 Podium */}
-              <div className="mb-6">
-                <div className="flex items-center justify-between mb-4">
+              {/* Single Top 10 Performers Image Placeholder */}
+              <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden">
+                {/* Header */}
+                <div className="flex items-center justify-between p-6 border-b border-gray-200">
                   <h3 className="font-semibold text-gray-900 flex items-center space-x-2">
                     <Award className="text-amber-500" size={20} />
                     <span>Top Performers</span>
                   </h3>
                   <button className="flex items-center space-x-2 px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium">
                     <Download size={16} />
-                    <span>Export CSV</span>
+                    <span>Export Image</span>
                   </button>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-4 mb-6">
-                  {topThree.map((user, index) => (
-                    <div
-                      key={user.rank}
-                      className={`bg-gradient-to-br ${
-                        index === 0 ? 'from-amber-50 to-yellow-50 border-amber-200' :
-                        index === 1 ? 'from-gray-50 to-slate-50 border-gray-200' :
-                        'from-orange-50 to-amber-50 border-orange-200'
-                      } border-2 rounded-2xl p-6 text-center relative`}
-                    >
-                      <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-gray-200">
-                        <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                          {user.rank}
-                        </span>
-                      </div>
-                      <img
-                        src={user.avatar}
-                        alt={user.name}
-                        className="w-20 h-20 rounded-full mx-auto mb-3 mt-4 border-4 border-white shadow-lg"
-                      />
-                      <h4 className="font-bold text-gray-900 mb-1">{user.name}</h4>
-                      <p className="text-2xl font-bold text-primary mb-1">{user.points.toLocaleString()} pts</p>
-                      <span className="text-xs font-semibold text-gray-600 bg-white px-3 py-1 rounded-full">
-                        {user.category}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Leaderboard Table */}
-              <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden">
-                {/* Table Header */}
-                <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
-                  <div className="grid grid-cols-12 gap-4 text-sm font-semibold text-gray-700">
-                    <div className="col-span-1">#</div>
-                    <div className="col-span-4">User</div>
-                    <div className="col-span-3">Category</div>
-                    <div className="col-span-2 text-center">Quizzes</div>
-                    <div className="col-span-2 text-right">Points</div>
-                  </div>
-                </div>
-
-                {/* Table Body */}
-                <div className="divide-y divide-gray-200">
-                  {filteredUsers.map((user) => (
-                    <div
-                      key={user.rank}
-                      className="px-6 py-4 hover:bg-gray-50 transition-colors"
-                    >
-                      <div className="grid grid-cols-12 gap-4 items-center">
-                        <div className="col-span-1">
-                          <span className={`inline-flex items-center justify-center w-8 h-8 rounded-full font-bold text-sm ${
-                            user.rank <= 10 ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-700'
-                          }`}>
-                            {user.rank}
-                          </span>
-                        </div>
-                        <div className="col-span-4 flex items-center space-x-3">
-                          <img
-                            src={user.avatar}
-                            alt={user.name}
-                            className="w-10 h-10 rounded-full border-2 border-gray-200"
-                          />
+                {/* Image Placeholder */}
+                <div className="relative w-full rounded-lg overflow-hidden bg-gray-50 border-2 border-dashed border-gray-300" style={{ minHeight: '900px' }}>
+                  {/* Instructions - Will hide when image loads */}
+                  <div className="absolute inset-0 flex items-center justify-center p-8" id="top10-instructions">
+                    <div className="text-center max-w-2xl">
+                      <Award className="mx-auto text-gray-400 mb-4" size={48} />
+                      <h4 className="text-2xl font-bold text-gray-700 mb-2">Top 10 Performers Image</h4>
+                      <p className="text-gray-500 mb-6">Upload a professional image featuring all top 10 learners (Ranks 1-10)</p>
+                      
+                      <div className="bg-white rounded-lg p-6 shadow-sm space-y-5 text-left">
+                        <div className="flex items-start space-x-3">
+                          <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">
+                            1
+                          </div>
                           <div>
-                            <p className="font-semibold text-gray-900">{user.name}</p>
-                            <p className="text-xs text-gray-500">{user.category}</p>
+                            <h5 className="font-semibold text-gray-900 mb-1">Place your image in the public folder</h5>
+                            <code className="text-sm bg-gray-100 px-3 py-1 rounded block">/client/public/top-10-performers.jpg</code>
                           </div>
                         </div>
-                        <div className="col-span-3">
-                          <span className={`inline-block ${user.categoryColor} text-white text-xs font-semibold px-3 py-1 rounded-full`}>
-                            {user.category}
-                          </span>
+
+                        <div className="flex items-start space-x-3">
+                          <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">
+                            2
+                          </div>
+                          <div>
+                            <h5 className="font-semibold text-gray-900 mb-1">Name your image file exactly</h5>
+                            <code className="text-sm bg-gray-100 px-3 py-1 rounded font-semibold">top-10-performers.jpg</code>
+                            <p className="text-xs text-gray-500 mt-1">Formats: .jpg, .png, .webp</p>
+                          </div>
                         </div>
-                        <div className="col-span-2 text-center">
-                          <span className="font-semibold text-gray-900">{user.quizzes}</span>
-                        </div>
-                        <div className="col-span-2 text-right">
-                          <span className="font-bold text-primary">{user.points.toLocaleString()}</span>
+
+                        <div className="flex items-start space-x-3">
+                          <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">
+                            3
+                          </div>
+                          <div>
+                            <h5 className="font-semibold text-gray-900 mb-1">Refresh the browser</h5>
+                            <p className="text-sm text-gray-600">Your image will appear here automatically, hiding these instructions</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
 
-                {/* Pagination */}
-                <div className="px-6 py-4 bg-gray-50 border-t border-gray-200 flex items-center justify-between">
-                  <p className="text-sm text-gray-600">Page {currentPage} of 6</p>
-                  <div className="flex items-center space-x-2">
-                    <button className="px-4 py-2 border border-gray-200 rounded-lg hover:bg-white transition-colors text-sm font-medium">
-                      Prev
-                    </button>
-                    {[1, 2, 3].map((page) => (
-                      <button
-                        key={page}
-                        className={`w-10 h-10 rounded-lg font-medium transition-colors ${
-                          currentPage === page
-                            ? 'bg-primary text-white'
-                            : 'border border-gray-200 hover:bg-white'
-                        }`}
-                      >
-                        {page}
-                      </button>
-                    ))}
-                    <button className="px-4 py-2 border border-gray-200 rounded-lg hover:bg-white transition-colors text-sm font-medium">
-                      Next
-                    </button>
+                      <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                        <div className="flex items-center space-x-2 mb-1">
+                          <Info className="text-blue-900" size={16} />
+                          <p className="text-sm font-semibold text-blue-900">Image Specifications</p>
+                        </div>
+                        <p className="text-xs text-blue-700">Recommended: 1200px × 900px | Max file size: 600KB</p>
+                      </div>
+                    </div>
                   </div>
+
+                  {/* Image */}
+                  <img
+                    src="/top-10-performers.jpg"
+                    alt="Top 10 Performers"
+                    className="relative z-10 w-full h-full object-contain"
+                    onLoad={(e) => {
+                      e.target.parentElement.style.background = 'white';
+                      e.target.parentElement.style.border = 'none';
+                      const instructions = document.getElementById('top10-instructions');
+                      if (instructions) instructions.style.display = 'none';
+                    }}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                    }}
+                  />
                 </div>
               </div>
             </div>

@@ -31,13 +31,18 @@ const Courses = () => {
 
   const fetchCourses = async () => {
     try {
-      const data = await getCourses();
-      // Ensure we have an array and it's not empty
-      const coursesData = Array.isArray(data) ? data : [];
-      setCourses(coursesData);
-      setFilteredCourses(coursesData);
+      const response = await getCourses();
+      // Extract data from response object
+      const coursesData = response?.data || response || [];
+      // Ensure we have an array
+      const coursesArray = Array.isArray(coursesData) ? coursesData : [];
+      console.log('Fetched courses:', coursesArray);
+      setCourses(coursesArray);
+      setFilteredCourses(coursesArray);
     } catch (error) {
       console.error('Error fetching courses:', error);
+      setCourses([]);
+      setFilteredCourses([]);
     } finally {
       setLoading(false);
     }
@@ -95,8 +100,14 @@ const Courses = () => {
         </div>
 
         {/* Courses Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredCourses.map((course) => (
+        {filteredCourses.length === 0 ? (
+          <div className="text-center py-12">
+            <BookOpen size={48} className="mx-auto text-gray-400 mb-4" />
+            <p className="text-gray-600 text-lg">No courses available at the moment.</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredCourses.map((course) => (
             <div key={course.id} className="card overflow-hidden group">
               {/* Thumbnail */}
               <div className="relative overflow-hidden h-48">
@@ -148,12 +159,15 @@ const Courses = () => {
               </div>
             </div>
           ))}
-        </div>
+          </div>
+        )}
 
         {/* View All Button */}
-        <div className="text-center mt-12">
-          <button className="btn-primary">View All Courses</button>
-        </div>
+        {filteredCourses.length > 0 && (
+          <div className="text-center mt-12">
+            <button className="btn-primary">View All Courses</button>
+          </div>
+        )}
       </div>
     </section>
   );

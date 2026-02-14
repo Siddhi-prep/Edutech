@@ -1,8 +1,11 @@
-import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, BookOpen } from 'react-feather';
+import React, { useState } from 'react';
+import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, BookOpen, Check, AlertCircle } from 'react-feather';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState({ type: '', text: '' });
 
   const footerLinks = {
     Company: ['About Us', 'Careers', 'Press', 'Blog', 'Contact'],
@@ -19,6 +22,56 @@ const Footer = () => {
     { icon: <Youtube size={20} />, url: '#', name: 'YouTube' },
   ];
 
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    
+    // Reset message
+    setMessage({ type: '', text: '' });
+    
+    // Validate email
+    if (!email) {
+      setMessage({ type: 'error', text: 'Please enter your email address' });
+      return;
+    }
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setMessage({ type: 'error', text: 'Please enter a valid email address' });
+      return;
+    }
+    
+    setLoading(true);
+    
+    try {
+      const response = await fetch('http://localhost:5000/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        setMessage({ 
+          type: 'success', 
+          text: data.alreadySubscribed 
+            ? 'You are already subscribed!' 
+            : 'Thank you for subscribing! Check your email for a welcome message.'
+        });
+        setEmail('');
+      } else {
+        setMessage({ type: 'error', text: data.message || 'Something went wrong. Please try again.' });
+      }
+    } catch (error) {
+      console.error('Subscription error:', error);
+      setMessage({ type: 'error', text: 'Failed to subscribe. Please try again later.' });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <footer className="bg-gray-900 text-gray-300">
       {/* Newsletter Section */}
@@ -33,16 +86,46 @@ const Footer = () => {
                 Get the latest courses, tips, and exclusive offers
               </p>
             </div>
-            <div className="flex w-full md:w-auto max-w-md">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-grow px-4 py-3 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary text-white"
-              />
-              <button className="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-r-lg font-semibold transition-colors flex items-center space-x-2">
-                <Mail size={18} />
-                <span>Subscribe</span>
-              </button>
+            <div className="w-full md:w-auto max-w-md">
+              <form onSubmit={handleSubscribe} className="flex">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  disabled={loading}
+                  className="flex-grow px-4 py-3 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                />
+                <button 
+                  type="submit"
+                  disabled={loading}
+                  className="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-r-lg font-semibold transition-colors flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {loading ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Mail size={18} />
+                      <span>Subscribe</span>
+                    </>
+                  )}
+                </button>
+              </form>
+              {message.text && (
+                <div className={`mt-3 flex items-start space-x-2 text-sm ${
+                  message.type === 'success' ? 'text-green-400' : 'text-red-400'
+                }`}>
+                  {message.type === 'success' ? (
+                    <Check size={16} className="flex-shrink-0 mt-0.5" />
+                  ) : (
+                    <AlertCircle size={16} className="flex-shrink-0 mt-0.5" />
+                  )}
+                  <span>{message.text}</span>
+                </div>
+              )}
             </div>
           </div>
         </div>

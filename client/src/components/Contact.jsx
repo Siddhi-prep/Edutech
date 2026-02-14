@@ -104,9 +104,15 @@ const Contact = () => {
                   <h4 className="font-semibold mb-1">Quick Support</h4>
                   <p className="text-sm opacity-90">Chat with us on WhatsApp</p>
                 </div>
-                <button className="bg-white text-green-600 p-3 rounded-full hover:scale-110 transition-transform">
+                <a
+                  href="https://wa.me/917013706173?text=Hello%20EduTech%20Team%2C%20I%20need%20assistance."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white text-green-600 p-3 rounded-full hover:scale-110 transition-transform flex items-center justify-center"
+                  aria-label="Chat with us on WhatsApp"
+                >
                   <MessageCircle size={24} />
-                </button>
+                </a>
               </div>
             </div>
           </div>

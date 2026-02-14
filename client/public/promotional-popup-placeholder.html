@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotional Popup Placeholder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f0f0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 1080px;
+            height: 1350px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Premium gradient background */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                #ffffff 0%, 
+                #f0f9ff 25%, 
+                #e0f2fe 50%, 
+                #f8fafc 75%, 
+                #ffffff 100%);
+        }
+        
+        /* Soft gradient overlays for depth */
+        .gradient-orb-1 {
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(60px);
+        }
+        
+        .gradient-orb-2 {
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+        
+        .gradient-orb-3 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(186, 230, 253, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(100px);
+        }
+        
+        /* Content container */
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+        }
+        
+        /* Logo container */
+        .logo-container {
+            margin-bottom: auto;
+        }
+        
+        .logo-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(14, 165, 233, 0.25);
+        }
+        
+        /* Text content */
+        .text-content {
+            text-align: center;
+            margin-bottom: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+        }
+        
+        .main-title {
+            font-size: 68px;
+            font-weight: 700;
+            line-height: 1.1;
+            color: #0f172a;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+            max-width: 800px;
+        }
+        
+        .subtitle {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 1.5;
+            color: #475569;
+            max-width: 700px;
+            margin-bottom: 24px;
+        }
+        
+        .tagline {
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: #94a3b8;
+            max-width: 650px;
+            font-style: italic;
+        }
+        
+        /* Decorative elements */
+        .decoration-line {
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #0ea5e9, transparent);
+            border-radius: 2px;
+            margin: 0 auto 40px;
+            opacity: 0.6;
+        }
+        
+        /* Subtle texture overlay */
+        .texture {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.03) 2px,
+                    rgba(255, 255, 255, 0.03) 4px
+                );
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        /* Soft glow effect */
+        .glow-effect {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 60%;
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+            filter: blur(120px);
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Background gradients -->
+        <div class="background"></div>
+        <div class="gradient-orb-1"></div>
+        <div class="gradient-orb-2"></div>
+        <div class="gradient-orb-3"></div>
+        <div class="glow-effect"></div>
+        <div class="texture"></div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Logo -->
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 19.5C4 18.837 4.26339 18.2011 4.73223 17.7322C5.20107 17.2634 5.83696 17 6.5 17H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6.5 2H20V22H6.5C5.83696 22 5.20107 21.7366 4.73223 21.2678C4.26339 20.7989 4 20.163 4 19.5V4.5C4 3.83696 4.26339 3.20107 4.73223 2.73223C5.20107 2.26339 5.83696 2 6.5 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Main text content -->
+            <div class="text-content">
+                <div>
+                    <div class="decoration-line"></div>
+                    <h1 class="main-title">Promotional Banner<br>Placeholder</h1>
+                </div>
+                
+                <p class="subtitle">This space will be used for seasonal<br>or special announcements.</p>
+                
+                <p class="tagline">Upload your event image here to activate the popup.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Instructions for exporting
+        console.log('%c📸 To Export as Image:', 'font-size: 16px; font-weight: bold; color: #0ea5e9;');
+        console.log('%c1. Right-click on the placeholder image', 'font-size: 14px;');
+        console.log('%c2. Select "Inspect Element"', 'font-size: 14px;');
+        console.log('%c3. Right-click on the .container element', 'font-size: 14px;');
+        console.log('%c4. Select "Screenshot Node" or use browser screenshot tools', 'font-size: 14px;');
+        console.log('%cOr use: Print > Save as PDF > Convert to PNG', 'font-size: 14px; color: #10b981;');
+    </script>
+</body>
+</html>

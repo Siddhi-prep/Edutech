@@ -13,6 +13,7 @@ const ContactPage = () => {
     name: '',
     email: '',
     company: '',
+    mobile: '',
     topic: '',
     urgency: 'Normal',
     message: '',
@@ -24,7 +25,6 @@ const ContactPage = () => {
   const [aiSuggestion, setAiSuggestion] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
-  const [uploadedFiles, setUploadedFiles] = useState([]);
 
   const topics = [
     'Course Inquiry',
@@ -79,71 +79,33 @@ const ContactPage = () => {
     setAiSuggestion(suggestion);
   };
 
-  const handleFileUpload = (e) => {
-    const files = Array.from(e.target.files);
-    setUploadedFiles([...uploadedFiles, ...files]);
-  };
-
-  const removeFile = (index) => {
-    setUploadedFiles(uploadedFiles.filter((_, i) => i !== index));
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Create submission data
-      const submissionData = {
-        ...formData,
-        files: uploadedFiles.map(file => file.name),
-        submittedAt: new Date().toISOString(),
-        ticketId: `TKT-${Date.now()}`,
-        status: 'submitted'
-      };
+    // Build WhatsApp message (structured, professional)
+    let msg = 'Contact & Support Request\n\n';
+    msg += `Name: ${formData.name || '-'}\n`;
+    msg += `Email: ${formData.email || '-'}\n`;
+    msg += `Company: ${formData.company || '-'}\n`;
+    msg += `Mobile: ${formData.mobile || '-'}\n`;
+    msg += `Topic: ${formData.topic || '-'}\n`;
+    msg += `Urgency: ${formData.urgency || '-'}\n`;
+    msg += `Message:\n${formData.message || '-'}\n`;
 
-      console.log('Form submitted:', submissionData);
-      
-      // Store in localStorage (simulate database)
-      const existingTickets = JSON.parse(localStorage.getItem('supportTickets') || '[]');
-      existingTickets.push(submissionData);
-      localStorage.setItem('supportTickets', JSON.stringify(existingTickets));
+    // WhatsApp number (country code included, no +)
+    const phone = '917013706173';
+    const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
 
-      setSubmitStatus({
-        type: 'success',
-        message: `Thank you! Your ticket #${submissionData.ticketId} has been submitted. We'll get back to you within 24 hours.`,
-        ticketId: submissionData.ticketId
-      });
-
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        topic: '',
-        urgency: 'Normal',
-        message: '',
-        preferredMethod: 'email',
-        preferredTime: '',
-        meetingPlatform: 'zoom'
-      });
-      setUploadedFiles([]);
-      setActiveTab('details');
-
-    } catch (error) {
-      setSubmitStatus({
-        type: 'error',
-        message: 'Something went wrong. Please try again or contact us directly.',
-        error: error.message
-      });
-    } finally {
+    // Small wait for UX
+    setTimeout(() => {
+      window.location.href = waUrl;
       setIsSubmitting(false);
-    }
+    }, 800);
   };
+
 
   return (
     <div className="min-h-screen bg-white relative">
@@ -258,46 +220,10 @@ const ContactPage = () => {
             {/* Main Contact Form */}
             <div className="lg:col-span-2">
               <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden">
-                {/* Tabs */}
-                <div className="flex border-b border-gray-200">
-                  <button
-                    onClick={() => setActiveTab('details')}
-                    className={`flex-1 flex items-center justify-center space-x-2 px-6 py-4 font-medium transition-colors ${
-                      activeTab === 'details'
-                        ? 'bg-primary/5 text-primary border-b-2 border-primary'
-                        : 'text-gray-600 hover:bg-gray-50'
-                    }`}
-                  >
-                    <Mail size={18} />
-                    <span>Details</span>
-                  </button>
-                  <button
-                    onClick={() => setActiveTab('schedule')}
-                    className={`flex-1 flex items-center justify-center space-x-2 px-6 py-4 font-medium transition-colors ${
-                      activeTab === 'schedule'
-                        ? 'bg-primary/5 text-primary border-b-2 border-primary'
-                        : 'text-gray-600 hover:bg-gray-50'
-                    }`}
-                  >
-                    <Calendar size={18} />
-                    <span>Schedule</span>
-                  </button>
-                  <button
-                    onClick={() => setActiveTab('confirm')}
-                    className={`flex-1 flex items-center justify-center space-x-2 px-6 py-4 font-medium transition-colors ${
-                      activeTab === 'confirm'
-                        ? 'bg-primary/5 text-primary border-b-2 border-primary'
-                        : 'text-gray-600 hover:bg-gray-50'
-                    }`}
-                  >
-                    <CheckCircle size={18} />
-                    <span>Confirm</span>
-                  </button>
-                </div>
-
+                {/* Single Contact Form - Details Only */}
                 <form onSubmit={handleSubmit} className="p-8">
                   {/* Details Tab */}
-                  {activeTab === 'details' && (
+                  <div className="space-y-6">
                     <div className="space-y-6">
                       <div className="grid md:grid-cols-2 gap-6">
                         <div>
@@ -333,6 +259,24 @@ const ContactPage = () => {
                               className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                             />
                           </div>
+                        </div>
+                      </div>
+                      <div className="mt-6">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Mobile Number *
+                        </label>
+                        <div className="relative">
+                          <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
+                          <input
+                            type="tel"
+                            name="mobile"
+                            value={formData.mobile}
+                            onChange={handleInputChange}
+                            placeholder="e.g. 9876543210"
+                            required
+                            pattern="[0-9]{10,15}"
+                            className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                          />
                         </div>
                       </div>
 
@@ -403,48 +347,6 @@ const ContactPage = () => {
                         />
                       </div>
 
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Attachments (optional)
-                        </label>
-                        <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-primary transition-colors cursor-pointer">
-                          <input
-                            type="file"
-                            multiple
-                            accept=".png,.jpg,.jpeg,.pdf,.doc,.docx"
-                            onChange={handleFileUpload}
-                            className="hidden"
-                            id="file-upload"
-                          />
-                          <label htmlFor="file-upload" className="cursor-pointer">
-                            <Upload className="mx-auto text-gray-400 mb-2" size={32} />
-                            <p className="text-sm text-gray-600">Click to upload or drag and drop</p>
-                            <p className="text-xs text-gray-500 mt-1">PNG, JPG, PDF up to 10MB</p>
-                          </label>
-                        </div>
-                        
-                        {/* Uploaded Files */}
-                        {uploadedFiles.length > 0 && (
-                          <div className="mt-3 space-y-2">
-                            {uploadedFiles.map((file, index) => (
-                              <div key={index} className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
-                                <div className="flex items-center space-x-2">
-                                  <FileText size={16} className="text-gray-500" />
-                                  <span className="text-sm text-gray-700">{file.name}</span>
-                                  <span className="text-xs text-gray-500">({(file.size / 1024).toFixed(1)} KB)</span>
-                                </div>
-                                <button
-                                  type="button"
-                                  onClick={() => removeFile(index)}
-                                  className="text-red-500 hover:text-red-700 transition-colors"
-                                >
-                                  <X size={16} />
-                                </button>
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                      </div>
 
                       {/* AI Recommendation */}
                       <div className="border-t border-gray-200 pt-6">
@@ -469,164 +371,7 @@ const ContactPage = () => {
                         )}
                       </div>
                     </div>
-                  )}
-
-                  {/* Schedule Tab */}
-                  {activeTab === 'schedule' && (
-                    <div className="space-y-6">
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-4">Preferred Contact Method</h3>
-                        <div className="grid md:grid-cols-2 gap-4">
-                          {contactMethods.map(method => (
-                            <button
-                              key={method.id}
-                              type="button"
-                              onClick={() => setFormData({ ...formData, preferredMethod: method.id })}
-                              className={`flex items-start space-x-3 p-4 rounded-lg border-2 transition-all text-left ${
-                                formData.preferredMethod === method.id
-                                  ? 'border-primary bg-primary/5'
-                                  : 'border-gray-200 hover:border-gray-300'
-                              }`}
-                            >
-                              <div className={`p-2 rounded-lg ${
-                                formData.preferredMethod === method.id ? 'bg-primary text-white' : 'bg-gray-100 text-gray-600'
-                              }`}>
-                                {method.icon}
-                              </div>
-                              <div className="flex-1">
-                                <p className="font-medium text-gray-900">{method.name}</p>
-                                <p className="text-sm text-gray-600">{method.description}</p>
-                              </div>
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-
-                      {(formData.preferredMethod === 'call' || formData.preferredMethod === 'video') && (
-                        <>
-                          <div>
-                            <h3 className="font-semibold text-gray-900 mb-4">Meeting Platform</h3>
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                              {meetingPlatforms.map(platform => (
-                                <button
-                                  key={platform.id}
-                                  type="button"
-                                  onClick={() => setFormData({ ...formData, meetingPlatform: platform.id })}
-                                  className={`flex flex-col items-center space-y-2 p-4 rounded-lg border-2 transition-all ${
-                                    formData.meetingPlatform === platform.id
-                                      ? 'border-primary bg-primary/5'
-                                      : 'border-gray-200 hover:border-gray-300'
-                                  }`}
-                                >
-                                  <div className="text-primary">{platform.icon}</div>
-                                  <span className="text-sm font-medium text-gray-900">{platform.name}</span>
-                                </button>
-                              ))}
-                            </div>
-                          </div>
-
-                          <div>
-                            <h3 className="font-semibold text-gray-900 mb-4">Pick a Time</h3>
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                              {timeSlots.map(time => (
-                                <button
-                                  key={time}
-                                  type="button"
-                                  onClick={() => setFormData({ ...formData, preferredTime: time })}
-                                  className={`px-4 py-3 rounded-lg border-2 font-medium transition-all ${
-                                    formData.preferredTime === time
-                                      ? 'border-primary bg-primary text-white'
-                                      : 'border-gray-200 hover:border-gray-300 text-gray-700'
-                                  }`}
-                                >
-                                  {time}
-                                </button>
-                              ))}
-                            </div>
-                          </div>
-
-                          <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
-                              Or choose a specific date
-                            </label>
-                            <input
-                              type="date"
-                              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
-                              min={new Date().toISOString().split('T')[0]}
-                            />
-                          </div>
-                        </>
-                      )}
-
-                      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                        <p className="text-sm text-blue-800">
-                          <strong>Note:</strong> You'll receive a confirmation email with meeting details within 1 hour.
-                        </p>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Confirm Tab */}
-                  {activeTab === 'confirm' && (
-                    <div className="space-y-6">
-                      <div className="text-center py-8">
-                        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <CheckCircle className="text-green-600" size={32} />
-                        </div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-2">Review Your Information</h3>
-                        <p className="text-gray-600">Please confirm your details before submitting</p>
-                      </div>
-
-                      <div className="bg-gray-50 rounded-lg p-6 space-y-4">
-                        <div className="grid md:grid-cols-2 gap-4">
-                          <div>
-                            <p className="text-sm text-gray-600">Name</p>
-                            <p className="font-medium text-gray-900">{formData.name || 'Not provided'}</p>
-                          </div>
-                          <div>
-                            <p className="text-sm text-gray-600">Email</p>
-                            <p className="font-medium text-gray-900">{formData.email || 'Not provided'}</p>
-                          </div>
-                          <div>
-                            <p className="text-sm text-gray-600">Topic</p>
-                            <p className="font-medium text-gray-900">{formData.topic || 'Not selected'}</p>
-                          </div>
-                          <div>
-                            <p className="text-sm text-gray-600">Urgency</p>
-                            <p className="font-medium text-gray-900">{formData.urgency}</p>
-                          </div>
-                          <div>
-                            <p className="text-sm text-gray-600">Contact Method</p>
-                            <p className="font-medium text-gray-900 capitalize">{formData.preferredMethod}</p>
-                          </div>
-                          {formData.preferredTime && (
-                            <div>
-                              <p className="text-sm text-gray-600">Preferred Time</p>
-                              <p className="font-medium text-gray-900">{formData.preferredTime}</p>
-                            </div>
-                          )}
-                        </div>
-                        {formData.message && (
-                          <div>
-                            <p className="text-sm text-gray-600 mb-1">Message</p>
-                            <p className="text-gray-900">{formData.message}</p>
-                          </div>
-                        )}
-                      </div>
-
-                      <div className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          id="terms"
-                          required
-                          className="w-4 h-4 text-primary focus:ring-primary rounded"
-                        />
-                        <label htmlFor="terms" className="text-sm text-gray-700">
-                          I agree to the <a href="#" className="text-primary hover:underline">Terms of Service</a> and <a href="#" className="text-primary hover:underline">Privacy Policy</a>
-                        </label>
-                      </div>
-                    </div>
-                  )}
+                  </div>
 
                   {/* Form Actions */}
                   <div className="flex items-center justify-between pt-6 border-t border-gray-200 mt-8">
@@ -637,12 +382,6 @@ const ContactPage = () => {
                       ← Back to FAQs
                     </a>
                     <div className="flex space-x-3">
-                      <button
-                        type="button"
-                        className="px-6 py-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
-                      >
-                        Send Test Email
-                      </button>
                       <button
                         type="submit"
                         disabled={isSubmitting}

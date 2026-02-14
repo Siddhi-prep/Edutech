@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Promotional Offer - Screenshot This!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1a1a1a;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 20px;
+        }
+        
+        .poster {
+            width: 1080px;
+            height: 1350px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Vibrant gradient background */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                #667eea 0%, 
+                #764ba2 50%, 
+                #f093fb 100%);
+        }
+        
+        /* Glow effects */
+        .glow-1 {
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+        
+        .glow-2 {
+            position: absolute;
+            bottom: -200px;
+            left: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(240, 147, 251, 0.4) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(100px);
+        }
+        
+        /* Content */
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 60px;
+            text-align: center;
+            color: white;
+        }
+        
+        .badge {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .main-title {
+            font-size: 96px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 30px;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .discount {
+            font-size: 180px;
+            font-weight: 900;
+            line-height: 1;
+            margin: 40px 0;
+            text-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            letter-spacing: -0.02em;
+        }
+        
+        .subtitle {
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 50px;
+            opacity: 0.95;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button {
+            background: white;
+            color: #667eea;
+            padding: 24px 60px;
+            border-radius: 16px;
+            font-size: 28px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+        }
+        
+        .validity {
+            margin-top: 50px;
+            font-size: 22px;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        
+        .features {
+            margin-top: 60px;
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 20px 40px;
+            border-radius: 12px;
+            font-size: 20px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Decorative circles */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+        
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            top: 100px;
+            left: -100px;
+        }
+        
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            bottom: 150px;
+            right: -50px;
+        }
+        
+        .circle-3 {
+            width: 150px;
+            height: 150px;
+            top: 40%;
+            right: 80px;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <div class="background"></div>
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+        
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+        
+        <div class="content">
+            <div class="badge">🎉 Limited Time Offer</div>
+            
+            <div class="main-title">MEGA<br>SALE</div>
+            
+            <div class="discount">50% OFF</div>
+            
+            <div class="subtitle">On All Premium Courses</div>
+            
+            <div class="features">
+                <div class="feature">✓ Lifetime Access</div>
+                <div class="feature">✓ Certificates</div>
+                <div class="feature">✓ Live Support</div>
+            </div>
+            
+            <div class="cta-button">Enroll Now</div>
+            
+            <div class="validity">Valid until December 31, 2025</div>
+        </div>
+    </div>
+    
+    <script>
+        console.log('%c📸 SCREENSHOT INSTRUCTIONS:', 'font-size: 20px; font-weight: bold; color: #667eea;');
+        console.log('%c1. Press F12 to open DevTools', 'font-size: 14px;');
+        console.log('%c2. Right-click on the poster element', 'font-size: 14px;');
+        console.log('%c3. Select "Screenshot Node" or "Capture node screenshot"', 'font-size: 14px;');
+        console.log('%c4. Save as "offer.jpg" in client/public/promotional-images/', 'font-size: 14px;');
+        console.log('%c5. Refresh your website to see the popup!', 'font-size: 14px; color: #10b981;');
+        console.log('%c\nAlternative: Use Snipping Tool to capture the poster (1080×1350)', 'font-size: 14px; font-style: italic;');
+    </script>
+</body>
+</html>

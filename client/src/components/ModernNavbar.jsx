@@ -1,90 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { 
   Menu, X, BookOpen, Home, Book, FileText, Award, 
-  MessageCircle, User, LogOut, Settings, Bell, Search,
-  ChevronDown, Clock, HelpCircle
+  MessageCircle, HelpCircle, Search, User, TrendingUp
 } from 'react-feather';
-import { useAuth } from '../contexts/AuthContext';
 
 const ModernNavbar = () => {
-  const { isLoggedIn, user, logout } = useAuth();
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const [isNotificationOpen, setIsNotificationOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Dummy user data
-  const dummyUser = {
-    name: 'Sarah Johnson',
-    email: 'sarah.johnson@edutech.com',
-    avatar: 'https://i.pravatar.cc/150?img=47',
-    plan: 'Premium Plan',
-    coursesCompleted: 8,
-    points: 2450
-  };
 
-  // Dummy notifications
-  const notifications = [
-    {
-      id: 1,
-      type: 'course',
-      title: 'New Course Available',
-      message: 'Check out "Advanced React Patterns" - just released!',
-      time: '5 min ago',
-      read: false,
-      icon: '📚'
-    },
-    {
-      id: 2,
-      type: 'achievement',
-      title: 'Achievement Unlocked!',
-      message: 'You completed 5 courses this month. Keep it up!',
-      time: '1 hour ago',
-      read: false,
-      icon: '🏆'
-    },
-    {
-      id: 3,
-      type: 'reminder',
-      title: 'Quiz Reminder',
-      message: 'Don\'t forget to complete your JavaScript quiz today.',
-      time: '2 hours ago',
-      read: true,
-      icon: '⏰'
-    },
-    {
-      id: 4,
-      type: 'social',
-      title: 'New Comment',
-      message: 'Alex replied to your discussion in "Web Dev Basics"',
-      time: '3 hours ago',
-      read: true,
-      icon: '💬'
-    },
-    {
-      id: 5,
-      type: 'update',
-      title: 'System Update',
-      message: 'New features added: Dark mode and progress tracking!',
-      time: '1 day ago',
-      read: true,
-      icon: '🎉'
-    }
+  // Site content for search
+  const siteContent = [
+    { title: 'Web Development Course', category: 'Course', path: '/courses', icon: <Book size={18} className="text-primary" />, keywords: 'web development html css javascript react' },
+    { title: 'Data Science Course', category: 'Course', path: '/courses', icon: <Book size={18} className="text-primary" />, keywords: 'data science python machine learning ai' },
+    { title: 'UI/UX Design Course', category: 'Course', path: '/courses', icon: <Book size={18} className="text-primary" />, keywords: 'design ui ux figma adobe' },
+    { title: 'Mobile App Development', category: 'Course', path: '/courses', icon: <Book size={18} className="text-primary" />, keywords: 'mobile app development react native flutter' },
+    { title: 'JavaScript Interview Questions', category: 'Blog', path: '/blogs', icon: <FileText size={18} className="text-secondary" />, keywords: 'javascript interview questions coding' },
+    { title: 'React Best Practices', category: 'Blog', path: '/blogs', icon: <FileText size={18} className="text-secondary" />, keywords: 'react best practices hooks components' },
+    { title: 'Leaderboard', category: 'Feature', path: '/leaderboard', icon: <Award size={18} className="text-green-600" />, keywords: 'leaderboard rankings top learners' },
+    { title: 'Quizzes', category: 'Feature', path: '/quizzes', icon: <HelpCircle size={18} className="text-purple-600" />, keywords: 'quizzes tests practice questions' },
+    { title: 'Contact Us', category: 'Page', path: '/contact', icon: <MessageCircle size={18} className="text-orange-600" />, keywords: 'contact support help email' },
+    { title: 'FAQ', category: 'Page', path: '/faq', icon: <HelpCircle size={18} className="text-blue-600" />, keywords: 'faq frequently asked questions help' },
+    { title: 'Browse All Courses', category: 'Page', path: '/courses', icon: <TrendingUp size={18} className="text-green-600" />, keywords: 'courses catalog browse all' },
+    { title: 'Read Our Blogs', category: 'Page', path: '/blogs', icon: <FileText size={18} className="text-purple-600" />, keywords: 'blog articles tutorials learning' }
   ];
-
-  // Popular searches / recommendations
-  const popularSearches = [
-    { query: 'React Hooks Tutorial', category: 'Course', icon: '📚' },
-    { query: 'JavaScript Interview Questions', category: 'Blog', icon: '📝' },
-    { query: 'Web Development Roadmap', category: 'Guide', icon: '🗺️' },
-    { query: 'Python for Beginners', category: 'Course', icon: '🐍' },
-    { query: 'UI/UX Design Principles', category: 'Course', icon: '🎨' }
-  ];
-
-  const unreadCount = notifications.filter(n => !n.read).length;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -96,31 +39,29 @@ const ModernNavbar = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (isProfileOpen && !event.target.closest('.profile-dropdown')) {
-        setIsProfileOpen(false);
-      }
-      if (isNotificationOpen && !event.target.closest('.notification-dropdown')) {
-        setIsNotificationOpen(false);
-      }
       if (isSearchOpen && !event.target.closest('.search-dropdown')) {
         setIsSearchOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isProfileOpen, isNotificationOpen, isSearchOpen]);
+  }, [isSearchOpen]);
 
-  const handleSearchSelect = (query) => {
-    setSearchQuery(query);
+  const handleSearchSelect = (item) => {
+    setSearchQuery('');
     setIsSearchOpen(false);
-    // Add search logic here
-    console.log('Searching for:', query);
+    navigate(item.path);
   };
 
-  const handleNotificationClick = (notification) => {
-    // Mark as read and handle click
-    console.log('Notification clicked:', notification);
-  };
+  const filteredContent = searchQuery.trim()
+    ? siteContent.filter(item => 
+        item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.keywords.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.category.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : siteContent.slice(0, 6); // Show first 6 as suggestions when search is empty
+
+
 
   const navLinks = [
     { name: 'Home', path: '/', icon: <Home size={18} />, isRoute: true },
@@ -142,18 +83,6 @@ const ModernNavbar = () => {
     }
   };
 
-  const handleLogout = () => {
-    logout();
-    setIsProfileOpen(false);
-    setIsOpen(false);
-    // Redirect to home page
-    window.location.href = '/';
-  };
-
-  const handleLogin = () => {
-    // Login logic is handled by AuthContext
-    // This function can be removed or used for other purposes
-  };
 
   return (
     <nav
@@ -220,7 +149,7 @@ const ModernNavbar = () => {
 
                 {/* Search Dropdown */}
                 {isSearchOpen && (
-                  <div className="absolute right-0 mt-2 w-96 bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden animate-fade-in">
+                  <div className="absolute right-0 mt-2 w-96 bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden animate-fade-in z-50">
                     {/* Search Input */}
                     <div className="p-4 border-b">
                       <div className="relative">
@@ -229,226 +158,56 @@ const ModernNavbar = () => {
                           type="text"
                           value={searchQuery}
                           onChange={(e) => setSearchQuery(e.target.value)}
-                          placeholder="Search courses, blogs, topics..."
+                          placeholder="Search courses, blogs, pages..."
                           className="w-full pl-10 pr-4 py-2.5 bg-gray-50 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
                           autoFocus
                         />
                       </div>
                     </div>
 
-                    {/* Popular Searches */}
-                    <div className="p-2">
+                    {/* Search Results */}
+                    <div className="p-2 max-h-96 overflow-y-auto">
                       <p className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase">
-                        Popular Searches
+                        {searchQuery.trim() ? 'Search Results' : 'Quick Access'}
                       </p>
-                      {popularSearches.map((search, index) => (
-                        <button
-                          key={index}
-                          onClick={() => handleSearchSelect(search.query)}
-                          className="w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors text-left group"
-                        >
-                          <span className="text-2xl">{search.icon}</span>
-                          <div className="flex-1">
-                            <p className="text-sm font-medium text-gray-900 group-hover:text-primary">
-                              {search.query}
-                            </p>
-                            <p className="text-xs text-gray-500">{search.category}</p>
-                          </div>
-                          <Search size={16} className="text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Notifications */}
-              <div className="relative notification-dropdown">
-                <button 
-                  onClick={() => setIsNotificationOpen(!isNotificationOpen)}
-                  className="hidden md:flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-colors relative"
-                >
-                  <Bell size={20} className="text-gray-600" />
-                  {unreadCount > 0 && (
-                    <span className="absolute top-1 right-1 w-5 h-5 bg-red-500 rounded-full text-white text-xs flex items-center justify-center font-semibold">
-                      {unreadCount}
-                    </span>
-                  )}
-                </button>
-
-                {/* Notification Dropdown */}
-                {isNotificationOpen && (
-                  <div className="absolute right-0 mt-2 w-96 bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden animate-fade-in max-h-[500px] flex flex-col">
-                    {/* Header */}
-                    <div className="p-4 border-b bg-gradient-to-r from-primary/5 to-secondary/5">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-semibold text-gray-900">Notifications</h3>
-                        <span className="text-xs text-primary font-medium">
-                          {unreadCount} new
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Notifications List */}
-                    <div className="overflow-y-auto flex-1">
-                      {notifications.map((notification) => (
-                        <button
-                          key={notification.id}
-                          onClick={() => handleNotificationClick(notification)}
-                          className={`w-full p-4 border-b hover:bg-gray-50 transition-colors text-left ${
-                            !notification.read ? 'bg-blue-50/50' : ''
-                          }`}
-                        >
-                          <div className="flex items-start space-x-3">
-                            <span className="text-2xl flex-shrink-0">{notification.icon}</span>
-                            <div className="flex-1 min-w-0">
-                              <div className="flex items-start justify-between mb-1">
-                                <p className="text-sm font-semibold text-gray-900">
-                                  {notification.title}
-                                </p>
-                                {!notification.read && (
-                                  <span className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-1"></span>
-                                )}
-                              </div>
-                              <p className="text-sm text-gray-600 line-clamp-2">
-                                {notification.message}
-                              </p>
-                              <p className="text-xs text-gray-400 mt-1">
-                                {notification.time}
-                              </p>
+                      {filteredContent.length > 0 ? (
+                        filteredContent.map((item, index) => (
+                          <button
+                            key={index}
+                            onClick={() => handleSearchSelect(item)}
+                            className="w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors text-left group"
+                          >
+                            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gray-100 group-hover:bg-primary/10 transition-colors">
+                              {item.icon}
                             </div>
-                          </div>
-                        </button>
-                      ))}
-                    </div>
-
-                    {/* Footer */}
-                    <div className="p-3 border-t bg-gray-50">
-                      <button className="w-full text-center text-sm font-medium text-primary hover:text-primary/80 transition-colors">
-                        View All Notifications
-                      </button>
+                            <div className="flex-1">
+                              <p className="text-sm font-medium text-gray-900 group-hover:text-primary">
+                                {item.title}
+                              </p>
+                              <p className="text-xs text-gray-500">{item.category}</p>
+                            </div>
+                            <Search size={16} className="text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                          </button>
+                        ))
+                      ) : (
+                        <div className="px-3 py-8 text-center">
+                          <p className="text-sm text-gray-500">No results found</p>
+                          <p className="text-xs text-gray-400 mt-1">Try different keywords</p>
+                        </div>
+                      )}
                     </div>
                   </div>
                 )}
               </div>
 
-              {/* Profile / Login */}
-              {isLoggedIn ? (
-                <div className="relative profile-dropdown">
-                  <button
-                    onClick={() => setIsProfileOpen(!isProfileOpen)}
-                    className="flex items-center space-x-2 px-3 py-1.5 rounded-full hover:bg-gray-100 transition-all"
-                  >
-                    <img
-                      src={user.avatar}
-                      alt={user.name}
-                      className="w-8 h-8 rounded-full border-2 border-primary/20"
-                    />
-                    <span className="hidden md:block text-sm font-medium text-gray-700">
-                      {user.name.split(' ')[0]}
-                    </span>
-                    <ChevronDown 
-                      size={16} 
-                      className={`hidden md:block text-gray-600 transition-transform ${
-                        isProfileOpen ? 'rotate-180' : ''
-                      }`}
-                    />
-                  </button>
-
-                  {/* Profile Dropdown */}
-                  {isProfileOpen && (
-                    <div className="absolute right-0 mt-2 w-72 bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden animate-fade-in">
-                      {/* User Info */}
-                      <div className="p-4 bg-gradient-to-br from-primary/5 to-secondary/5 border-b">
-                        <div className="flex items-center space-x-3">
-                          <img
-                            src={user.avatar}
-                            alt={user.name}
-                            className="w-12 h-12 rounded-full border-2 border-primary/20"
-                          />
-                          <div className="flex-1">
-                            <h3 className="font-semibold text-gray-900">{user.name}</h3>
-                            <p className="text-xs text-gray-600">{user.email}</p>
-                          </div>
-                        </div>
-                        <div className="mt-3 flex items-center justify-between text-xs">
-                          <span className="px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">
-                            {user.plan}
-                          </span>
-                          <span className="text-gray-600">{user.points} points</span>
-                        </div>
-                      </div>
-
-                      {/* Quick Stats */}
-                      <div className="grid grid-cols-2 gap-3 p-4 border-b">
-                        <div className="text-center">
-                          <div className="flex items-center justify-center w-10 h-10 bg-blue-50 rounded-full mx-auto mb-1">
-                            <Award size={18} className="text-primary" />
-                          </div>
-                          <p className="text-lg font-bold text-gray-900">{user.coursesCompleted}</p>
-                          <p className="text-xs text-gray-600">Completed</p>
-                        </div>
-                        <div className="text-center">
-                          <div className="flex items-center justify-center w-10 h-10 bg-green-50 rounded-full mx-auto mb-1">
-                            <Clock size={18} className="text-secondary" />
-                          </div>
-                          <p className="text-lg font-bold text-gray-900">24h</p>
-                          <p className="text-xs text-gray-600">This Week</p>
-                        </div>
-                      </div>
-
-                      {/* Menu Items */}
-                      <div className="p-2">
-                        <Link 
-                          to="/profile"
-                          className="w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors text-left"
-                        >
-                          <User size={18} className="text-gray-600" />
-                          <span className="text-sm font-medium text-gray-700">My Profile</span>
-                        </Link>
-                        <Link 
-                          to="/my-courses"
-                          className="w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors text-left"
-                        >
-                          <Book size={18} className="text-gray-600" />
-                          <span className="text-sm font-medium text-gray-700">My Courses</span>
-                        </Link>
-                        <Link 
-                          to="/settings"
-                          className="w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors text-left"
-                        >
-                          <Settings size={18} className="text-gray-600" />
-                          <span className="text-sm font-medium text-gray-700">Settings</span>
-                        </Link>
-                      </div>
-
-                      {/* Logout */}
-                      <div className="p-2 border-t">
-                        <button
-                          onClick={handleLogout}
-                          className="w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg hover:bg-red-50 transition-colors text-left group"
-                        >
-                          <LogOut size={18} className="text-gray-600 group-hover:text-red-600" />
-                          <span className="text-sm font-medium text-gray-700 group-hover:text-red-600">
-                            Logout
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <Link
-                  to="/login"
-                  className="relative px-6 py-2.5 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl text-gray-800 font-medium hover:bg-white/20 hover:border-white/30 transition-all duration-300 shadow-lg hover:shadow-xl text-sm md:text-base group overflow-hidden"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <span className="relative z-10 flex items-center space-x-2">
-                    <User size={16} />
-                    <span>Login</span>
-                  </span>
-                </Link>
-              )}
+              {/* Login Button (Showcase) */}
+              <button
+                className="hidden md:flex items-center space-x-2 px-5 py-2 bg-gradient-to-r from-primary/10 to-secondary/10 hover:from-primary/20 hover:to-secondary/20 border border-primary/20 rounded-full text-gray-700 font-medium transition-all duration-300 group"
+                onClick={() => alert('Login functionality will be added later!')}
+              >
+                <User size={16} className="group-hover:scale-110 transition-transform" />
+                <span>Login</span>
+              </button>
 
               {/* Mobile Menu Button */}
               <button
@@ -487,10 +246,41 @@ const ModernNavbar = () => {
                     <Search size={18} className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
                     <input
                       type="text"
-                      placeholder="Search courses, blogs, topics..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder="Search courses, blogs, pages..."
                       className="w-full pl-12 pr-4 py-4 bg-white rounded-2xl text-base focus:outline-none focus:ring-2 focus:ring-primary/20 border border-gray-200 shadow-sm"
                     />
                   </div>
+                  {/* Mobile Search Results */}
+                  {searchQuery.trim() && (
+                    <div className="mt-3 bg-white rounded-xl border border-gray-200 overflow-hidden">
+                      {filteredContent.length > 0 ? (
+                        filteredContent.slice(0, 5).map((item, index) => (
+                          <button
+                            key={index}
+                            onClick={() => {
+                              handleSearchSelect(item);
+                              setIsOpen(false);
+                            }}
+                            className="w-full flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 transition-colors text-left border-b last:border-b-0"
+                          >
+                            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gray-100">
+                              {item.icon}
+                            </div>
+                            <div className="flex-1">
+                              <p className="text-sm font-medium text-gray-900">{item.title}</p>
+                              <p className="text-xs text-gray-500">{item.category}</p>
+                            </div>
+                          </button>
+                        ))
+                      ) : (
+                        <div className="px-4 py-6 text-center text-sm text-gray-500">
+                          No results found
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 {navLinks.map((link) => (
@@ -524,78 +314,19 @@ const ModernNavbar = () => {
                   )
                 ))}
 
-                {/* Mobile User Section */}
-                {isLoggedIn ? (
-                  <>
-                    <div className="pt-3 mt-3 border-t border-gray-200">
-                      <div className="px-4 py-3 bg-gray-50 rounded-xl mb-2">
-                        <div className="flex items-center space-x-3 mb-3">
-                          <img
-                            src={user?.avatar || 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face'}
-                            alt={user?.name || 'User'}
-                            className="w-10 h-10 rounded-full border-2 border-primary/20"
-                          />
-                          <div>
-                            <p className="font-semibold text-gray-900 text-sm">{user?.name || 'User'}</p>
-                            <p className="text-xs text-gray-600">{user?.plan || 'Free Plan'}</p>
-                          </div>
-                        </div>
-                        <div className="grid grid-cols-2 gap-2 text-xs">
-                          <div className="bg-white p-2 rounded-lg text-center">
-                            <p className="font-bold text-primary">{user?.coursesCompleted || 0}</p>
-                            <p className="text-gray-600">Courses</p>
-                          </div>
-                          <div className="bg-white p-2 rounded-lg text-center">
-                            <p className="font-bold text-secondary">{user?.points || 0}</p>
-                            <p className="text-gray-600">Points</p>
-                          </div>
-                        </div>
-                      </div>
-                      <Link 
-                        to="/profile"
-                        className="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-50 font-medium transition-all w-full"
-                      >
-                        <User size={18} />
-                        <span>My Profile</span>
-                      </Link>
-                      <Link 
-                        to="/my-courses"
-                        className="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-50 font-medium transition-all w-full"
-                      >
-                        <Book size={18} />
-                        <span>My Courses</span>
-                      </Link>
-                      <Link 
-                        to="/settings"
-                        className="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-50 font-medium transition-all w-full"
-                      >
-                        <Settings size={18} />
-                        <span>Settings</span>
-                      </Link>
-                      <button
-                        onClick={handleLogout}
-                        className="flex items-center space-x-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50 font-medium transition-all w-full"
-                      >
-                        <LogOut size={18} />
-                        <span>Logout</span>
-                      </button>
-                    </div>
-                  </>
-                ) : (
-                  <div className="pt-3 mt-3 border-t border-gray-200">
-                    <Link
-                      to="/login"
-                      onClick={() => setIsOpen(false)}
-                      className="relative flex items-center justify-center space-x-2 px-6 py-4 bg-white/60 backdrop-blur-xl border border-gray-200/50 rounded-2xl font-medium hover:bg-white/80 hover:border-gray-300/50 transition-all duration-300 shadow-lg hover:shadow-xl group overflow-hidden"
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <span className="relative z-10 flex items-center space-x-2 text-gray-700 group-hover:text-gray-900">
-                        <User size={18} />
-                        <span>Login</span>
-                      </span>
-                    </Link>
-                  </div>
-                )}
+                {/* Mobile Login Button */}
+                <div className="pt-3 mt-3 border-t border-gray-200">
+                  <button
+                    onClick={() => {
+                      alert('Login functionality will be added later!');
+                      setIsOpen(false);
+                    }}
+                    className="w-full flex items-center justify-center space-x-2 px-6 py-4 bg-gradient-to-r from-primary/10 to-secondary/10 hover:from-primary/20 hover:to-secondary/20 border border-primary/20 rounded-2xl font-medium transition-all duration-300 text-gray-700"
+                  >
+                    <User size={18} />
+                    <span>Login</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

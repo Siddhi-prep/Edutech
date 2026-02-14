@@ -1,0 +1,73 @@
+🎯 HOW TO TEST THE PROMOTIONAL POPUP
+====================================
+
+QUICK START (3 Steps):
+----------------------
+
+1. CREATE OR DOWNLOAD A TEST IMAGE
+   - Create an image: 1080px × 1350px (recommended)
+   - Or download a sample promotional poster online
+   - Save it with one of these names:
+     • offer.jpg
+     • offer.png
+     • promo.jpg
+     • banner.jpg
+
+2. PLACE THE IMAGE IN THIS FOLDER
+   - Location: client/public/promotional-images/
+   - Just drag and drop your image here
+   - Make sure it's named correctly (offer.jpg, promo.png, etc.)
+
+3. TEST ON YOUR WEBSITE
+   - Start your development server: npm run dev
+   - Open your website: http://localhost:3000
+   - Wait 1-2 seconds
+   - The popup should appear automatically!
+
+TESTING THE CLOSE FUNCTIONALITY:
+---------------------------------
+✓ Click the X button (top-right) - popup closes
+✓ Click outside the image - popup closes
+✓ Refresh the page - popup won't show again (same session)
+✓ Close browser and reopen - popup shows again (new session)
+
+TO REMOVE THE POPUP:
+--------------------
+Simply delete or rename the image file from this folder.
+No image = No popup!
+
+RECOMMENDED TEST IMAGE SIZES:
+-----------------------------
+• Mobile First: 1080px × 1350px (9:16 ratio)
+• Square: 1080px × 1080px
+• Landscape: 1920px × 1080px (will auto-resize)
+
+SUPPORTED FILE FORMATS:
+-----------------------
+✓ JPG/JPEG (.jpg, .jpeg)
+✓ PNG (.png)
+✓ WebP (.webp)
+
+NEED A SAMPLE IMAGE?
+--------------------
+You can use these free resources:
+• Canva.com (create custom promotional posters)
+• Unsplash.com (download free images)
+• Or use the placeholder HTML file we created earlier
+
+TROUBLESHOOTING:
+----------------
+Popup not showing?
+→ Check file name matches: offer.jpg, promo.png, etc.
+→ Clear browser cache (Ctrl+Shift+R)
+→ Check browser console for errors (F12)
+→ Make sure image is in the correct folder
+
+Popup showing but image broken?
+→ Check image file isn't corrupted
+→ Try a different format (PNG instead of JPG)
+→ Reduce file size (compress image)
+
+====================================
+Ready to test? Just add your image!
+====================================

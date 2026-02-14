@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { MessageCircle, X, Send, Bot, User, Lock, Maximize2, Minimize2 } from 'react-feather';
-import { useAuth } from '../contexts/AuthContext';
 
-const AIAssistant = () => {
-  const { isAuthenticated, user } = useAuth();
+const AIAssistant = ({ onOpenChange }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [messages, setMessages] = useState([
@@ -23,6 +21,13 @@ const AIAssistant = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  // Notify parent when chatbot opens/closes
+  useEffect(() => {
+    if (onOpenChange) {
+      onOpenChange(isOpen);
+    }
+  }, [isOpen, onOpenChange]);
 
   const quickReplies = [
     '📚 Browse Courses',
@@ -92,21 +97,15 @@ const AIAssistant = () => {
     }
   };
 
-  // Don't show AI Assistant if not authenticated
-  if (!isAuthenticated()) {
-    return null;
-  }
-
   return (
     <>
       {/* Chat Button */}
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 bg-gradient-to-r from-primary to-secondary text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 z-50 group animate-bounce-gentle"
+          className="fixed bottom-6 right-6 bg-gradient-to-r from-primary to-secondary text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 z-50 group"
         >
           <MessageCircle size={24} className="group-hover:scale-110 transition-transform" />
-          <span className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
           <div className="absolute bottom-full right-0 mb-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
             Ask AI Assistant
           </div>
@@ -114,7 +113,7 @@ const AIAssistant = () => {
       )}
       {/* Chat Window */}
       {isOpen && (
-        <div className={`fixed z-50 transition-all duration-300 ${
+        <div className={`fixed z-[9999] transition-all duration-300 ${
           isMinimized 
             ? 'bottom-6 right-6 w-80' 
             : 'bottom-6 right-6 w-96 h-[600px] md:w-[420px] md:h-[650px]'

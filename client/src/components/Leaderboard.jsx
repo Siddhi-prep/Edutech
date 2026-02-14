@@ -1,52 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import { Award, TrendingUp } from 'react-feather';
-import { getLeaderboard } from '../services/api';
 
 const Leaderboard = () => {
-  const [leaderboard, setLeaderboard] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [showAll, setShowAll] = useState(false);
-
-  useEffect(() => {
-    fetchLeaderboard();
-  }, []);
-
-  const fetchLeaderboard = async () => {
-    try {
-      const response = await getLeaderboard();
-      setLeaderboard(response.data);
-      setLoading(false);
-    } catch (error) {
-      console.error('Error fetching leaderboard:', error);
-      setLoading(false);
-    }
-  };
-
-  const displayedLeaderboard = showAll ? leaderboard : leaderboard.slice(0, 5);
-
-  const getBadgeColor = (badge) => {
-    switch (badge) {
-      case 'gold':
-        return 'from-yellow-400 to-yellow-600';
-      case 'silver':
-        return 'from-gray-300 to-gray-500';
-      case 'bronze':
-        return 'from-orange-400 to-orange-600';
-      default:
-        return 'from-gray-400 to-gray-600';
-    }
-  };
-
-  if (loading) {
-    return (
-      <section id="leaderboard" className="py-20 bg-gray-50">
-        <div className="container-custom text-center">
-          <div className="animate-pulse">Loading leaderboard...</div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section id="leaderboard" className="py-12 md:py-20 bg-gray-50">
@@ -65,94 +20,94 @@ const Leaderboard = () => {
               <div className="flex items-center justify-between">
                 <h3 className="text-xl md:text-2xl font-bold flex items-center space-x-2">
                   <Award size={24} className="md:w-7 md:h-7" />
-                  <span>Top {showAll ? leaderboard.length : 5} Learners</span>
+                  <span>Top 5 Learners</span>
                 </h3>
                 <TrendingUp size={20} className="md:w-6 md:h-6" />
               </div>
             </div>
 
-            {/* Leaderboard List */}
-            <div className="divide-y">
-              {displayedLeaderboard.map((learner) => (
-                <div
-                  key={learner.id}
-                  className="p-6 hover:bg-gray-50 transition-colors group"
-                >
-                  <div className="flex items-center space-x-4">
-                    {/* Rank */}
-                    <div
-                      className={`flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br ${getBadgeColor(
-                        learner.badge
-                      )} flex items-center justify-center text-white font-bold text-lg shadow-lg`}
-                    >
-                      {learner.rank}
+            {/* Top 5 Performers Image Placeholder */}
+            <div className="p-6">
+              <div className="relative w-full rounded-lg overflow-hidden bg-gray-50 border-2 border-dashed border-gray-300" style={{ minHeight: '800px' }}>
+                {/* Instructions - Will hide when image loads */}
+                <div className="absolute inset-0 flex items-center justify-center p-8">
+                  <div className="text-center max-w-2xl">
+                    <div className="mb-8">
+                      <Award className="mx-auto text-gray-400 mb-4" size={48} />
+                      <h3 className="text-2xl font-bold text-gray-700 mb-2">Top 5 Performers Image</h3>
+                      <p className="text-gray-500">Follow these steps to add your performers image</p>
                     </div>
-
-                    {/* Avatar */}
-                    <img
-                      src={learner.avatar}
-                      alt={learner.name}
-                      className="w-14 h-14 rounded-full border-2 border-gray-200 group-hover:scale-110 transition-transform"
-                    />
-
-                    {/* Info */}
-                    <div className="flex-grow">
-                      <h4 className="text-lg font-semibold text-gray-900">
-                        {learner.name}
-                      </h4>
-                      <p className="text-sm text-gray-600">
-                        {learner.coursesCompleted} courses completed
-                      </p>
-                    </div>
-
-                    {/* Points */}
-                    <div className="text-right">
-                      <div className="text-2xl font-bold text-primary">
-                        {learner.points.toLocaleString()}
+                    
+                    <div className="space-y-6 text-left bg-white rounded-lg p-6 shadow-sm">
+                      {/* Step 1 */}
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">
+                          1
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold text-gray-900 mb-1">Place your image in the public folder</h4>
+                          <p className="text-sm text-gray-600">
+                            <code className="bg-gray-100 px-2 py-1 rounded text-xs">
+                              /client/public/top-5-performers.jpg
+                            </code>
+                          </p>
+                        </div>
                       </div>
-                      <div className="text-sm text-gray-600">points</div>
-                    </div>
-                  </div>
 
-                  {/* Progress Bar */}
-                  <div className="mt-4">
-                    <div className="flex items-center justify-between text-sm text-gray-600 mb-2">
-                      <span>Overall Progress</span>
-                      <span className="font-semibold">{learner.progress}%</span>
+                      {/* Step 2 */}
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">
+                          2
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold text-gray-900 mb-1">Name your image file</h4>
+                          <p className="text-sm text-gray-600">
+                            Use exactly: <code className="bg-gray-100 px-2 py-1 rounded text-xs font-semibold">top-5-performers.jpg</code>
+                          </p>
+                          <p className="text-xs text-gray-500 mt-1">Supported formats: .jpg, .png, .webp</p>
+                        </div>
+                      </div>
+
+                      {/* Step 3 */}
+                      <div className="flex items-start space-x-4">
+                        <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">
+                          3
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold text-gray-900 mb-1">Refresh the page</h4>
+                          <p className="text-sm text-gray-600">
+                            After placing the image, refresh your browser to see it displayed here
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                      <div
-                        className="bg-gradient-to-r from-primary to-secondary h-full rounded-full transition-all duration-500"
-                        style={{ width: `${learner.progress}%` }}
-                      ></div>
-                    </div>
+
+                    <p className="text-xs text-gray-400 mt-6">
+                      Recommended size: 1200px × 800px | Max file size: 500KB
+                    </p>
                   </div>
                 </div>
-              ))}
+
+                {/* Image - Will show on top of instructions when loaded */}
+                <img
+                  src="/top-5-performers.jpg"
+                  alt="Top 5 Performers"
+                  className="relative z-10 w-full h-full object-contain"
+                  onLoad={(e) => {
+                    // Hide instructions when image loads successfully
+                    e.target.parentElement.style.background = 'white';
+                    const instructions = e.target.previousElementSibling;
+                    if (instructions) instructions.style.display = 'none';
+                  }}
+                  onError={(e) => {
+                    // Show instructions if image fails to load
+                    e.target.style.display = 'none';
+                  }}
+                />
+              </div>
             </div>
           </div>
 
-          {/* View Full Leaderboard Button */}
-          {leaderboard.length > 5 && !showAll && (
-            <div className="text-center mt-6">
-              <Link
-                to="/leaderboard"
-                className="inline-block btn-secondary px-8 py-3"
-              >
-                View Full Leaderboard ({leaderboard.length - 5} more)
-              </Link>
-            </div>
-          )}
-          {showAll && (
-            <div className="text-center mt-6">
-              <button
-                onClick={() => setShowAll(false)}
-                className="btn-secondary px-8 py-3"
-              >
-                Show Top 5 Only
-              </button>
-            </div>
-          )}
 
           {/* CTA */}
           <div className="text-center mt-8">

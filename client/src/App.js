@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
-import { AuthProvider } from './contexts/AuthContext';
 import ModernNavbar from './components/ModernNavbar';
 import Footer from './components/Footer';
 import AIAssistant from './components/AIAssistant';
+import PromotionalPopup from './components/PromotionalPopup';
 import HomePage from './pages/HomePage';
 import CoursesPage from './pages/CoursesPage';
 import BlogsPage from './pages/BlogsPage';
@@ -11,12 +11,6 @@ import LeaderboardPage from './pages/LeaderboardPage';
 import QuizzesPage from './pages/QuizzesPage';
 import ContactPage from './pages/ContactPage';
 import FAQPage from './pages/FAQPage';
-import LoginPage from './pages/LoginPage';
-import SignUpPage from './pages/SignUpPage';
-import MyProfilePage from './pages/MyProfilePage';
-import MyCoursesPage from './pages/MyCoursesPage';
-import SettingsPage from './pages/SettingsPage';
-import SecurityPage from './pages/SecurityPage';
 import './index.css';
 
 class ErrorBoundary extends React.Component {
@@ -59,14 +53,8 @@ class ErrorBoundary extends React.Component {
 
 const AppContent = () => {
   const location = useLocation();
-  const hideNavbar = [
-    '/login',
-    '/signup',
-    '/profile',
-    '/my-courses',
-    '/settings',
-    '/security'
-  ].includes(location.pathname);
+  const hideNavbar = false; // Always show navbar
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
 
   return (
     <div className="App min-h-screen flex flex-col">
@@ -81,18 +69,13 @@ const AppContent = () => {
             <Route path="/quizzes" element={<QuizzesPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/faq" element={<FAQPage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/signup" element={<SignUpPage />} />
-            <Route path="/profile" element={<MyProfilePage />} />
-            <Route path="/my-courses" element={<MyCoursesPage />} />
-            <Route path="/settings" element={<SettingsPage />} />
-            <Route path="/security" element={<SecurityPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </ErrorBoundary>
       </main>
       {!hideNavbar && <Footer />}
-      <AIAssistant />
+      <AIAssistant onOpenChange={setIsChatbotOpen} />
+      <PromotionalPopup isChatbotOpen={isChatbotOpen} />
     </div>
   );
 };
@@ -100,11 +83,9 @@ const AppContent = () => {
 function App() {
   return (
     <React.StrictMode>
-      <AuthProvider>
-        <Router>
-          <AppContent />
-        </Router>
-      </AuthProvider>
+      <Router>
+        <AppContent />
+      </Router>
     </React.StrictMode>
   );
 }
