@@ -4,31 +4,31 @@ const testimonials = [
   {
     name: 'Ananya Sharma',
     handle: 'B.Tech CSE Student',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ananya&backgroundColor=b6e3f4',
     text: 'EduTech completely changed how I prepare for placements. The structured courses and real-world projects gave me the confidence I needed to crack my dream company.',
   },
   {
     name: 'Rahul Verma',
     handle: 'Full Stack Developer',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul&backgroundColor=c0aede',
     text: 'The mentorship quality here is unmatched. I went from knowing basic HTML to building production-ready apps in just 4 months. Highly recommend for anyone serious about tech.',
   },
   {
     name: 'Priya Patel',
     handle: 'Data Science Intern',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Priya&backgroundColor=ffd5dc',
     text: 'The data science track is incredibly well-designed. Each module builds on the last, and the hands-on projects made complex concepts feel approachable and practical.',
   },
   {
     name: 'Arjun Mehta',
     handle: 'UI/UX Designer',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Arjun&backgroundColor=d1f4d9',
     text: 'As a design student, I was surprised by how well EduTech covers the intersection of design and development. The community feedback on projects is genuinely helpful.',
   },
   {
     name: 'Sneha Reddy',
     handle: 'MCA Graduate',
-    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sneha&backgroundColor=ffdfbf',
     text: 'I tried multiple platforms before finding EduTech. The difference is the focus on real skills over certificates. The quizzes and case studies keep you sharp and job-ready.',
   },
 ];
