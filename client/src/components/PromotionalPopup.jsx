@@ -8,7 +8,6 @@ const PromotionalPopup = ({ isChatbotOpen }) => {
   const [showEventsButton, setShowEventsButton] = useState(false);
 
   // Check if popup was closed in this session
-  const POPUP_CLOSED_KEY = 'promotional_popup_closed';
   const POPUP_SESSION_KEY = 'promotional_popup_session';
 
   useEffect(() => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { MessageCircle, X, Send, Bot, User, Lock, Maximize2, Minimize2 } from 'react-feather';
+import { MessageCircle, X, Send, Maximize2, Minimize2 } from 'react-feather';
 
 const AIAssistant = ({ onOpenChange }) => {
   const [isOpen, setIsOpen] = useState(false);

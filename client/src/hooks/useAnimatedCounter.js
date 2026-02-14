@@ -16,13 +16,14 @@ const useAnimatedCounter = (end, duration = 5000, start = 0) => {
       { threshold: 0.1 }
     );
 
-    if (countRef.current) {
-      observer.observe(countRef.current);
+    const node = countRef.current;
+    if (node) {
+      observer.observe(node);
     }
 
     return () => {
-      if (countRef.current) {
-        observer.unobserve(countRef.current);
+      if (node) {
+        observer.unobserve(node);
       }
     };
   }, [isVisible]);

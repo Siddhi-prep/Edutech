@@ -1,32 +1,12 @@
 import React, { useState } from 'react';
 import { 
-  Search, Download, TrendingUp, Award, Target, Zap, CheckCircle, Star, Info
+  Search, Download, TrendingUp, Award, Star, Info
 } from 'react-feather';
 import GradientBackground from '../components/GradientBackground';
 
 const LeaderboardPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedPeriod, setSelectedPeriod] = useState('This Week');
-
-  // Calculate current week range (Monday to Sunday)
-  const getCurrentWeekRange = () => {
-    const today = new Date();
-    const currentDay = today.getDay();
-    const diff = currentDay === 0 ? -6 : 1 - currentDay; // Adjust to get Monday
-    
-    const monday = new Date(today);
-    monday.setDate(today.getDate() + diff);
-    
-    const sunday = new Date(monday);
-    sunday.setDate(monday.getDate() + 6);
-    
-    const formatDate = (date) => {
-      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-      return `${months[date.getMonth()]} ${date.getDate()}`;
-    };
-    
-    return `${formatDate(monday)} - ${formatDate(sunday)}, ${today.getFullYear()}`;
-  };
 
   return (
     <div className="min-h-screen bg-white relative">

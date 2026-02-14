@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { 
   Search, Filter, Grid, List, Calendar, Clock, 
-  TrendingUp, Zap, BookOpen, Layers, ChevronLeft, ChevronRight, Archive
+  TrendingUp, Zap, BookOpen, Layers, Archive
 } from 'react-feather';
 import GradientBackground from '../components/GradientBackground';
 
 const BlogsPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory] = useState('All');
   const [filterTab, setFilterTab] = useState('All');
   const [viewMode, setViewMode] = useState('grid');
   const [sortBy, setSortBy] = useState('Most Recent');
@@ -108,7 +108,6 @@ const BlogsPage = () => {
     }
   ];
 
-  const categories = ['All', 'UI/UX', 'Frontend', 'Backend', 'Data', 'Cloud', 'Security', 'AI/ML'];
   const filterTabs = ['All', 'Featured', 'New', 'Case Studies', 'Tutorials'];
 
   // Filter blogs

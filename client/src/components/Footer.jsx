@@ -168,7 +168,7 @@ const Footer = () => {
                 {links.map((link, index) => (
                   <li key={index}>
                     <a
-                      href="#"
+                      href="/"
                       className="text-gray-400 hover:text-primary transition-colors"
                     >
                       {link}
@@ -187,13 +187,13 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
             <p>© {currentYear} EduTech. All rights reserved.</p>
             <div className="flex items-center space-x-6">
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="/privacy" className="hover:text-primary transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="/terms" className="hover:text-primary transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="/sitemap" className="hover:text-primary transition-colors">
                 Sitemap
               </a>
             </div>

@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { 
-  Mail, Phone, MapPin, Calendar, Video, MessageCircle, 
+  Mail, Phone, MapPin, 
   Send, Clock, CheckCircle, HelpCircle, Zap, User, 
-  Briefcase, FileText, Upload, Monitor, Smartphone, 
-  Globe, Shield, AlertCircle, X
+  Briefcase, 
+  AlertCircle
 } from 'react-feather';
 import GradientBackground from '../components/GradientBackground';
 
 const ContactPage = () => {
-  const [activeTab, setActiveTab] = useState('details');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -38,24 +37,6 @@ const ContactPage = () => {
 
   const urgencyLevels = ['Low', 'Normal', 'High', 'Urgent'];
 
-  const contactMethods = [
-    { id: 'email', name: 'Email', icon: <Mail size={20} />, description: 'Response within 24 hours' },
-    { id: 'call', name: 'Phone Call', icon: <Phone size={20} />, description: 'Schedule a call' },
-    { id: 'video', name: 'Video Meeting', icon: <Video size={20} />, description: 'Book a video call' },
-    { id: 'chat', name: 'Live Chat', icon: <MessageCircle size={20} />, description: 'Instant support' }
-  ];
-
-  const meetingPlatforms = [
-    { id: 'zoom', name: 'Zoom', icon: <Video size={24} /> },
-    { id: 'meet', name: 'Google Meet', icon: <Monitor size={24} /> },
-    { id: 'teams', name: 'Microsoft Teams', icon: <Briefcase size={24} /> },
-    { id: 'phone', name: 'Phone Call', icon: <Phone size={24} /> }
-  ];
-
-  const timeSlots = [
-    '09:00 AM', '10:00 AM', '11:00 AM', '12:00 PM',
-    '02:00 PM', '03:00 PM', '04:00 PM', '05:00 PM'
-  ];
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

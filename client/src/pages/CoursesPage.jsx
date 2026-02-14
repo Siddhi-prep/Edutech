@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import { 
   Search, Filter, Grid, List, Star, Clock, Users, 
   TrendingUp, Zap, BookOpen, ChevronLeft, ChevronRight

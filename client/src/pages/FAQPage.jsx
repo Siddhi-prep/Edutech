@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { 
   Search, X, ChevronRight, HelpCircle, BookOpen, 
-  CreditCard, Settings, User, Zap, Calendar, 
-  Shield, TrendingUp, Award, Bell, Trash2, Key,
-  RefreshCw, FileText, Star
+  CreditCard, Settings, Zap, Calendar, 
+  TrendingUp, Award, Star
 } from 'react-feather';
 import GradientBackground from '../components/GradientBackground';
 

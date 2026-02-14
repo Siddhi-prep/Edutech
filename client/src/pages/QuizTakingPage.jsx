@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  Clock, Flag, ChevronLeft, ChevronRight, HelpCircle, 
+  Flag, ChevronLeft, ChevronRight, HelpCircle, 
   CheckCircle, XCircle, Zap, ArrowLeft, Settings
 } from 'react-feather';
 import { useAuth } from '../contexts/AuthContext';
@@ -8,7 +8,7 @@ import ProtectedFeature from '../components/ProtectedFeature';
 import GradientBackground from '../components/GradientBackground';
 
 const QuizTakingPage = ({ quiz, onBack }) => {
-  const { isAuthenticated, hasPermission } = useAuth();
+  useAuth();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isAnswered, setIsAnswered] = useState(false);

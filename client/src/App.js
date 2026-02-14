@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import ModernNavbar from './components/ModernNavbar';
 import Footer from './components/Footer';
 import AIAssistant from './components/AIAssistant';
@@ -52,7 +52,6 @@ class ErrorBoundary extends React.Component {
 }
 
 const AppContent = () => {
-  const location = useLocation();
   const hideNavbar = false; // Always show navbar
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
 
