@@ -61,7 +61,7 @@ const Hero = () => {
         <div className="text-center max-w-4xl mx-auto">
 
           {/* Main Headline — staggered slide-up with blur */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-2 md:mb-4 leading-tight px-2">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-2 md:mb-4 leading-tight px-2">
             <motion.span
               className="inline-block"
               variants={fadeUp}
@@ -93,20 +93,23 @@ const Hero = () => {
             </motion.span>
           </h1>
 
-          {/* Hashtag — scale-in with blur */}
-          <motion.p
-            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl italic font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4 md:mb-6"
+          {/* Hashtag — stylish multi-font script */}
+          <motion.div
+            className="mb-4 md:mb-6 flex items-baseline justify-center flex-wrap"
             variants={scaleIn}
             initial="hidden"
             animate="visible"
             custom={0.7}
           >
-            #SiddhiThoSadhiddam
-          </motion.p>
+            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl" style={{ fontFamily: "'Dancing Script', cursive", color: '#0f2b5b', fontWeight: 700 }}>#</span>
+            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl" style={{ fontFamily: "'Great Vibes', cursive", color: '#0f2b5b' }}>Siddhi</span>
+            <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl" style={{ fontFamily: "'Sacramento', cursive", color: '#1a4080' }}>Tho</span>
+            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl" style={{ fontFamily: "'Caveat', cursive", color: '#0f2b5b', fontWeight: 700 }}>Sadhiddam</span>
+          </motion.div>
 
           {/* Subheading */}
           <motion.p
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 md:mb-12 max-w-3xl mx-auto px-4"
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-8 md:mb-12 max-w-3xl mx-auto px-4"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
