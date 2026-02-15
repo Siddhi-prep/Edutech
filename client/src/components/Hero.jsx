@@ -46,12 +46,6 @@ const Hero = () => {
   const appLearners = useAnimatedCounter(25000, 5500);
   const credibleCourses = useAnimatedCounter(5, 4500);
 
-  const scrollToCourses = () => {
-    const element = document.querySelector('#courses');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white px-4">
