@@ -68,7 +68,7 @@ const LoginPage = () => {
       const result = login(userData, `token_${Date.now()}`);
       
       if (result.success) {
-        setSuccess(authMode === 'signin' ? 'Login successful! Redirecting...' : 'Account created successfully! Welcome to EduTech!');
+        setSuccess(authMode === 'signin' ? 'Login successful! Redirecting...' : 'Account created successfully! Welcome to SiddhiPrep!');
         
         setTimeout(() => {
           navigate('/');

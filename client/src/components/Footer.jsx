@@ -140,7 +140,7 @@ const Footer = () => {
               <div className="bg-gradient-to-r from-primary to-secondary p-2 rounded-lg">
                 <BookOpen className="text-white" size={24} />
               </div>
-              <span className="text-2xl font-bold text-white">EduTech</span>
+              <span className="text-2xl font-bold text-white">SiddhiPrep</span>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Empowering learners worldwide with cutting-edge education and
@@ -185,7 +185,7 @@ const Footer = () => {
       <div className="border-t border-gray-800">
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
-            <p>© {currentYear} EduTech. All rights reserved.</p>
+            <p>© {currentYear} SiddhiPrep. All rights reserved.</p>
             <div className="flex items-center space-x-6">
               <a href="/privacy" className="hover:text-primary transition-colors">
                 Privacy Policy

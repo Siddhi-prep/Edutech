@@ -130,11 +130,11 @@ const ContactPage = () => {
               <div className="bg-white border border-gray-200 rounded-2xl p-6">
                 <h3 className="font-semibold text-gray-900 mb-4">Quick Contact</h3>
                 <div className="space-y-4">
-                  <a href="mailto:support@edutech.com" className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                  <a href="mailto:support@siddhiprep.com" className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
                     <Mail className="text-primary flex-shrink-0 mt-1" size={20} />
                     <div>
                       <p className="font-medium text-gray-900">Email Us</p>
-                      <p className="text-sm text-gray-600">support@edutech.com</p>
+                      <p className="text-sm text-gray-600">support@siddhiprep.com</p>
                     </div>
                   </a>
                   <a href="tel:+1234567890" className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">

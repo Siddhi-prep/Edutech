@@ -101,7 +101,7 @@ const SignUpPage = () => {
       const result = login(userData, `signup_token_${Date.now()}`);
       
       if (result.success) {
-        setSuccess('Account created successfully! Welcome to EduTech!');
+        setSuccess('Account created successfully! Welcome to SiddhiPrep!');
         
         // Redirect after success
         setTimeout(() => {
@@ -144,7 +144,7 @@ const SignUpPage = () => {
       const result = login(socialUserData, `${provider}_signup_token_${Date.now()}`);
       
       if (result.success) {
-        setSuccess(`Account created with ${provider}! Welcome to EduTech!`);
+        setSuccess(`Account created with ${provider}! Welcome to SiddhiPrep!`);
         
         setTimeout(() => {
           navigate('/');

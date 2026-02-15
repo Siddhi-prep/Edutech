@@ -70,7 +70,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-gray-900 mb-0.5">Email Us</h4>
-                  <p className="text-sm text-gray-500">support@edutech.com</p>
+                  <p className="text-sm text-gray-500">support@siddhiprep.com</p>
                 </div>
               </div>
 
@@ -105,7 +105,7 @@ const Contact = () => {
                   <p className="text-xs opacity-90">Chat with us on WhatsApp</p>
                 </div>
                 <a
-                  href="https://wa.me/917013706173?text=Hello%20EduTech%20Team%2C%20I%20need%20assistance."
+                  href="https://wa.me/917013706173?text=Hello%20SiddhiPrep%20Team%2C%20I%20need%20assistance."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white text-green-600 p-2.5 rounded-full hover:scale-110 transition-transform flex items-center justify-center"

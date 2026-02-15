@@ -7,7 +7,7 @@ const AIAssistant = ({ onOpenChange }) => {
   const [messages, setMessages] = useState([
     {
       type: 'bot',
-      text: 'Hi! 👋 I\'m your EduTech AI Assistant. How can I help you today?',
+      text: 'Hi! 👋 I\'m your SiddhiPrep AI Assistant. How can I help you today?',
       time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
   ]);
@@ -40,9 +40,9 @@ const AIAssistant = ({ onOpenChange }) => {
     'courses': 'We offer 200+ courses in Web Development, Data Science, UI/UX Design, and more! Click on the "Courses" section to explore.',
     'pricing': 'Our courses range from $99 to $399. We also offer bundle discounts and monthly payment plans. Would you like to know more about a specific course?',
     'enroll': 'Enrolling is easy! Just browse our courses, click "Enroll Now" on any course, and follow the simple registration process. Need help choosing a course?',
-    'contact': 'You can reach us at support@edutech.com or call +1 (555) 123-4567. We\'re here Monday-Friday, 9 AM - 6 PM EST.',
+    'contact': 'You can reach us at support@siddhiprep.com or call +1 (555) 123-4567. We\'re here Monday-Friday, 9 AM - 6 PM EST.',
     'help': 'I can help you with:\n• Finding the right course\n• Pricing and payment options\n• Enrollment process\n• Technical support\n• General questions\n\nWhat would you like to know?',
-    'default': 'That\'s a great question! Our team can provide detailed information. You can contact us at support@edutech.com or explore our courses section for more details.'
+    'default': 'That\'s a great question! Our team can provide detailed information. You can contact us at support@siddhiprep.com or explore our courses section for more details.'
   };
 
   const getBotResponse = (userMessage) => {
@@ -215,7 +215,7 @@ const AIAssistant = ({ onOpenChange }) => {
                     </button>
                   </div>
                   <p className="text-xs text-gray-500 mt-2 text-center">
-                    Powered by EduTech AI
+                    Powered by SiddhiPrep AI
                   </p>
                 </div>
               </>

@@ -106,7 +106,7 @@ const ModernNavbar = () => {
                 <BookOpen className="text-white" size={20} />
               </div>
               <span className="text-lg md:text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hidden sm:block">
-                EduTech
+                SiddhiPrep
               </span>
             </Link>
 

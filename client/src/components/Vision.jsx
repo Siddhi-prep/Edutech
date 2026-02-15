@@ -38,7 +38,7 @@ const Vision = () => {
               <span className="text-primary"> Mission</span>
             </h2>
             <p className="text-sm md:text-base text-gray-600 mb-5 md:mb-6 leading-relaxed">
-              At EduTech, we believe education should be accessible, engaging, and transformative.
+              At SiddhiPrep, we believe education should be accessible, engaging, and transformative.
               We're building the future of learning with cutting-edge technology and world-class content.
             </p>
             <div className="space-y-4">

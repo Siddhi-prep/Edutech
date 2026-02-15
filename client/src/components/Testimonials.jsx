@@ -5,7 +5,7 @@ const testimonials = [
     name: 'Ananya Sharma',
     handle: 'B.Tech CSE Student',
     avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ananya&backgroundColor=b6e3f4',
-    text: 'EduTech completely changed how I prepare for placements. The structured courses and real-world projects gave me the confidence I needed to crack my dream company.',
+    text: 'SiddhiPrep completely changed how I prepare for placements. The structured courses and real-world projects gave me the confidence I needed to crack my dream company.',
   },
   {
     name: 'Rahul Verma',
@@ -23,13 +23,13 @@ const testimonials = [
     name: 'Arjun Mehta',
     handle: 'UI/UX Designer',
     avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Arjun&backgroundColor=d1f4d9',
-    text: 'As a design student, I was surprised by how well EduTech covers the intersection of design and development. The community feedback on projects is genuinely helpful.',
+    text: 'As a design student, I was surprised by how well SiddhiPrep covers the intersection of design and development. The community feedback on projects is genuinely helpful.',
   },
   {
     name: 'Sneha Reddy',
     handle: 'MCA Graduate',
     avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sneha&backgroundColor=ffdfbf',
-    text: 'I tried multiple platforms before finding EduTech. The difference is the focus on real skills over certificates. The quizzes and case studies keep you sharp and job-ready.',
+    text: 'I tried multiple platforms before finding SiddhiPrep. The difference is the focus on real skills over certificates. The quizzes and case studies keep you sharp and job-ready.',
   },
 ];
 
@@ -67,7 +67,7 @@ const Testimonials = () => {
             What Our Students Say
           </h2>
           <p className="text-base max-w-[600px] font-medium text-gray-500 sm:text-lg">
-            Real success stories from learners who transformed their careers with EduTech
+            Real success stories from learners who transformed their careers with SiddhiPrep
           </p>
         </div>
 

@@ -47,7 +47,7 @@ const Navbar = () => {
               <BookOpen className="text-white" size={20} />
             </div>
             <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              EduTech
+              SiddhiPrep
             </span>
           </Link>
 

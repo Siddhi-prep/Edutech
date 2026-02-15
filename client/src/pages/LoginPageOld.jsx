@@ -144,7 +144,7 @@ const LoginPage = () => {
               <BookOpen className="text-white" size={20} />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              EduTech
+              SiddhiPrep
             </span>
           </Link>
         </div>
@@ -160,7 +160,7 @@ const LoginPage = () => {
                 <BookOpen className="text-white" size={24} />
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                EduTech
+                SiddhiPrep
               </span>
             </Link>
           </div>

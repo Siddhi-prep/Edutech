@@ -94,7 +94,7 @@ const MyProfilePage = () => {
               <div className="bg-gradient-to-br from-primary to-secondary p-2 rounded-xl">
                 <BookOpen className="text-white" size={20} />
               </div>
-              <span className="text-xl font-bold text-gray-900">EduTech</span>
+              <span className="text-xl font-bold text-gray-900">SiddhiPrep</span>
             </Link>
             <button
               onClick={handleLogout}
