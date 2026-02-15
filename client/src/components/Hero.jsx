@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight } from 'react-feather';
+import { ArrowRight, Play } from 'react-feather';
 import { motion } from 'framer-motion';
 import GradientBackground from './GradientBackground';
 import useAnimatedCounter from '../hooks/useAnimatedCounter';
@@ -42,10 +42,9 @@ const Hero = () => {
   const parallaxOffset = useParallax(0.3);
 
   // Apple-inspired smooth counters
-  const learners = useAnimatedCounter(25000, 6000);
-  const courses = useAnimatedCounter(50, 5500);
-  const mentors = useAnimatedCounter(50, 5000);
-  const countries = useAnimatedCounter(15, 4500);
+  const ytLearners = useAnimatedCounter(35000, 6000);
+  const appLearners = useAnimatedCounter(25000, 5500);
+  const credibleCourses = useAnimatedCounter(5, 4500);
 
   const scrollToCourses = () => {
     const element = document.querySelector('#courses');
@@ -119,8 +118,8 @@ const Hero = () => {
             animate="visible"
             custom={0.9}
           >
-            Join thousands of learners upgrading their skills with AI-powered learning.
-            Master in-demand skills and accelerate your career.
+            Join the Siddhi Family — where thousands of aspirants grow and prepare together.
+            Learn from credible faculty and move one step closer to your dream job every single day.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -131,16 +130,24 @@ const Hero = () => {
             animate="visible"
             custom={1.1}
           >
-            <button
-              onClick={scrollToCourses}
+            <a
+              href="https://www.siddhiprep.com/courses"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary flex items-center space-x-2 text-base md:text-lg group w-full sm:w-auto transform hover:scale-105 hover:shadow-2xl transition-all duration-300"
             >
               <span>Browse Courses</span>
               <ArrowRight className="group-hover:translate-x-1 transition-transform duration-300" size={20} />
-            </button>
-            <button className="btn-secondary text-base md:text-lg w-full sm:w-auto transform hover:scale-105 hover:shadow-xl transition-all duration-300">
-              Watch Demo
-            </button>
+            </a>
+            <a
+              href="https://www.youtube.com/playlist?list=PL9grYD5cBKDvNeAkDD953piUmftb78pE8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary flex items-center space-x-2 text-base md:text-lg w-full sm:w-auto transform hover:scale-105 hover:shadow-xl transition-all duration-300"
+            >
+              <Play size={18} />
+              <span>Watch Demo</span>
+            </a>
           </motion.div>
 
           {/* Stats Section — staggered children */}
@@ -158,48 +165,45 @@ const Hero = () => {
                 initial="hidden"
                 animate="visible"
               >
-                {/* Active Learners */}
+                {/* YouTube Learners */}
                 <motion.div className="text-center" variants={statItem}>
                   <div
-                    ref={learners.ref}
+                    ref={ytLearners.ref}
                     className="text-2xl sm:text-3xl md:text-4xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2 leading-tight tracking-tight"
                   >
-                    {learners.count.toLocaleString()}+
+                    {ytLearners.count.toLocaleString()}+
                   </div>
-                  <div className="text-xs md:text-sm text-gray-500 font-medium uppercase tracking-wide">Active Learners</div>
+                  <div className="text-xs md:text-sm text-gray-500 font-medium uppercase tracking-wide">YouTube Learners</div>
                 </motion.div>
 
-                {/* Premium Courses */}
+                {/* App Learners */}
                 <motion.div className="text-center" variants={statItem}>
                   <div
-                    ref={courses.ref}
+                    ref={appLearners.ref}
                     className="text-2xl sm:text-3xl md:text-4xl font-semibold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent mb-2 leading-tight tracking-tight"
                   >
-                    {courses.count}+
+                    {appLearners.count.toLocaleString()}+
                   </div>
-                  <div className="text-xs md:text-sm text-gray-500 font-medium uppercase tracking-wide">Premium Courses</div>
+                  <div className="text-xs md:text-sm text-gray-500 font-medium uppercase tracking-wide">App Learners</div>
                 </motion.div>
 
-                {/* Expert Mentors */}
+                {/* Credible Courses */}
                 <motion.div className="text-center" variants={statItem}>
                   <div
-                    ref={mentors.ref}
+                    ref={credibleCourses.ref}
                     className="text-2xl sm:text-3xl md:text-4xl font-semibold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-2 leading-tight tracking-tight"
                   >
-                    {mentors.count}+
+                    {credibleCourses.count}
                   </div>
-                  <div className="text-xs md:text-sm text-gray-500 font-medium uppercase tracking-wide">Expert Mentors</div>
+                  <div className="text-xs md:text-sm text-gray-500 font-medium uppercase tracking-wide">Credible Courses</div>
                 </motion.div>
 
-                {/* Countries Reached */}
+                {/* Pan India Community */}
                 <motion.div className="text-center" variants={statItem}>
-                  <div
-                    ref={countries.ref}
-                    className="text-2xl sm:text-3xl md:text-4xl font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2 leading-tight tracking-tight"
-                  >
-                    {countries.count}
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 leading-tight tracking-tight" style={{ background: 'linear-gradient(180deg, #FF9933 30%, #FFFFFF 50%, #138808 70%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                    IN
                   </div>
-                  <div className="text-xs md:text-sm text-gray-500 font-medium uppercase tracking-wide">Countries Reached</div>
+                  <div className="text-xs md:text-sm text-gray-500 font-medium uppercase tracking-wide">Pan India Community</div>
                 </motion.div>
               </motion.div>
             </div>

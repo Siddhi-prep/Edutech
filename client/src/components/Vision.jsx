@@ -1,7 +1,7 @@
 import React from 'react';
 import { Target, Users, Award, TrendingUp, Play } from 'react-feather';
 
-const YOUTUBE_VIDEO_ID = 'dQw4w9WgXcQ';
+const YOUTUBE_VIDEO_ID = 'jsQvag9hHLY';
 
 const Vision = () => {
   const features = [
