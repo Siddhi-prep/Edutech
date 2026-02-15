@@ -34,28 +34,31 @@ const Hero = () => {
         <div className="text-center max-w-4xl mx-auto animate-fade-in">
 
           {/* Main Headline with Animation */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight px-2 animate-fade-in">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-2 md:mb-4 leading-tight px-2 animate-fade-in">
             <span className="inline-block animate-slide-up" style={{ animationDelay: '0.1s' }}>
               Learn Smart.
             </span>
             <br />
             <span className="inline-block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent animate-slide-up" style={{ animationDelay: '0.3s' }}>
-              Grow Fast.
+              Revise Daily.
             </span>
             <br />
             <span className="inline-block animate-slide-up" style={{ animationDelay: '0.5s' }}>
-              Excel Together.
+              Achieve with Siddhi.
             </span>
           </h1>
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl italic font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4 md:mb-6 animate-fade-in" style={{ animationDelay: '0.7s' }}>
+            #SiddhiThoSadhiddam
+          </p>
 
           {/* Subheading */}
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 md:mb-12 max-w-3xl mx-auto px-4 animate-fade-in" style={{ animationDelay: '0.7s' }}>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 md:mb-12 max-w-3xl mx-auto px-4 animate-fade-in" style={{ animationDelay: '0.9s' }}>
             Join thousands of learners upgrading their skills with AI-powered learning.
             Master in-demand skills and accelerate your career.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-12 md:mb-16 px-4 animate-fade-in" style={{ animationDelay: '0.9s' }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-12 md:mb-16 px-4 animate-fade-in" style={{ animationDelay: '1.1s' }}>
             <button
               onClick={scrollToCourses}
               className="btn-primary flex items-center space-x-2 text-base md:text-lg group w-full sm:w-auto transform hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-pulse-glow"
@@ -69,7 +72,7 @@ const Hero = () => {
           </div>
 
           {/* Apple-Inspired Stats Section */}
-          <div className="max-w-4xl mx-auto px-6 animate-fade-in" style={{ animationDelay: '1.5s' }}>
+          <div className="max-w-4xl mx-auto px-6 animate-fade-in" style={{ animationDelay: '1.7s' }}>
             <div className="bg-white/60 backdrop-blur-xl border border-gray-200/50 rounded-2xl p-6 md:p-8 shadow-lg">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
                 {/* Active Learners */}
