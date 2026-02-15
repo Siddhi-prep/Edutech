@@ -29,6 +29,7 @@ const PromotionalPopup = ({ isChatbotOpen }) => {
       '/promotional-images/offer.jpeg',
       '/promotional-images/offer.webp',
       '/promotional-images/promo.jpg',
+      '/promotional-images/promo.jpeg',
       '/promotional-images/promo.png',
       '/promotional-images/promotion.jpg',
       '/promotional-images/promotion.png',
