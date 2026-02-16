@@ -1,5 +1,5 @@
 import React from 'react';
-import { Target, Users, Award, TrendingUp, Play } from 'react-feather';
+import { Target, BookOpen, Users, Zap, Play } from 'react-feather';
 
 const YOUTUBE_VIDEO_ID = 'jsQvag9hHLY';
 
@@ -7,23 +7,27 @@ const Vision = () => {
   const features = [
     {
       icon: <Target size={24} />,
-      title: 'Mission-Driven',
-      description: 'Democratizing quality education for everyone, everywhere.',
+      title: 'Result-Driven Preparation',
+      subtitle: 'We don\'t just teach — we prepare you to perform.',
+      description: 'Every lecture, test, and mentorship session is structured to maximize your exam score and build real confidence.',
+    },
+    {
+      icon: <BookOpen size={24} />,
+      title: 'Foundation First',
+      subtitle: 'Strong basics create strong ranks.',
+      description: 'All subjects are taught from the ground up to ensure conceptual clarity, logical thinking, and long-term retention.',
     },
     {
       icon: <Users size={24} />,
-      title: 'Community First',
-      description: 'Learn together with peers, mentors, and industry experts.',
+      title: 'Guided Mentorship',
+      subtitle: 'Preparation without direction leads to confusion.',
+      description: 'Through weekly live mentorship and structured support, we guide every aspirant with clarity, discipline, and accountability.',
     },
     {
-      icon: <Award size={24} />,
-      title: 'Industry-Recognized',
-      description: 'Earn certificates valued by top companies worldwide.',
-    },
-    {
-      icon: <TrendingUp size={24} />,
-      title: 'Career Growth',
-      description: 'Track your progress and unlock new opportunities.',
+      icon: <Zap size={24} />,
+      title: 'Accessible Excellence',
+      subtitle: 'Quality education should not be restricted.',
+      description: 'With open notes, free quizzes, installment options, and structured resources, we make serious preparation affordable and accessible.',
     },
   ];
 
@@ -38,8 +42,8 @@ const Vision = () => {
               <span className="text-primary"> Mission</span>
             </h2>
             <p className="text-sm md:text-base text-gray-600 mb-5 md:mb-6 leading-relaxed">
-              At SiddhiPrep, we believe education should be accessible, engaging, and transformative.
-              We're building the future of learning with cutting-edge technology and world-class content.
+              At SiddhiPrep, we believe in transforming aspirants into achievers through strategic mentorship,
+              exam-focused content, and high-quality digital learning.
             </p>
             <div className="space-y-4">
               {features.map((feature, index) => (
@@ -51,6 +55,7 @@ const Vision = () => {
                     <h3 className="text-base font-semibold text-gray-900 mb-0.5">
                       {feature.title}
                     </h3>
+                    <p className="text-sm font-medium text-gray-700 mb-0.5">{feature.subtitle}</p>
                     <p className="text-sm text-gray-500">{feature.description}</p>
                   </div>
                 </div>
