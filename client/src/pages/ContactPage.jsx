@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, Instagram, Clock, CheckCircle, HelpCircle } from 'react-feather';
+import { Mail, Phone, Send, Clock, HelpCircle } from 'react-feather';
 import GradientBackground from '../components/GradientBackground';
 
 const WhatsAppIcon = ({ size = 20 }) => (
@@ -27,7 +27,7 @@ const ContactPage = () => {
           <div className="text-center mb-8">
             <h2 className="text-xl font-bold text-gray-900 mb-3">Let's Connect</h2>
             <p className="text-sm text-gray-500 max-w-xl mx-auto">
-              Whether you have a question about courses, pricing, or anything else,
+              Whether you have a question about preparation, guidance or courses,
               our team is ready to answer all your questions.
             </p>
           </div>
@@ -62,19 +62,19 @@ const ContactPage = () => {
               </div>
             </a>
 
-            {/* Instagram */}
+            {/* Telegram */}
             <a
-              href="https://www.instagram.com/siddhi_prep"
+              href="https://t.me/Siddhi_SSC"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white border border-gray-200 rounded-2xl p-6 flex items-start space-x-4 hover:shadow-md hover:border-gray-300 transition-all duration-300"
             >
-              <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-3 rounded-xl text-pink-500 flex-shrink-0">
-                <Instagram size={20} />
+              <div className="bg-sky-50 p-3 rounded-xl text-sky-500 flex-shrink-0">
+                <Send size={20} />
               </div>
               <div>
-                <h3 className="text-sm font-semibold text-gray-900 mb-1">Instagram</h3>
-                <p className="text-sm text-gray-500">@Siddhi_Prep</p>
+                <h3 className="text-sm font-semibold text-gray-900 mb-1">Telegram</h3>
+                <p className="text-sm text-gray-500">Siddhi_SSC</p>
               </div>
             </a>
 
@@ -113,24 +113,16 @@ const ContactPage = () => {
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
                   <span className="text-gray-600">Monday - Friday</span>
-                  <span className="font-medium text-gray-900">9:00 AM - 6:00 PM</span>
+                  <span className="font-medium text-gray-900">11:00 AM - 7:00 PM</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Saturday</span>
-                  <span className="font-medium text-gray-900">10:00 AM - 4:00 PM</span>
+                  <span className="font-medium text-gray-900">11:00 AM - 4:00 PM</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Sunday</span>
-                  <span className="font-medium text-gray-900">Closed</span>
+                  <span className="font-medium text-gray-900 italic">My team rests on Sunday.</span>
                 </div>
-              </div>
-              <div className="mt-4 pt-4 border-t border-gray-200">
-                <p className="text-xs text-gray-500">
-                  <span className="inline-flex items-center space-x-1">
-                    <CheckCircle size={14} className="text-green-500" />
-                    <span>24/7 Live Chat Support Available</span>
-                  </span>
-                </p>
               </div>
             </div>
 

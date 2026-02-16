@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, Instagram } from 'react-feather';
+import { Mail, Phone, Send } from 'react-feather';
 
 const WhatsAppIcon = ({ size = 18 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -23,7 +23,7 @@ const Contact = () => {
           <div className="text-center mb-8">
             <h3 className="text-xl font-bold text-gray-900 mb-3">Let's Connect</h3>
             <p className="text-sm text-gray-500 max-w-xl mx-auto">
-              Whether you have a question about courses, pricing, or anything else,
+              Whether you have a question about preparation, guidance or courses,
               our team is ready to answer all your questions.
             </p>
           </div>
@@ -58,19 +58,19 @@ const Contact = () => {
               </div>
             </a>
 
-            {/* Instagram */}
+            {/* Telegram */}
             <a
-              href="https://www.instagram.com/siddhi_prep"
+              href="https://t.me/Siddhi_SSC"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white border border-gray-100 rounded-xl p-5 flex items-start space-x-3 hover:shadow-md hover:border-gray-200 transition-all duration-300"
             >
-              <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-2.5 rounded-lg text-pink-500 flex-shrink-0">
-                <Instagram size={18} />
+              <div className="bg-sky-50 p-2.5 rounded-lg text-sky-500 flex-shrink-0">
+                <Send size={18} />
               </div>
               <div>
-                <h4 className="text-sm font-semibold text-gray-900 mb-0.5">Instagram</h4>
-                <p className="text-sm text-gray-500">@Siddhi_Prep</p>
+                <h4 className="text-sm font-semibold text-gray-900 mb-0.5">Telegram</h4>
+                <p className="text-sm text-gray-500">Siddhi_SSC</p>
               </div>
             </a>
 
