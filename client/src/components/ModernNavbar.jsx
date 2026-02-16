@@ -15,18 +15,18 @@ const ModernNavbar = () => {
 
   // Site content for search
   const siteContent = [
-    { title: 'Web Development Course', category: 'Course', path: '/courses', icon: <Book size={18} className="text-primary" />, keywords: 'web development html css javascript react' },
-    { title: 'Data Science Course', category: 'Course', path: '/courses', icon: <Book size={18} className="text-primary" />, keywords: 'data science python machine learning ai' },
-    { title: 'UI/UX Design Course', category: 'Course', path: '/courses', icon: <Book size={18} className="text-primary" />, keywords: 'design ui ux figma adobe' },
-    { title: 'Mobile App Development', category: 'Course', path: '/courses', icon: <Book size={18} className="text-primary" />, keywords: 'mobile app development react native flutter' },
-    { title: 'JavaScript Interview Questions', category: 'Blog', path: '/blogs', icon: <FileText size={18} className="text-secondary" />, keywords: 'javascript interview questions coding' },
-    { title: 'React Best Practices', category: 'Blog', path: '/blogs', icon: <FileText size={18} className="text-secondary" />, keywords: 'react best practices hooks components' },
-    { title: 'Leaderboard', category: 'Feature', path: '/leaderboard', icon: <Award size={18} className="text-green-600" />, keywords: 'leaderboard rankings top learners' },
-    { title: 'Quizzes', category: 'Feature', path: '/quizzes', icon: <HelpCircle size={18} className="text-purple-600" />, keywords: 'quizzes tests practice questions' },
-    { title: 'Contact Us', category: 'Page', path: '/contact', icon: <MessageCircle size={18} className="text-orange-600" />, keywords: 'contact support help email' },
-    { title: 'FAQ', category: 'Page', path: '/faq', icon: <HelpCircle size={18} className="text-blue-600" />, keywords: 'faq frequently asked questions help' },
-    { title: 'Browse All Courses', category: 'Page', path: '/courses', icon: <TrendingUp size={18} className="text-green-600" />, keywords: 'courses catalog browse all' },
-    { title: 'Read Our Blogs', category: 'Page', path: '/blogs', icon: <FileText size={18} className="text-purple-600" />, keywords: 'blog articles tutorials learning' }
+    { title: 'BrahMos Batch 2 - Flagship Program', category: 'Course', path: '/courses', icon: <Book size={18} className="text-primary" />, keywords: 'brahmos batch ssc cgl chsl mts maths english gs flagship' },
+    { title: 'GS 1.0 - General Studies', category: 'Course', path: '/courses', icon: <Book size={18} className="text-primary" />, keywords: 'gs general studies science gk static' },
+    { title: 'English VOD 1.0', category: 'Course', path: '/courses', icon: <Book size={18} className="text-primary" />, keywords: 'english vocabulary rc cloze test para jumbles' },
+    { title: 'WPME - Visual Learning', category: 'Course', path: '/courses', icon: <Book size={18} className="text-primary" />, keywords: 'wpme word power made easy vocabulary visual' },
+    { title: 'SSC 2025 Previous Papers', category: 'Quiz', path: '/quizzes', icon: <HelpCircle size={18} className="text-purple-600" />, keywords: 'ssc previous papers pyq 2025 practice' },
+    { title: 'Current Affairs Quiz', category: 'Quiz', path: '/quizzes', icon: <HelpCircle size={18} className="text-purple-600" />, keywords: 'current affairs daily ca quiz gk' },
+    { title: 'Vocabulary - Word Drop', category: 'Quiz', path: '/quizzes', icon: <HelpCircle size={18} className="text-purple-600" />, keywords: 'vocabulary word drop synonyms antonyms' },
+    { title: 'Leaderboards', category: 'Feature', path: '/leaderboard', icon: <Award size={18} className="text-green-600" />, keywords: 'leaderboard rankings top performers brahmos batch' },
+    { title: 'Blogs - Coming Soon', category: 'Page', path: '/blogs', icon: <FileText size={18} className="text-secondary" />, keywords: 'blog articles notes stories coming soon' },
+    { title: 'Contact & Support', category: 'Page', path: '/contact', icon: <MessageCircle size={18} className="text-orange-600" />, keywords: 'contact support whatsapp telegram email call' },
+    { title: 'FAQs', category: 'Page', path: '/faq', icon: <HelpCircle size={18} className="text-blue-600" />, keywords: 'faq questions help refund mentorship installment' },
+    { title: 'Browse All Courses', category: 'Page', path: '/courses', icon: <TrendingUp size={18} className="text-green-600" />, keywords: 'courses catalog browse all enroll' },
   ];
 
   useEffect(() => {
