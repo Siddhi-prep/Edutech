@@ -2,34 +2,52 @@ import React from 'react';
 
 const testimonials = [
   {
-    name: 'Ananya Sharma',
-    handle: 'B.Tech CSE Student',
-    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ananya&backgroundColor=b6e3f4',
-    text: 'SiddhiPrep completely changed how I prepare for placements. The structured courses and real-world projects gave me the confidence I needed to crack my dream company.',
+    name: 'Chandu',
+    handle: 'SSC CGL Aspirant',
+    avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Chandu&backgroundColor=b6e3f4',
+    text: 'Siddhi has been a great place for SSC CGL preparation. The faculty explain concepts clearly, the study material is helpful, and the overall environment motivates me to learn better. I feel more confident about my exam after joining Siddhi.',
   },
   {
-    name: 'Rahul Verma',
-    handle: 'Full Stack Developer',
-    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul&backgroundColor=c0aede',
-    text: 'The mentorship quality here is unmatched. I went from knowing basic HTML to building production-ready apps in just 4 months. Highly recommend for anyone serious about tech.',
+    name: 'Uttej Velpula',
+    handle: 'BrahMos Batch Student',
+    avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Uttej&backgroundColor=c0aede',
+    text: "Truly Siddhi is the best mentorship course. I have ever seen such a mentor and content — it was like the gate pass for any exam to clear. I'll make sure that I would be in 2026 results and waiting for celebrations with BrahMos.",
   },
   {
-    name: 'Priya Patel',
-    handle: 'Data Science Intern',
-    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Priya&backgroundColor=ffd5dc',
-    text: 'The data science track is incredibly well-designed. Each module builds on the last, and the hands-on projects made complex concepts feel approachable and practical.',
+    name: 'Revanth',
+    handle: 'SSC CGL Aspirant',
+    avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Revanth&backgroundColor=ffd5dc',
+    text: 'When I compared to my previous coaching, Siddhi is very much better — classes, tests, revision notes, weekly timetables, mentorships. In every aspect Siddhi leads. I am feeling that I took a good decision.',
   },
   {
-    name: 'Arjun Mehta',
-    handle: 'UI/UX Designer',
-    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Arjun&backgroundColor=d1f4d9',
-    text: 'As a design student, I was surprised by how well SiddhiPrep covers the intersection of design and development. The community feedback on projects is genuinely helpful.',
+    name: 'Vinay Kumar',
+    handle: 'BrahMos Batch Student',
+    avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Vinay&backgroundColor=d1f4d9',
+    text: 'Before joining Siddhi, I scored 70-80 in full mocks. Now I am able to score 100-110. This is only because of the Siddhi team. Teaching is excellent, mapping is top notch, and analysing paper patterns is another level.',
   },
   {
-    name: 'Sneha Reddy',
-    handle: 'MCA Graduate',
-    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sneha&backgroundColor=ffdfbf',
-    text: 'I tried multiple platforms before finding SiddhiPrep. The difference is the focus on real skills over certificates. The quizzes and case studies keep you sharp and job-ready.',
+    name: 'Mouna Suma',
+    handle: 'BrahMos Batch Student',
+    avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Mouna&backgroundColor=ffdfbf',
+    text: "I discovered Siddhi Sir on YouTube. Then Sir launched the BrahMos course and it was a turning point for me. His way of teaching is truly different. He makes you fall in love with the subject, removes your fear and builds your confidence step by step.",
+  },
+  {
+    name: 'Manoj Acche',
+    handle: 'SSC CGL Aspirant',
+    avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Manoj&backgroundColor=b6e3f4',
+    text: 'After I got Siddhi I never want to compromise on things. I felt like learning from my brother — the comfort and clarity in every session is unmatched.',
+  },
+  {
+    name: 'K Bhanu Prakash',
+    handle: 'SSC CGL Aspirant',
+    avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Bhanu&backgroundColor=c0aede',
+    text: 'SIDDHI is an excellent app for SSC CGL aspirants. The teaching quality is very good, especially for Maths, English, and GS. The revision notes are very useful and the Sunday mentorship sessions provide guidance, motivation, and proper direction.',
+  },
+  {
+    name: 'Vaishnavi',
+    handle: 'BrahMos Batch Student',
+    avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Vaishnavi&backgroundColor=ffd5dc',
+    text: "After 1 year of struggling to find a better source, I came to know about Siddhi. As the Sanskrit meaning suggests — Perfection — in the content, depth of class, and the way Sir teaches. The team has done fabulous work. Really happy that I joined.",
   },
 ];
 
@@ -68,7 +86,7 @@ const Testimonials = () => {
             What Our Students Say
           </h2>
           <p className="text-base max-w-[600px] font-medium text-gray-500 sm:text-lg">
-            Real success stories from learners who transformed their careers with SiddhiPrep
+            Real words from real aspirants preparing with SiddhiPrep
           </p>
         </div>
 
