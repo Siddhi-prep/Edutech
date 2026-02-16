@@ -102,6 +102,7 @@ const Courses = () => {
                   <img
                     src={course.thumbnail}
                     alt={course.title}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     onError={(e) => {
                       e.target.style.display = 'none';
@@ -178,4 +179,4 @@ const Courses = () => {
   );
 };
 
-export default Courses;
+export default React.memo(Courses);

@@ -41,6 +41,7 @@ const TestimonialCard = ({ name, handle, avatar, text }) => (
       <img
         src={avatar}
         alt={name}
+        loading="lazy"
         className="h-12 w-12 rounded-full object-cover"
       />
       <div className="flex flex-col">
@@ -101,4 +102,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default React.memo(Testimonials);

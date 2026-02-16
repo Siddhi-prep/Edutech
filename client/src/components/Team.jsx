@@ -48,6 +48,7 @@ const Team = () => {
                   <img
                     src={leader.image}
                     alt={leader.name}
+                    loading="lazy"
                     className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto object-cover object-top ring-2 ring-gray-200 group-hover:ring-primary/30 transition-all"
                     onError={(e) => {
                       e.target.style.display = 'none';
@@ -90,6 +91,7 @@ const Team = () => {
                       <img
                         src={member.image}
                         alt={member.name}
+                        loading="lazy"
                         className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto object-cover object-top ring-2 ring-gray-100 group-hover:ring-primary/20 transition-all"
                         onError={(e) => {
                           e.target.style.display = 'none';
@@ -118,4 +120,4 @@ const Team = () => {
   );
 };
 
-export default Team;
+export default React.memo(Team);

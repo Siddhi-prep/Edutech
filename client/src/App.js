@@ -1,17 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import ModernNavbar from './components/ModernNavbar';
 import Footer from './components/Footer';
 import AIAssistant from './components/AIAssistant';
 import PromotionalPopup from './components/PromotionalPopup';
-import HomePage from './pages/HomePage';
-import CoursesPage from './pages/CoursesPage';
-import BlogsPage from './pages/BlogsPage';
-import LeaderboardPage from './pages/LeaderboardPage';
-import QuizzesPage from './pages/QuizzesPage';
-import ContactPage from './pages/ContactPage';
-import FAQPage from './pages/FAQPage';
 import './index.css';
+
+const HomePage = lazy(() => import('./pages/HomePage'));
+const CoursesPage = lazy(() => import('./pages/CoursesPage'));
+const BlogsPage = lazy(() => import('./pages/BlogsPage'));
+const LeaderboardPage = lazy(() => import('./pages/LeaderboardPage'));
+const QuizzesPage = lazy(() => import('./pages/QuizzesPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+const FAQPage = lazy(() => import('./pages/FAQPage'));
+
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-white">
+    <div className="text-center">
+      <div className="w-10 h-10 border-3 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+      <p className="text-sm text-gray-500">Loading...</p>
+    </div>
+  </div>
+);
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -60,16 +70,18 @@ const AppContent = () => {
       {!hideNavbar && <ModernNavbar />}
       <main className="flex-grow">
         <ErrorBoundary>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/courses" element={<CoursesPage />} />
-            <Route path="/blogs" element={<BlogsPage />} />
-            <Route path="/leaderboard" element={<LeaderboardPage />} />
-            <Route path="/quizzes" element={<QuizzesPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/faq" element={<FAQPage />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/courses" element={<CoursesPage />} />
+              <Route path="/blogs" element={<BlogsPage />} />
+              <Route path="/leaderboard" element={<LeaderboardPage />} />
+              <Route path="/quizzes" element={<QuizzesPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/faq" element={<FAQPage />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </Suspense>
         </ErrorBoundary>
       </main>
       {!hideNavbar && <Footer />}
