@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, Send } from 'react-feather';
+import { Mail, Phone, Instagram } from 'react-feather';
 
 const WhatsAppIcon = ({ size = 18 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -32,7 +32,7 @@ const Contact = () => {
           <div className="grid sm:grid-cols-2 gap-4 mb-6">
             {/* Email */}
             <a
-              href="mailto:support@siddhiprep.com"
+              href="mailto:Edsiddhi03@gmail.com"
               className="bg-white border border-gray-100 rounded-xl p-5 flex items-start space-x-3 hover:shadow-md hover:border-gray-200 transition-all duration-300"
             >
               <div className="bg-blue-50 p-2.5 rounded-lg text-primary flex-shrink-0">
@@ -40,13 +40,13 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="text-sm font-semibold text-gray-900 mb-0.5">Email Us</h4>
-                <p className="text-sm text-gray-500">support@siddhiprep.com</p>
+                <p className="text-sm text-gray-500">Edsiddhi03@gmail.com</p>
               </div>
             </a>
 
             {/* Call */}
             <a
-              href="tel:+15551234567"
+              href="tel:+919030898917"
               className="bg-white border border-gray-100 rounded-xl p-5 flex items-start space-x-3 hover:shadow-md hover:border-gray-200 transition-all duration-300"
             >
               <div className="bg-green-50 p-2.5 rounded-lg text-secondary flex-shrink-0">
@@ -54,24 +54,29 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="text-sm font-semibold text-gray-900 mb-0.5">Call Us</h4>
-                <p className="text-sm text-gray-500">+1 (555) 123-4567</p>
+                <p className="text-sm text-gray-500">+91 9030898917</p>
               </div>
             </a>
 
-            {/* Telegram */}
-            <div className="bg-white border border-gray-100 rounded-xl p-5 flex items-start space-x-3 hover:shadow-md hover:border-gray-200 transition-all duration-300">
-              <div className="bg-sky-50 p-2.5 rounded-lg text-sky-500 flex-shrink-0">
-                <Send size={18} />
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/siddhi_prep"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white border border-gray-100 rounded-xl p-5 flex items-start space-x-3 hover:shadow-md hover:border-gray-200 transition-all duration-300"
+            >
+              <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-2.5 rounded-lg text-pink-500 flex-shrink-0">
+                <Instagram size={18} />
               </div>
               <div>
-                <h4 className="text-sm font-semibold text-gray-900 mb-0.5">Telegram</h4>
-                <p className="text-sm text-gray-500">Coming soon</p>
+                <h4 className="text-sm font-semibold text-gray-900 mb-0.5">Instagram</h4>
+                <p className="text-sm text-gray-500">@Siddhi_Prep</p>
               </div>
-            </div>
+            </a>
 
             {/* WhatsApp */}
             <a
-              href="https://wa.me/917013706173?text=Hello%20SiddhiPrep%20Team%2C%20I%20need%20assistance."
+              href="https://wa.me/919030898917?text=Hey%20SiddhiPrep%2C%20I%20am%20interested%20in%20your%20courses%20and%20would%20like%20some%20assistance.%20Please%20help%20me%20out."
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-50/60 border border-green-200 rounded-xl p-5 flex items-start space-x-3 hover:shadow-md hover:bg-green-50 transition-all duration-300"
@@ -86,10 +91,12 @@ const Contact = () => {
             </a>
           </div>
 
-          {/* Friendly Note */}
-          <p className="text-center text-xs text-gray-400">
-            Quick doubt? WhatsApp is best for messages 😄
-          </p>
+          {/* Humorous Note */}
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 mt-6 text-center">
+            <p className="text-sm text-amber-800">
+              We reply fastest on WhatsApp between <span className="font-semibold">10 AM - 7 PM</span>. Save the call for emergencies, we promise we read every text.
+            </p>
+          </div>
         </div>
       </div>
     </section>
