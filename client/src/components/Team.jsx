@@ -14,8 +14,6 @@ const faculties = [
   { id: 4, name: 'Dr Aparna Mam', role: 'Faculty – English', image: '/team/dr-aparna.png' },
   { id: 5, name: 'Akhil Sir', role: 'Faculty – Maths', image: '/team/akhil-sir.jpg', placeholder: true },
   { id: 6, name: 'Ritik Sir', role: 'Associate Faculty – Mathematics', image: '/team/rithik.jpeg' },
-  { id: 7, name: 'Uttej', role: 'Mentor', image: '/team/uttej.jpeg' },
-  { id: 8, name: 'Mouna Suma', role: 'Mentor', image: '/team/Mouna suma.jpeg' },
 ];
 
 const PlaceholderAvatar = () => (
