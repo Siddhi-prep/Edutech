@@ -20,7 +20,7 @@ const CoursesPage = () => {
       duration: 'Free Workshop',
       students: 7855,
       price: 0,
-      thumbnail: '/courses/project-cgl-2026.jpg',
+      thumbnail: '/courses/project-cgl-2026.jpeg',
       link: 'https://zbckzy.courses.store/782520',
       comingSoon: false
     },
@@ -33,7 +33,7 @@ const CoursesPage = () => {
       duration: '24 Weeks',
       students: 500,
       price: 3999,
-      thumbnail: '/courses/brahmos-batch-2.jpg',
+      thumbnail: '/courses/brahmos-batch-2.png',
       link: 'https://zbckzy.courses.store/781683',
       comingSoon: false
     },
@@ -46,7 +46,7 @@ const CoursesPage = () => {
       duration: '18 Weeks',
       students: 500,
       price: 1699,
-      thumbnail: '/courses/gs-1.0.jpg',
+      thumbnail: '/courses/gs-1.0.png',
       link: 'https://zbckzy.courses.store/717257',
       comingSoon: false
     },
@@ -59,7 +59,7 @@ const CoursesPage = () => {
       duration: 'Recorded',
       students: 300,
       price: 799,
-      thumbnail: '/courses/english-1.0.jpg',
+      thumbnail: '/courses/english-1.0.png',
       link: 'https://zbckzy.courses.store/717259',
       comingSoon: false
     },
