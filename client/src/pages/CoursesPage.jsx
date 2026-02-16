@@ -72,7 +72,7 @@ const CoursesPage = () => {
       duration: '3 Weeks',
       students: 400,
       price: 99,
-      thumbnail: '/courses/wpme.jpg',
+      thumbnail: '/courses/wpme.webp',
       link: 'https://zbckzy.courses.store/797733',
       comingSoon: false
     },
@@ -85,7 +85,7 @@ const CoursesPage = () => {
       duration: 'TBA',
       students: 0,
       price: 0,
-      thumbnail: '/courses/test-series.jpg',
+      thumbnail: '',
       link: '#',
       comingSoon: true
     }
@@ -200,15 +200,21 @@ const CoursesPage = () => {
                     <div className={`bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center overflow-hidden ${
                       viewMode === 'list' ? 'w-48 flex-shrink-0' : 'h-48'
                     }`}>
-                      <img
-                        src={course.thumbnail}
-                        alt={course.title}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          e.target.style.display = 'none';
-                          e.target.parentElement.innerHTML = `<div class="flex items-center justify-center w-full h-full"><span class="text-lg font-bold text-gray-400 text-center px-4">${course.title}</span></div>`;
-                        }}
-                      />
+                      {course.comingSoon ? (
+                        <div className="flex flex-col items-center justify-center w-full h-full bg-gradient-to-br from-gray-100 to-gray-200">
+                          <span className="text-2xl font-bold text-gray-400 tracking-wide">COMING SOON</span>
+                        </div>
+                      ) : (
+                        <img
+                          src={course.thumbnail}
+                          alt={course.title}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                            e.target.parentElement.innerHTML = `<div class="flex items-center justify-center w-full h-full"><span class="text-lg font-bold text-gray-400 text-center px-4">${course.title}</span></div>`;
+                          }}
+                        />
+                      )}
                     </div>
 
                     <div className="p-6 flex-1 flex flex-col">
