@@ -1,74 +1,117 @@
-import React, { useState, useEffect } from 'react';
-import { Linkedin } from 'react-feather';
-import { getTeam } from '../services/api';
+import React from 'react';
+
+const braveLeaders = [
+  { id: 1, name: 'Major Vivek B', unit: '21 Para', image: '/team/major-vivek.jpg' },
+  { id: 2, name: 'Major Sandeep Unnikrishnan, AC', unit: '', image: '/team/major-sandeep.jpg' },
+  { id: 3, name: 'Capt. Viper SC', unit: '10 Para', image: '/team/capt-viper.jpg' },
+  { id: 4, name: 'Captain Nair', unit: '2 Para', image: '/team/captain-nair.jpg' },
+];
+
+const faculties = [
+  { id: 1, name: 'Siddhi Sir', role: 'Academic Head & Lead Faculty', image: '/team/siddhi-sir.jpg' },
+  { id: 2, name: 'Akshay Sir', role: 'Faculty – Science', image: '/team/akshay-sir.jpg', placeholder: true },
+  { id: 3, name: 'Dr Sree Lakshmi Mam', role: 'Faculty – Science', image: '/team/dr-sree-lakshmi.jpg' },
+  { id: 4, name: 'Dr Aparna Mam', role: 'Faculty – English', image: '/team/dr-aparna.jpg' },
+  { id: 5, name: 'Akhil Sir', role: 'Faculty – Maths', image: '/team/akhil-sir.jpg', placeholder: true },
+  { id: 6, name: 'Rithik Raj Sir', role: 'Associate Faculty – Mathematics', image: '/team/rithik-raj-sir.jpg' },
+];
+
+const PlaceholderAvatar = ({ name }) => (
+  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mx-auto">
+    <span className="text-2xl font-bold text-primary/60">
+      {name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+    </span>
+  </div>
+);
 
 const Team = () => {
-  const [team, setTeam] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchTeam();
-  }, []);
-
-  const fetchTeam = async () => {
-    try {
-      const response = await getTeam();
-      setTeam(response.data);
-      setLoading(false);
-    } catch (error) {
-      console.error('Error fetching team:', error);
-      setLoading(false);
-    }
-  };
-
-  if (loading) {
-    return (
-      <section className="py-20 bg-white">
-        <div className="container-custom text-center">
-          <div className="animate-pulse">Loading team...</div>
-        </div>
-      </section>
-    );
-  }
-
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 md:py-20 bg-white">
       <div className="container-custom">
-        <div className="text-center mb-12">
-          <h2 className="section-title">Meet Our Team</h2>
-          <p className="section-subtitle">
-            Passionate educators and industry experts dedicated to your success
+        {/* Main Heading */}
+        <div className="text-center mb-4 md:mb-6 px-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-4">Meet Our Team</h2>
+          <p className="text-base md:text-lg text-gray-600">
+            Brave Leaders & Passionate Educators dedicated to your success
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 max-w-5xl mx-auto">
-          {team.map((member) => (
-            <div
-              key={member.id}
-              className="bg-white border border-gray-100 rounded-xl p-4 sm:p-5 text-center group hover:shadow-md hover:border-gray-200 transition-all duration-300"
-            >
-              <div className="relative mb-3 inline-block">
-                <img
-                  src={member.avatar}
-                  alt={member.name}
-                  className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto object-cover ring-2 ring-gray-100 group-hover:ring-primary/20 transition-all"
-                />
+        {/* Row 1 — Brave Leaders */}
+        <div className="mb-12 md:mb-16">
+          <p className="text-center text-sm text-gray-500 italic mb-6 md:mb-8">
+            Inspired from the Sacrifices & Leadership of our Brave Hearts
+          </p>
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-10 max-w-4xl mx-auto">
+            {braveLeaders.map((leader) => (
+              <div key={leader.id} className="text-center group w-28 sm:w-32">
+                <div className="relative mb-3 inline-block">
+                  <img
+                    src={leader.image}
+                    alt={leader.name}
+                    className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto object-cover ring-2 ring-gray-200 group-hover:ring-primary/30 transition-all"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 items-center justify-center mx-auto hidden">
+                    <span className="text-2xl font-bold text-gray-400">
+                      {leader.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                    </span>
+                  </div>
+                </div>
+                <h3 className="text-xs sm:text-sm font-semibold text-gray-900 leading-tight mb-0.5">
+                  {leader.name}
+                </h3>
+                {leader.unit && (
+                  <p className="text-xs text-gray-500">{leader.unit}</p>
+                )}
               </div>
+            ))}
+          </div>
+        </div>
 
-              <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-0.5 leading-tight">
-                {member.name}
-              </h3>
-              <p className="text-xs sm:text-sm text-primary font-medium mb-1.5">{member.role}</p>
-              <p className="text-xs text-gray-500 mb-3 line-clamp-2 leading-relaxed">{member.tagline}</p>
-
-              <a
-                href={member.linkedin}
-                className="inline-flex items-center justify-center w-8 h-8 bg-gray-50 rounded-full text-gray-400 hover:bg-primary hover:text-white transition-all duration-200"
+        {/* Row 2 — Expert Faculties */}
+        <div>
+          <h3 className="text-center text-xl md:text-2xl font-bold text-gray-900 mb-6 md:mb-8">
+            Our Expert Faculties & Mentors
+          </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5 max-w-5xl mx-auto">
+            {faculties.map((member) => (
+              <div
+                key={member.id}
+                className="bg-white border border-gray-100 rounded-xl p-4 text-center group hover:shadow-md hover:border-gray-200 transition-all duration-300"
               >
-                <Linkedin size={14} />
-              </a>
-            </div>
-          ))}
+                <div className="relative mb-3 inline-block">
+                  {member.placeholder ? (
+                    <PlaceholderAvatar name={member.name} />
+                  ) : (
+                    <>
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto object-cover ring-2 ring-gray-100 group-hover:ring-primary/20 transition-all"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.nextSibling.style.display = 'flex';
+                        }}
+                      />
+                      <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 items-center justify-center mx-auto hidden">
+                        <span className="text-2xl font-bold text-primary/60">
+                          {member.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                        </span>
+                      </div>
+                    </>
+                  )}
+                </div>
+
+                <h3 className="text-xs sm:text-sm font-semibold text-gray-900 mb-0.5 leading-tight">
+                  {member.name}
+                </h3>
+                <p className="text-xs text-primary font-medium leading-tight">{member.role}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
