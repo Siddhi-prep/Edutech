@@ -13,7 +13,7 @@ const faculties = [
   { id: 3, name: 'Dr Sree Lakshmi Mam', role: 'Faculty – Science', image: '/team/dr-sree-lakshmi.png' },
   { id: 4, name: 'Dr Aparna Mam', role: 'Faculty – English', image: '/team/dr-aparna.png' },
   { id: 5, name: 'Akhil Sir', role: 'Faculty – Maths', image: '/team/akhil-sir.jpg', placeholder: true },
-  { id: 6, name: 'Rithik Raj Sir', role: 'Associate Faculty – Mathematics', image: '/team/rithik-raj-sir.jpg', placeholder: true },
+  { id: 6, name: 'Ritik Sir', role: 'Associate Faculty – Mathematics', image: '/team/ritik-sir.jpg', placeholder: true },
 ];
 
 const PlaceholderAvatar = () => (

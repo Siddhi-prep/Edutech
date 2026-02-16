@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Play } from 'react-feather';
 import { motion } from 'framer-motion';
 import GradientBackground from './GradientBackground';
@@ -127,15 +128,13 @@ const Hero = () => {
             animate="visible"
             custom={1.1}
           >
-            <a
-              href="https://www.siddhiprep.com/courses"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/courses"
               className="btn-primary flex items-center space-x-2 text-base md:text-lg group w-full sm:w-auto transform hover:scale-105 hover:shadow-2xl transition-all duration-300"
             >
               <span>Browse Courses</span>
               <ArrowRight className="group-hover:translate-x-1 transition-transform duration-300" size={20} />
-            </a>
+            </Link>
             <a
               href="https://www.youtube.com/playlist?list=PL9grYD5cBKDvNeAkDD953piUmftb78pE8"
               target="_blank"
