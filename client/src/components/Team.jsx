@@ -1,19 +1,19 @@
 import React from 'react';
 
 const braveLeaders = [
-  { id: 1, name: 'Major Vivek B', unit: '21 Para', image: '/team/major-vivek.jpg' },
-  { id: 2, name: 'Major Sandeep Unnikrishnan, AC', unit: '', image: '/team/major-sandeep.jpg' },
-  { id: 3, name: 'Capt. Viper SC', unit: '10 Para', image: '/team/capt-viper.jpg' },
-  { id: 4, name: 'Captain Nair', unit: '2 Para', image: '/team/captain-nair.jpg' },
+  { id: 1, name: 'Major Vivek B', unit: '21 Para', image: '/team/major-vivek.png' },
+  { id: 2, name: 'Major Sandeep Unnikrishnan, AC', unit: '', image: '/team/major-sandeep.jpeg' },
+  { id: 3, name: 'Capt. Viper SC', unit: '10 Para', image: '/team/capt-viper.png' },
+  { id: 4, name: 'Captain Nair', unit: '2 Para', image: '/team/captain-nair.png' },
 ];
 
 const faculties = [
-  { id: 1, name: 'Siddhi Sir', role: 'Academic Head & Lead Faculty', image: '/team/siddhi-sir.jpg' },
+  { id: 1, name: 'Siddhi Sir', role: 'Academic Head & Lead Faculty', image: '/team/siddhi-sir.png' },
   { id: 2, name: 'Akshay Sir', role: 'Faculty – Science', image: '/team/akshay-sir.jpg', placeholder: true },
-  { id: 3, name: 'Dr Sree Lakshmi Mam', role: 'Faculty – Science', image: '/team/dr-sree-lakshmi.jpg' },
-  { id: 4, name: 'Dr Aparna Mam', role: 'Faculty – English', image: '/team/dr-aparna.jpg' },
+  { id: 3, name: 'Dr Sree Lakshmi Mam', role: 'Faculty – Science', image: '/team/dr-sree-lakshmi.png' },
+  { id: 4, name: 'Dr Aparna Mam', role: 'Faculty – English', image: '/team/dr-aparna.png' },
   { id: 5, name: 'Akhil Sir', role: 'Faculty – Maths', image: '/team/akhil-sir.jpg', placeholder: true },
-  { id: 6, name: 'Rithik Raj Sir', role: 'Associate Faculty – Mathematics', image: '/team/rithik-raj-sir.jpg' },
+  { id: 6, name: 'Rithik Raj Sir', role: 'Associate Faculty – Mathematics', image: '/team/rithik-raj-sir.jpg', placeholder: true },
 ];
 
 const PlaceholderAvatar = ({ name }) => (
@@ -48,7 +48,7 @@ const Team = () => {
                   <img
                     src={leader.image}
                     alt={leader.name}
-                    className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto object-cover ring-2 ring-gray-200 group-hover:ring-primary/30 transition-all"
+                    className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto object-cover object-top ring-2 ring-gray-200 group-hover:ring-primary/30 transition-all"
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.nextSibling.style.display = 'flex';
@@ -90,7 +90,7 @@ const Team = () => {
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto object-cover ring-2 ring-gray-100 group-hover:ring-primary/20 transition-all"
+                        className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto object-cover object-top ring-2 ring-gray-100 group-hover:ring-primary/20 transition-all"
                         onError={(e) => {
                           e.target.style.display = 'none';
                           e.target.nextSibling.style.display = 'flex';
