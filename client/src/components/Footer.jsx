@@ -1,156 +1,53 @@
-import React, { useState } from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, BookOpen, Check, AlertCircle } from 'react-feather';
+import React from 'react';
+import { Instagram, Youtube, BookOpen, Send } from 'react-feather';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const [email, setEmail] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState({ type: '', text: '' });
-
-  const footerLinks = {
-    Company: ['About Us', 'Careers', 'Press', 'Blog', 'Contact'],
-    Courses: ['Web Development', 'Data Science', 'UI/UX Design', 'Mobile Apps', 'Marketing'],
-    Resources: ['Documentation', 'Tutorials', 'Community', 'Support', 'FAQs'],
-    Legal: ['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'Refund Policy'],
-  };
 
   const socialLinks = [
-    { icon: <Facebook size={20} />, url: '#', name: 'Facebook' },
-    { icon: <Twitter size={20} />, url: '#', name: 'Twitter' },
-    { icon: <Instagram size={20} />, url: '#', name: 'Instagram' },
-    { icon: <Linkedin size={20} />, url: '#', name: 'LinkedIn' },
-    { icon: <Youtube size={20} />, url: '#', name: 'YouTube' },
+    { icon: <Youtube size={20} />, url: 'https://www.youtube.com/@SiddhiPrep', name: 'YouTube' },
+    { icon: <Instagram size={20} />, url: 'https://www.instagram.com/siddhi_prep', name: 'Instagram' },
+    { icon: <Send size={20} />, url: 'https://t.me/siddhiPrep', name: 'Telegram' },
   ];
 
-  const handleSubscribe = async (e) => {
-    e.preventDefault();
-    
-    // Reset message
-    setMessage({ type: '', text: '' });
-    
-    // Validate email
-    if (!email) {
-      setMessage({ type: 'error', text: 'Please enter your email address' });
-      return;
-    }
-    
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setMessage({ type: 'error', text: 'Please enter a valid email address' });
-      return;
-    }
-    
-    setLoading(true);
-    
-    try {
-      const response = await fetch('http://localhost:5000/api/newsletter/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
-      
-      const data = await response.json();
-      
-      if (data.success) {
-        setMessage({ 
-          type: 'success', 
-          text: data.alreadySubscribed 
-            ? 'You are already subscribed!' 
-            : 'Thank you for subscribing! Check your email for a welcome message.'
-        });
-        setEmail('');
-      } else {
-        setMessage({ type: 'error', text: data.message || 'Something went wrong. Please try again.' });
-      }
-    } catch (error) {
-      console.error('Subscription error:', error);
-      setMessage({ type: 'error', text: 'Failed to subscribe. Please try again later.' });
-    } finally {
-      setLoading(false);
-    }
-  };
+  const companyLinks = [
+    { label: 'About Us', href: '/', type: 'internal' },
+    { label: 'Careers', href: 'mailto:edsiddhi03@gmail.com?subject=Career%20Inquiry%20-%20SiddhiPrep&body=Hi%20SiddhiPrep%20Team%2C%0A%0AI%20am%20interested%20in%20career%20opportunities%20at%20SiddhiPrep.%0A%0ARegards', type: 'external' },
+    { label: 'Blog', href: '/blogs', type: 'internal' },
+    { label: 'Contact', href: 'https://wa.me/919030898917?text=Hey%20SiddhiPrep%2C%20I%20am%20interested%20in%20your%20courses%20and%20would%20like%20some%20assistance.%20Please%20help%20me%20out.', type: 'external' },
+  ];
+
+  const courseLinks = [
+    { label: 'BrahMos', href: 'https://zbckzy.courses.store/781683' },
+    { label: 'GS Mastery', href: 'https://zbckzy.courses.store/717257' },
+    { label: 'English Mastery', href: 'https://zbckzy.courses.store/717259' },
+    { label: 'WPME Visual Learning', href: 'https://zbckzy.courses.store/797733' },
+  ];
 
   return (
     <footer className="bg-gray-900 text-gray-300">
-      {/* Newsletter Section */}
-      <div className="border-b border-gray-800">
-        <div className="container-custom py-12">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-center md:text-left">
-              <h3 className="text-2xl font-bold text-white mb-2">
-                Stay Updated
-              </h3>
-              <p className="text-gray-400">
-                Get the latest courses, tips, and exclusive offers
-              </p>
-            </div>
-            <div className="w-full md:w-auto max-w-md">
-              <form onSubmit={handleSubscribe} className="flex">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  disabled={loading}
-                  className="flex-grow px-4 py-3 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary text-white disabled:opacity-50 disabled:cursor-not-allowed"
-                />
-                <button 
-                  type="submit"
-                  disabled={loading}
-                  className="bg-primary hover:bg-blue-700 text-white px-6 py-3 rounded-r-lg font-semibold transition-colors flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {loading ? (
-                    <>
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                      <span>Sending...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Mail size={18} />
-                      <span>Subscribe</span>
-                    </>
-                  )}
-                </button>
-              </form>
-              {message.text && (
-                <div className={`mt-3 flex items-start space-x-2 text-sm ${
-                  message.type === 'success' ? 'text-green-400' : 'text-red-400'
-                }`}>
-                  {message.type === 'success' ? (
-                    <Check size={16} className="flex-shrink-0 mt-0.5" />
-                  ) : (
-                    <AlertCircle size={16} className="flex-shrink-0 mt-0.5" />
-                  )}
-                  <span>{message.text}</span>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer Content */}
       <div className="container-custom py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <div className="bg-gradient-to-r from-primary to-secondary p-2 rounded-lg">
                 <BookOpen className="text-white" size={24} />
               </div>
-              <span className="text-2xl font-bold text-white">SiddhiPrep</span>
+              <span className="text-2xl font-bold text-white">SIDDHI PREP</span>
             </div>
-            <p className="text-gray-400 mb-6 leading-relaxed">
-              Empowering learners worldwide with cutting-edge education and
-              transformative learning experiences.
+            <p className="text-gray-400 mb-6 leading-relaxed text-sm">
+              Transforming aspirants into achievers through strategic mentorship, exam-focused content, and high-quality digital learning.
             </p>
             <div className="flex space-x-3">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.name}
                   className="bg-gray-800 p-2 rounded-lg hover:bg-primary transition-colors"
                 >
@@ -160,44 +57,72 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Links Sections */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h4 className="text-white font-semibold mb-4">{category}</h4>
-              <ul className="space-y-2">
-                {links.map((link, index) => (
-                  <li key={index}>
-                    <a
-                      href="/"
-                      className="text-gray-400 hover:text-primary transition-colors"
+          {/* Company */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">Company</h4>
+            <ul className="space-y-2">
+              {companyLinks.map((link, index) => (
+                <li key={index}>
+                  {link.type === 'internal' ? (
+                    <Link
+                      to={link.href}
+                      className="text-gray-400 hover:text-primary transition-colors text-sm"
                     >
-                      {link}
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      target={link.href.startsWith('mailto') ? '_self' : '_blank'}
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-primary transition-colors text-sm"
+                    >
+                      {link.label}
                     </a>
-                  </li>
-                ))}
-              </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Courses */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">Courses</h4>
+            <ul className="space-y-2">
+              {courseLinks.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-primary transition-colors text-sm"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">Legal</h4>
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+              <p className="text-sm text-gray-400 leading-relaxed">
+                <span className="text-white font-medium">Refund Policy</span><br />
+                No refunds are issued under any circumstances.
+              </p>
             </div>
-          ))}
+          </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
         <div className="container-custom py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
-            <p>© {currentYear} SiddhiPrep. All rights reserved.</p>
-            <div className="flex items-center space-x-6">
-              <a href="/privacy" className="hover:text-primary transition-colors">
-                Privacy Policy
-              </a>
-              <a href="/terms" className="hover:text-primary transition-colors">
-                Terms of Service
-              </a>
-              <a href="/sitemap" className="hover:text-primary transition-colors">
-                Sitemap
-              </a>
-            </div>
-          </div>
+          <p className="text-center text-sm text-gray-400">
+            &copy; {currentYear} SiddhiPrep. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
