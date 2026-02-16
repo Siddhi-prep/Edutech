@@ -2,7 +2,7 @@ import React from 'react';
 
 const GradientBackground = () => {
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden bg-white">
+    <div className="absolute inset-0 -z-10 overflow-hidden bg-white pointer-events-none">
       {/* Gold gradient blob - Top Right */}
       <div
         className="absolute inset-x-0 -top-40 transform-gpu overflow-hidden blur-3xl sm:-top-80"

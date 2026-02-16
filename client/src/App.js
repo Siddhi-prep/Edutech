@@ -66,9 +66,9 @@ const AppContent = () => {
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
 
   return (
-    <div className="App min-h-screen flex flex-col">
+    <div className="App">
       {!hideNavbar && <ModernNavbar />}
-      <main className="flex-grow">
+      <main>
         <ErrorBoundary>
           <Suspense fallback={<PageLoader />}>
             <Routes>

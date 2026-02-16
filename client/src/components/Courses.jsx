@@ -93,9 +93,9 @@ const Courses = () => {
           {courses.map((course) => (
             <div key={course.id} className={`bg-white border border-gray-100 rounded-xl overflow-hidden group hover:shadow-md hover:border-gray-200 transition-all duration-300 ${course.comingSoon ? 'opacity-75' : ''}`}>
               {/* Thumbnail */}
-              <div className="relative overflow-hidden h-36 sm:h-40 bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center">
+              <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-purple-50">
                 {course.comingSoon ? (
-                  <div className="flex flex-col items-center justify-center w-full h-full bg-gradient-to-br from-gray-100 to-gray-200">
+                  <div className="flex flex-col items-center justify-center w-full aspect-video bg-gradient-to-br from-gray-100 to-gray-200">
                     <span className="text-2xl font-bold text-gray-400 tracking-wide">COMING SOON</span>
                   </div>
                 ) : (
@@ -103,7 +103,7 @@ const Courses = () => {
                     src={course.thumbnail}
                     alt={course.title}
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500"
                     onError={(e) => {
                       e.target.style.display = 'none';
                     }}

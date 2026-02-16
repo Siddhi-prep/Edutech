@@ -197,11 +197,11 @@ const CoursesPage = () => {
                     } ${course.comingSoon ? 'opacity-80' : ''}`}
                   >
                     {/* Thumbnail */}
-                    <div className={`bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center overflow-hidden ${
-                      viewMode === 'list' ? 'w-48 flex-shrink-0' : 'h-48'
+                    <div className={`bg-gradient-to-br from-blue-50 to-purple-50 overflow-hidden ${
+                      viewMode === 'list' ? 'w-48 flex-shrink-0 flex items-center justify-center' : ''
                     }`}>
                       {course.comingSoon ? (
-                        <div className="flex flex-col items-center justify-center w-full h-full bg-gradient-to-br from-gray-100 to-gray-200">
+                        <div className="flex flex-col items-center justify-center w-full aspect-video bg-gradient-to-br from-gray-100 to-gray-200">
                           <span className="text-2xl font-bold text-gray-400 tracking-wide">COMING SOON</span>
                         </div>
                       ) : (
@@ -209,10 +209,10 @@ const CoursesPage = () => {
                           src={course.thumbnail}
                           alt={course.title}
                           loading="lazy"
-                          className="w-full h-full object-cover"
+                          className="w-full h-auto object-contain"
                           onError={(e) => {
                             e.target.style.display = 'none';
-                            e.target.parentElement.innerHTML = `<div class="flex items-center justify-center w-full h-full"><span class="text-lg font-bold text-gray-400 text-center px-4">${course.title}</span></div>`;
+                            e.target.parentElement.innerHTML = `<div class="flex items-center justify-center w-full aspect-video"><span class="text-lg font-bold text-gray-400 text-center px-4">${course.title}</span></div>`;
                           }}
                         />
                       )}

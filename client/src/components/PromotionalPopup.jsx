@@ -14,6 +14,17 @@ const PromotionalPopup = ({ isChatbotOpen }) => {
     checkForPromotionalImage();
   }, []);
 
+  useEffect(() => {
+    if (isVisible) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isVisible]);
+
   const checkForPromotionalImage = async () => {
     const possibleImages = [
       '/promotional-images/offer.jpg',
@@ -34,7 +45,8 @@ const PromotionalPopup = ({ isChatbotOpen }) => {
     for (const path of possibleImages) {
       try {
         const response = await fetch(path, { method: 'HEAD' });
-        if (response.ok) {
+        const contentType = response.headers.get('content-type') || '';
+        if (response.ok && contentType.startsWith('image/')) {
           setImagePath(path);
           setImageExists(true);
 
@@ -146,10 +158,7 @@ const PromotionalPopup = ({ isChatbotOpen }) => {
         </div>
       )}
 
-      {/* Prevent body scroll when popup is open */}
-      {isVisible && (
-        <style>{`body { overflow: hidden; }`}</style>
-      )}
+      
     </>
   );
 };
