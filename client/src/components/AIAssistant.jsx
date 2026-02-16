@@ -67,8 +67,12 @@ const AIAssistant = ({ onOpenChange }) => {
       return 'Course pricing is listed on each course card on our Courses page. We also offer installment payment options on all courses, because quality preparation should be accessible, not restricted.\n\nVisit /courses to see current pricing.';
     }
 
+    if (msg.includes('login') || msg.includes('log in') || msg.includes('sign in') || msg.includes('account')) {
+      return 'You can login to your SiddhiPrep account directly here:\nhttps://web.classplusapp.com/login?orgCode=zbckzy\n\nUse the same mobile number you registered with during enrollment.';
+    }
+
     if (msg.includes('enroll') || msg.includes('register') || msg.includes('sign up') || msg.includes('join')) {
-      return 'Enrolling is simple. Head to our Courses page, pick your course, and click "Enroll Now". You will be redirected to our Classplus platform to complete the enrollment.\n\nAlready enrolled? Login at web.classplusapp.com with your credentials.';
+      return 'Enrolling is simple. Head to our Courses page, pick your course, and click "Enroll Now". You will be redirected to our Classplus platform to complete the enrollment.\n\nAlready enrolled? Login here: https://web.classplusapp.com/login?orgCode=zbckzy';
     }
 
     if (msg.includes('free') || msg.includes('quiz') || msg.includes('test') || msg.includes('pyq') || msg.includes('previous paper')) {
