@@ -44,9 +44,9 @@ const leaderboardData = {
 };
 
 const tabs = [
-  { id: 'weeklyFreeTest', label: 'Weekly Free Test' },
-  { id: 'brahmosBatch1', label: 'Brahmos Batch 1' },
-  { id: 'brahmosBatch2', label: 'Brahmos Batch 2' },
+  { id: 'brahmosBatch1', label: 'BrahMos Batch 1' },
+  { id: 'brahmosBatch2', label: 'BrahMos Batch 2' },
+  { id: 'weeklyFreeTest', label: 'Weekly Live Test' },
 ];
 
 /* ── Rank card component ── */
@@ -95,12 +95,7 @@ const LeaderboardPage = () => {
           {/* Header */}
           <div className="mb-8">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Leaderboards</h1>
-            <div className="flex items-center gap-2">
-              <TrendingUp className="text-primary flex-shrink-0" size={18} />
-              <p className="text-sm font-medium text-gray-500 italic">
-                Excellence is not a destination, it's a continuous journey
-              </p>
-            </div>
+            <p className="text-base text-gray-600">Track top performers across all batches and tests.</p>
           </div>
 
           <div className="grid lg:grid-cols-4 gap-6">
@@ -135,19 +130,32 @@ const LeaderboardPage = () => {
                   ))}
                 </div>
 
-                <div className="mt-6 p-4 bg-gradient-to-r from-primary to-secondary rounded-xl text-white text-center">
+                <a
+                  href="https://www.siddhiprep.com/quizzes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 block p-4 bg-gradient-to-r from-primary to-secondary rounded-xl text-white text-center hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
+                >
                   <div className="flex items-center justify-center space-x-2 mb-1">
                     <Award className="text-white" size={18} />
-                    <p className="text-sm font-semibold">Your Goal</p>
+                    <p className="text-sm font-semibold">Attempt Quizzes Now</p>
                   </div>
                   <p className="text-xs opacity-90">Rank in Top 10 to get featured!</p>
-                </div>
+                </a>
               </div>
             </div>
 
             {/* Main Content — Animated Tabs Leaderboard */}
             <div className="lg:col-span-3">
               <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+                {/* Quote */}
+                <div className="flex items-center justify-center gap-2 pt-5 px-5">
+                  <TrendingUp className="text-primary flex-shrink-0" size={16} />
+                  <p className="text-sm font-medium text-gray-500 italic">
+                    Excellence is not a destination, it's a continuous journey
+                  </p>
+                </div>
+
                 {/* Animated Tab Bar */}
                 <div className="flex gap-1 p-1.5 bg-gray-100 rounded-xl m-4 sm:m-5">
                   {tabs.map((tab) => (
