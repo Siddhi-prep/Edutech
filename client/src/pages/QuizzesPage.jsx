@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  Search, Filter, Grid, List, Play, ExternalLink
+  Search, Filter, Grid, List, Play
 } from 'react-feather';
 import GradientBackground from '../components/GradientBackground';
 
