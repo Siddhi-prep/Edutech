@@ -16,11 +16,16 @@ const faculties = [
   { id: 6, name: 'Rithik Raj Sir', role: 'Associate Faculty – Mathematics', image: '/team/rithik-raj-sir.jpg', placeholder: true },
 ];
 
-const PlaceholderAvatar = ({ name }) => (
-  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mx-auto">
-    <span className="text-2xl font-bold text-primary/60">
-      {name.split(' ').map(n => n[0]).join('').slice(0, 2)}
-    </span>
+const PlaceholderAvatar = () => (
+  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center mx-auto ring-2 ring-gray-100 overflow-hidden">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      className="w-14 h-14 sm:w-16 sm:h-16 text-gray-400 mt-2"
+    >
+      <circle cx="12" cy="8" r="4" fill="currentColor" />
+      <path d="M4 21c0-4.418 3.582-7 8-7s8 2.582 8 7" fill="currentColor" />
+    </svg>
   </div>
 );
 
