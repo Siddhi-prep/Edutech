@@ -15,7 +15,7 @@ const QuizzesPage = () => {
       title: '2025 SSC Previous Papers',
       description: 'Practice with actual SSC 2025 previous year question papers. Solve real exam questions to understand the pattern and difficulty level.',
       category: 'SSC 2025 Previous Papers',
-      thumbnail: '/quizzes/ssc-previous-papers.jpg',
+      thumbnail: '/quizzes/ssc-previous-papers.png',
       link: 'https://zbckzy.courses.store/freetest?testFolderId=6978b972c367ba783db0eb69'
     },
     {
@@ -23,7 +23,7 @@ const QuizzesPage = () => {
       title: 'YouTube Live Sessions',
       description: 'Tests from our YouTube Live sessions. Attempt quizzes discussed during live classes and track your performance.',
       category: 'YouTube Live Tests',
-      thumbnail: '/quizzes/youtube-live-tests.jpg',
+      thumbnail: '/quizzes/YouTube Live Tests.png',
       link: 'https://zbckzy.courses.store/freetest?testFolderId=68aea8393449d0a4bf0fb764'
     },
     {
@@ -31,7 +31,7 @@ const QuizzesPage = () => {
       title: 'Current Affairs',
       description: 'Stay updated with the latest current affairs questions. Covers national, international, sports, science & technology topics relevant for SSC exams.',
       category: 'Current Affairs',
-      thumbnail: '/quizzes/current-affairs.jpg',
+      thumbnail: '/quizzes/Current Affairs.png',
       link: 'https://zbckzy.courses.store/freetest?testFolderId=69665e77a3f503580cfeb12a'
     },
     {
@@ -39,7 +39,7 @@ const QuizzesPage = () => {
       title: 'Word Drop (2025 Vocabulary)',
       description: 'Master vocabulary with words from SSC 2025 exams. Includes synonyms, antonyms, idioms & phrases tested in recent papers.',
       category: 'Vocabulary',
-      thumbnail: '/quizzes/vocabulary.jpg',
+      thumbnail: '/quizzes/Vocabulary.png',
       link: 'https://zbckzy.courses.store/freetest?testFolderId=6974c2854e39cda62115a118'
     }
   ];
