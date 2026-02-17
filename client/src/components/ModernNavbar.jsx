@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { 
-  Menu, X, BookOpen, Home, Book, FileText, Award, 
+  Menu, X, Home, Book, FileText, Award, 
   MessageCircle, HelpCircle, Search, User, TrendingUp
 } from 'react-feather';
 
@@ -102,9 +102,11 @@ const ModernNavbar = () => {
               className="flex items-center space-x-2 group"
               onClick={() => setIsOpen(false)}
             >
-              <div className="bg-gradient-to-br from-primary to-secondary p-1.5 md:p-2 rounded-xl group-hover:scale-110 transition-transform shadow-md">
-                <BookOpen className="text-white" size={20} />
-              </div>
+              <img
+                src="/logo.jpeg"
+                alt="SiddhiPrep Logo"
+                className="w-8 h-8 md:w-9 md:h-9 rounded-xl group-hover:scale-110 transition-transform shadow-md object-cover"
+              />
               <span className="text-lg md:text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hidden sm:block">
                 SiddhiPrep
               </span>
