@@ -5,54 +5,44 @@ import GradientBackground from '../components/GradientBackground';
 
 /* ── Leaderboard data per tab ── */
 const leaderboardData = {
-  weeklyFreeTest: [
-    { rank: 1, name: 'Ananya Sharma', score: 980, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ananya&backgroundColor=b6e3f4', badge: '🥇' },
-    { rank: 2, name: 'Rahul Verma', score: 945, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul&backgroundColor=c0aede', badge: '🥈' },
-    { rank: 3, name: 'Priya Patel', score: 920, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Priya&backgroundColor=ffd5dc', badge: '🥉' },
-    { rank: 4, name: 'Arjun Mehta', score: 890, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Arjun&backgroundColor=d1f4d9' },
-    { rank: 5, name: 'Sneha Reddy', score: 875, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sneha&backgroundColor=ffdfbf' },
-    { rank: 6, name: 'Karan Singh', score: 860, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Karan&backgroundColor=b6e3f4' },
-    { rank: 7, name: 'Meera Joshi', score: 840, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Meera&backgroundColor=c0aede' },
-    { rank: 8, name: 'Vikram Das', score: 820, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Vikram&backgroundColor=ffd5dc' },
-    { rank: 9, name: 'Pooja Nair', score: 800, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Pooja&backgroundColor=d1f4d9' },
-    { rank: 10, name: 'Aditya Rao', score: 785, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Aditya&backgroundColor=ffdfbf' },
-  ],
   brahmosBatch1: [
-    { rank: 1, name: 'Deepak Kumar', score: 970, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Deepak&backgroundColor=b6e3f4', badge: '🥇' },
-    { rank: 2, name: 'Kavya Iyer', score: 955, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Kavya&backgroundColor=ffd5dc', badge: '🥈' },
-    { rank: 3, name: 'Rohan Gupta', score: 930, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Rohan&backgroundColor=c0aede', badge: '🥉' },
-    { rank: 4, name: 'Ishita Bansal', score: 910, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ishita&backgroundColor=d1f4d9' },
-    { rank: 5, name: 'Nikhil Tiwari', score: 895, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Nikhil&backgroundColor=ffdfbf' },
-    { rank: 6, name: 'Shruti Mishra', score: 880, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Shruti&backgroundColor=b6e3f4' },
-    { rank: 7, name: 'Amit Pandey', score: 865, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Amit&backgroundColor=c0aede' },
-    { rank: 8, name: 'Riya Saxena', score: 850, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Riya&backgroundColor=ffd5dc' },
-    { rank: 9, name: 'Saurabh Jain', score: 835, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Saurabh&backgroundColor=d1f4d9' },
-    { rank: 10, name: 'Tanvi Kapoor', score: 820, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Tanvi&backgroundColor=ffdfbf' },
+    { rank: 1, name: 'Sammathamu Seshank', score: '170.5/200', grade: 'A', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=SS&backgroundColor=b6e3f4', badge: '🥇' },
+    { rank: 2, name: 'Arani Gayathri', score: '167.5/200', grade: 'A', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=AG&backgroundColor=c0aede', badge: '🥈' },
+    { rank: 3, name: 'Umesh Kumar Yadav', score: '165.5/200', grade: 'A', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=UY&backgroundColor=ffd5dc', badge: '🥉' },
+    { rank: 4, name: 'Vaishnavi', score: '162.5/200', grade: 'A', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Va&backgroundColor=d1f4d9' },
+    { rank: 5, name: 'Sajitha', score: '161.5/200', grade: 'A', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Sa&backgroundColor=ffdfbf' },
+    { rank: 6, name: 'Priya', score: '160.5/200', grade: 'A', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Pr&backgroundColor=b6e3f4' },
+    { rank: 7, name: 'Nikhil', score: '152/200', grade: 'A', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Ni&backgroundColor=c0aede' },
+    { rank: 8, name: 'Rishipriya', score: '149/200', grade: 'A', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Ri&backgroundColor=ffd5dc' },
+    { rank: 9, name: 'Arun Raj', score: '138.5/200', grade: 'B', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=AR&backgroundColor=d1f4d9' },
+    { rank: 10, name: 'Saikrishna N', score: '123/200', grade: 'B', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=SN&backgroundColor=ffdfbf' },
   ],
   brahmosBatch2: [
-    { rank: 1, name: 'Harsh Agarwal', score: 960, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Harsh&backgroundColor=b6e3f4', badge: '🥇' },
-    { rank: 2, name: 'Nisha Yadav', score: 940, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Nisha&backgroundColor=ffd5dc', badge: '🥈' },
-    { rank: 3, name: 'Varun Chopra', score: 925, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Varun&backgroundColor=c0aede', badge: '🥉' },
-    { rank: 4, name: 'Divya Sharma', score: 905, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Divya&backgroundColor=d1f4d9' },
-    { rank: 5, name: 'Manish Reddy', score: 890, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Manish&backgroundColor=ffdfbf' },
-    { rank: 6, name: 'Sakshi Dubey', score: 875, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sakshi&backgroundColor=b6e3f4' },
-    { rank: 7, name: 'Rajat Verma', score: 860, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Rajat&backgroundColor=c0aede' },
-    { rank: 8, name: 'Ankita Jha', score: 845, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ankita&backgroundColor=ffd5dc' },
-    { rank: 9, name: 'Suresh Pillai', score: 830, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Suresh&backgroundColor=d1f4d9' },
-    { rank: 10, name: 'Neha Kulkarni', score: 815, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Neha&backgroundColor=ffdfbf' },
+    { rank: 1, name: 'Sravya', score: '163/200', grade: 'A', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Sr&backgroundColor=b6e3f4', badge: '\ud83e\udd47' },
+    { rank: 2, name: 'Padma', score: '151/200', grade: 'A', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Pa&backgroundColor=c0aede', badge: '\ud83e\udd48' },
+    { rank: 3, name: 'Aiswarya P', score: '149/200', grade: 'A', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=AP&backgroundColor=ffd5dc', badge: '\ud83e\udd49' },
+    { rank: 4, name: 'Avinash', score: '130/200', grade: 'B', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Av&backgroundColor=d1f4d9' },
+    { rank: 5, name: 'Revanth', score: '129/200', grade: 'B', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Re&backgroundColor=ffdfbf' },
+    { rank: 6, name: 'Lokesh', score: '126/200', grade: 'B', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Lo&backgroundColor=b6e3f4' },
+    { rank: 7, name: 'Anitha', score: '122.5/200', grade: 'B', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=An&backgroundColor=c0aede' },
+    { rank: 8, name: 'J Sri Harsha', score: '122/200', grade: 'B', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=JH&backgroundColor=ffd5dc' },
+    { rank: 9, name: 'Kurla', score: '119/200', grade: 'B', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Ku&backgroundColor=d1f4d9' },
+    { rank: 10, name: 'Ricky', score: '118/200', grade: 'B', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=Ri&backgroundColor=ffdfbf' },
   ],
+  weeklyLiveTest: [],
 };
 
 const tabs = [
   { id: 'brahmosBatch1', label: 'BrahMos Batch 1' },
   { id: 'brahmosBatch2', label: 'BrahMos Batch 2' },
-  { id: 'weeklyFreeTest', label: 'Weekly Live Test' },
+  { id: 'weeklyLiveTest', label: 'Weekly Live Test' },
 ];
 
 /* ── Rank card component ── */
-const RankCard = ({ rank, name, score, avatar, badge }) => {
+const RankCard = ({ rank, name, score, grade, avatar, badge }) => {
   const isTop3 = rank <= 3;
   const ringColor = rank === 1 ? 'ring-amber-400' : rank === 2 ? 'ring-gray-400' : rank === 3 ? 'ring-amber-600' : 'ring-gray-200';
+  const gradeColor = grade === 'A' ? 'bg-green-100 text-green-700' : grade === 'B' ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-600';
 
   return (
     <div className={`flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl border transition-all duration-200 hover:shadow-md ${isTop3 ? 'bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/15' : 'bg-white border-gray-100 hover:border-gray-200'}`}>
@@ -77,11 +67,26 @@ const RankCard = ({ rank, name, score, avatar, badge }) => {
       {/* Score */}
       <div className="text-right flex-shrink-0">
         <p className={`text-sm font-bold ${isTop3 ? 'text-primary' : 'text-gray-700'}`}>{score}</p>
-        <p className="text-xs text-gray-400">pts</p>
+      </div>
+
+      {/* Grade */}
+      <div className="flex-shrink-0">
+        <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${gradeColor}`}>{grade}</span>
       </div>
     </div>
   );
 };
+
+/* ── Coming Soon placeholder ── */
+const ComingSoon = ({ message }) => (
+  <div className="flex flex-col items-center justify-center py-16 text-center">
+    <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full flex items-center justify-center mb-4">
+      <Award className="text-primary" size={28} />
+    </div>
+    <h3 className="text-lg font-bold text-gray-900 mb-2">{message}</h3>
+    <p className="text-sm text-gray-500 max-w-sm">Stay tuned! Results will be updated here once available.</p>
+  </div>
+);
 
 const LeaderboardPage = () => {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
@@ -192,9 +197,13 @@ const LeaderboardPage = () => {
                             transition={{ duration: 0.3, ease: 'easeInOut' }}
                             className="space-y-2.5"
                           >
-                            {leaderboardData[tab.id].map((person) => (
-                              <RankCard key={person.rank} {...person} />
-                            ))}
+                            {leaderboardData[tab.id].length > 0 ? (
+                              leaderboardData[tab.id].map((person) => (
+                                <RankCard key={person.rank} {...person} />
+                              ))
+                            ) : (
+                              <ComingSoon message={tab.id === 'weeklyLiveTest' ? 'Weekly Live Test — Coming Soon' : 'Leaderboard — Coming Soon'} />
+                            )}
                           </motion.div>
                         )
                     )}
