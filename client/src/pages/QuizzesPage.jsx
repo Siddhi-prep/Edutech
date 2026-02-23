@@ -21,10 +21,10 @@ const QuizzesPage = () => {
     {
       id: 2,
       title: 'YouTube Live Sessions',
-      description: 'Tests from our YouTube Live sessions. Attempt quizzes discussed during live classes and track your performance.',
+      description: 'Attempt the Quizzes from GS Astra Series and test your knowledge on the topic.',
       category: 'YouTube Live Tests',
       thumbnail: '/quizzes/YouTube Live Tests.png',
-      link: 'https://zbckzy.courses.store/freetest?testFolderId=68aea8393449d0a4bf0fb764'
+      link: 'https://zbckzy.courses.store/freetest?testFolderId=699c0353fac9a81aea2c6211'
     },
     {
       id: 3,
