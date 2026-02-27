@@ -15,7 +15,7 @@ const TestSeriesPage = () => {
       title: 'Complete Test Series',
       description: 'Complete Test Series for SSC CGL 2025 with 100+ tests. Includes full-length mock tests, subject-wise tests, and detailed performance analysis. Perfect for comprehensive exam preparation.',
       category: 'All',
-      price: '₹60',
+      price: '₹49',
       thumbnail: '/test-series/complete-test-series.jpeg',
       link: 'https://zbckzy.courses.store/courses/806340'
     }
