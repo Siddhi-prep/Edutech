@@ -66,10 +66,9 @@ const ModernNavbar = () => {
   const navLinks = [
     { name: 'Home', path: '/', icon: <Home size={18} />, isRoute: true },
     { name: 'Courses', path: '/courses', icon: <Book size={18} />, isRoute: true },
-    { name: 'Blogs', path: '/blogs', icon: <FileText size={18} />, isRoute: true },
-    { name: 'Leaderboard', path: '/leaderboard', icon: <Award size={18} />, isRoute: true },
-    { name: 'Quizzes', path: '/quizzes', icon: <HelpCircle size={18} />, isRoute: true },
     { name: 'Tests', path: '/test-series', icon: <Target size={18} />, isRoute: true },
+    { name: 'Free Quizzes', path: '/quizzes', icon: <HelpCircle size={18} />, isRoute: true },
+    { name: 'Leaderboard', path: '/leaderboard', icon: <Award size={18} />, isRoute: true },
     { name: 'Contact', path: '/contact', icon: <MessageCircle size={18} />, isRoute: true },
   ];
 

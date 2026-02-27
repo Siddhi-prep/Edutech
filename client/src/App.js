@@ -8,7 +8,6 @@ import './index.css';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const CoursesPage = lazy(() => import('./pages/CoursesPage'));
-const BlogsPage = lazy(() => import('./pages/BlogsPage'));
 const LeaderboardPage = lazy(() => import('./pages/LeaderboardPage'));
 const QuizzesPage = lazy(() => import('./pages/QuizzesPage'));
 const TestSeriesPage = lazy(() => import('./pages/TestSeriesPage'));
@@ -75,7 +74,6 @@ const AppContent = () => {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/courses" element={<CoursesPage />} />
-              <Route path="/blogs" element={<BlogsPage />} />
               <Route path="/leaderboard" element={<LeaderboardPage />} />
               <Route path="/quizzes" element={<QuizzesPage />} />
               <Route path="/test-series" element={<TestSeriesPage />} />
