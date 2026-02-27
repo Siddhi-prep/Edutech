@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { 
   Menu, X, Home, Book, FileText, Award, 
-  MessageCircle, HelpCircle, Search, User, TrendingUp
+  MessageCircle, HelpCircle, Search, User, TrendingUp, Target
 } from 'react-feather';
 
 const ModernNavbar = () => {
@@ -69,6 +69,7 @@ const ModernNavbar = () => {
     { name: 'Blogs', path: '/blogs', icon: <FileText size={18} />, isRoute: true },
     { name: 'Leaderboard', path: '/leaderboard', icon: <Award size={18} />, isRoute: true },
     { name: 'Quizzes', path: '/quizzes', icon: <HelpCircle size={18} />, isRoute: true },
+    { name: 'Tests', path: '/test-series', icon: <Target size={18} />, isRoute: true },
     { name: 'Contact', path: '/contact', icon: <MessageCircle size={18} />, isRoute: true },
   ];
 

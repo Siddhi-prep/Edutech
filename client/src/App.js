@@ -11,6 +11,7 @@ const CoursesPage = lazy(() => import('./pages/CoursesPage'));
 const BlogsPage = lazy(() => import('./pages/BlogsPage'));
 const LeaderboardPage = lazy(() => import('./pages/LeaderboardPage'));
 const QuizzesPage = lazy(() => import('./pages/QuizzesPage'));
+const TestSeriesPage = lazy(() => import('./pages/TestSeriesPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const FAQPage = lazy(() => import('./pages/FAQPage'));
 
@@ -77,6 +78,7 @@ const AppContent = () => {
               <Route path="/blogs" element={<BlogsPage />} />
               <Route path="/leaderboard" element={<LeaderboardPage />} />
               <Route path="/quizzes" element={<QuizzesPage />} />
+              <Route path="/test-series" element={<TestSeriesPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/faq" element={<FAQPage />} />
               <Route path="*" element={<Navigate to="/" replace />} />
