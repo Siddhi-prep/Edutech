@@ -12,12 +12,21 @@ const TestSeriesPage = () => {
   const allTestSeries = [
     {
       id: 1,
-      title: 'Complete Test Series',
-      description: 'Complete Test Series for SSC CGL 2025 with 100+ tests. Includes full-length mock tests, subject-wise tests, and detailed performance analysis. Perfect for comprehensive exam preparation.',
+      title: 'Advanced Maths Test Series',
+      description: 'Advanced Maths Test Series for SSC CGL 2025 with 100+ tests. Includes full-length mock tests, subject-wise tests, and detailed performance analysis. Perfect for comprehensive exam preparation.',
       category: 'All',
       price: '₹49',
       thumbnail: '/test-series/complete-test-series.jpeg',
       link: 'https://zbckzy.courses.store/courses/806340'
+    },
+    {
+      id: 2,
+      title: 'Arithmetic Maths Test Series',
+      description: 'Arithmetic Maths Test Series for SSC CGL 2025 with 100+ tests. Includes full-length mock tests, subject-wise tests, and detailed performance analysis. Perfect for comprehensive exam preparation.',
+      category: 'All',
+      price: '₹49',
+      thumbnail: '/test-series/arithmetic-math.jpeg',
+      link: 'https://zbckzy.courses.store/courses/810788'
     }
   ];
 
