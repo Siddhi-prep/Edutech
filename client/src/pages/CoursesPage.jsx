@@ -26,19 +26,34 @@ const CoursesPage = () => {
     },
     {
       id: 2,
-      title: 'BrahMos Batch 2',
-      description: "Siddhi's Flagship course that provides teaching, Notes & Topic wise practise Tests for Maths, GS and English. For Reasoning we provide Theory Notes & Practise Sheets for the entire Syllabus.",
-      category: 'BrahMos Batch 2',
+      title: 'SSC SELECTION BATCH -CGL 2026(TIER 1)',
+      description: 'Stop studying randomly. Start following a system. This batch gives you daily structure, tests, and complete coverage for SSC CGL 2026. No confusion. No excuses. Only execution → Only selection.',
+      category: 'All',
       level: 'Beginner',
-      duration: '24 Weeks',
-      students: 500,
-      price: 3999,
-      thumbnail: '/courses/brahmos-batch-2.png',
-      link: 'https://zbckzy.courses.store/781683',
+      duration: 'Free Workshop',
+      students: 0,
+      price: 1199,
+      salePrice: 827,
+      thumbnail: '/courses/selection-batch.png',
+      link: 'https://zbckzy.courses.store/782520',
       comingSoon: false
     },
     {
       id: 3,
+      title: 'BrahMos',
+      description: "Siddhi's Flagship course that provides teaching, Notes & Topic wise practise Tests for Maths, GS and English. For Reasoning we provide Theory Notes & Practise Sheets for the entire Syllabus.",
+      category: 'BrahMos',
+      level: 'Beginner',
+      duration: '24 Weeks',
+      students: 500,
+      price: 3999,
+      salePrice: 2799,
+      thumbnail: '/courses/brahmos.png',
+      link: 'https://zbckzy.courses.store/courses/821913',
+      comingSoon: false
+    },
+    {
+      id: 4,
       title: 'GS 1.0 – Mastery with NCERTs',
       description: "Siddhi's GS Module includes Standard Subjects like History, Geography, Polity, Economy, Environment, Science alongside SSC Specific trending topics like Space Technology, Architecture, Culture, Books & Authors, Sports Etc. Includes current affairs at each module. Live classes with recordings available.",
       category: 'Subject Wise',
@@ -46,12 +61,13 @@ const CoursesPage = () => {
       duration: '18 Weeks',
       students: 500,
       price: 1699,
+      salePrice: 1120,
       thumbnail: '/courses/gs-1.0.png',
       link: 'https://zbckzy.courses.store/717257',
       comingSoon: false
     },
     {
-      id: 4,
+      id: 5,
       title: 'English – VOD 1.0',
       description: 'English is a recorded course that comprehensively covers Vocabulary and Grammar. Special emphasis is given to Reading Comprehension, Cloze Test & Para Jumbles. Syllabus is covered based on the latest pattern.',
       category: 'Subject Wise',
@@ -59,12 +75,13 @@ const CoursesPage = () => {
       duration: 'Recorded',
       students: 300,
       price: 799,
+      salePrice: 595,
       thumbnail: '/courses/english-1.0.png',
       link: 'https://zbckzy.courses.store/717259',
       comingSoon: false
     },
     {
-      id: 5,
+      id: 6,
       title: 'WPME – Visual Learning Program',
       description: 'Word Power Made Easy is a standard Book for Learning & Mastering Vocabulary. This course covers WPME extensively and offers 100+ Practise tests. Includes new words, Idioms & Phrases from SSC 2025 converted to visual slides — a one stop solution for vocabulary needs.',
       category: 'Modules',
@@ -77,7 +94,7 @@ const CoursesPage = () => {
       comingSoon: false
     },
     {
-      id: 6,
+      id: 7,
       title: 'Test Series',
       description: 'Coming soon',
       category: 'All',
@@ -190,6 +207,11 @@ const CoursesPage = () => {
               {/* Courses */}
               <div className={viewMode === 'grid' ? 'grid md:grid-cols-2 gap-6' : 'space-y-4'}>
                 {filteredCourses.map(course => (
+                   <a
+                              href={course.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                   <div
                     key={course.id}
                     className={`bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 group ${
@@ -209,7 +231,7 @@ const CoursesPage = () => {
                           src={course.thumbnail}
                           alt={course.title}
                           loading="lazy"
-                          className="w-full h-auto object-contain"
+                          className="w-full h-auto  object-contain"
                           onError={(e) => {
                             e.target.style.display = 'none';
                             e.target.parentElement.innerHTML = `<div class="flex items-center justify-center w-full aspect-video"><span class="text-lg font-bold text-gray-400 text-center px-4">${course.title}</span></div>`;
@@ -252,14 +274,18 @@ const CoursesPage = () => {
                           </div>
                         </div>
                       )}
-
                       <div className="flex items-center justify-between mt-auto pt-2">
                         <div>
                           {course.comingSoon ? (
-                            <span className="text-lg font-bold text-gray-400">TBA</span>
+                            <span className="text-lg font-bold text-gray-400 ">TBA</span>
                           ) : course.price === 0 ? (
                             <span className="text-2xl font-bold text-green-600">Free</span>
-                          ) : (
+                          ) : course.salePrice ? (
+                            <div className='flex gap-2'> 
+                            <span className="text-lg font-bold text-gray-500 line-through">₹{course.price.toLocaleString()}</span>
+                            <span className="text-2xl font-bold text-gray-900">₹{course.salePrice.toLocaleString()}</span>
+                            </div>
+                          ) :(
                             <span className="text-2xl font-bold text-gray-900">₹{course.price.toLocaleString()}</span>
                           )}
                         </div>
@@ -269,19 +295,18 @@ const CoursesPage = () => {
                               Coming Soon
                             </span>
                           ) : (
-                            <a
-                              href={course.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="px-5 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium inline-block"
-                            >
+                            
+                              <div className='px-5 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium inline-block'>
+
                               {course.price === 0 ? 'Register Free' : 'Enroll Now'}
-                            </a>
+                              </div>
+
                           )}
                         </div>
                       </div>
                     </div>
                   </div>
+                  </a>
                 ))}
               </div>
             </div>

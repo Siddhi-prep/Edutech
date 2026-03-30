@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'sale': "url('/src/assets/images/red-metal.png')",
+      },
       colors: {
         primary: '#2563EB',
         secondary: '#10B981',

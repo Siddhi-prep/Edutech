@@ -1,18 +1,25 @@
-import React, { useState, Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import ModernNavbar from './components/ModernNavbar';
-import Footer from './components/Footer';
-import AIAssistant from './components/AIAssistant';
-import PromotionalPopup from './components/PromotionalPopup';
-import './index.css';
+import React, { useState, Suspense, lazy } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import ModernNavbar from "./components/ModernNavbar";
+import Footer from "./components/Footer";
+import AIAssistant from "./components/AIAssistant";
+import PromotionalPopup from "./components/PromotionalPopup";
+import "./index.css";
+import confetti from "canvas-confetti";
+import { useEffect } from "react";
 
-const HomePage = lazy(() => import('./pages/HomePage'));
-const CoursesPage = lazy(() => import('./pages/CoursesPage'));
-const LeaderboardPage = lazy(() => import('./pages/LeaderboardPage'));
-const QuizzesPage = lazy(() => import('./pages/QuizzesPage'));
-const TestSeriesPage = lazy(() => import('./pages/TestSeriesPage'));
-const ContactPage = lazy(() => import('./pages/ContactPage'));
-const FAQPage = lazy(() => import('./pages/FAQPage'));
+const HomePage = lazy(() => import("./pages/HomePage"));
+const CoursesPage = lazy(() => import("./pages/CoursesPage"));
+const LeaderboardPage = lazy(() => import("./pages/LeaderboardPage"));
+const QuizzesPage = lazy(() => import("./pages/QuizzesPage"));
+const TestSeriesPage = lazy(() => import("./pages/TestSeriesPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
+const FAQPage = lazy(() => import("./pages/FAQPage"));
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-white">
@@ -34,7 +41,7 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    console.error('Error caught by error boundary:', error, errorInfo);
+    console.error("Error caught by error boundary:", error, errorInfo);
   }
 
   render() {
@@ -42,9 +49,12 @@ class ErrorBoundary extends React.Component {
       return (
         <div className="min-h-screen flex items-center justify-center bg-gray-50">
           <div className="text-center p-8 max-w-2xl">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">Something went wrong</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">
+              Something went wrong
+            </h1>
             <p className="text-gray-600 mb-6">
-              We're sorry, but we encountered an error. Please try refreshing the page or contact support if the problem persists.
+              We're sorry, but we encountered an error. Please try refreshing
+              the page or contact support if the problem persists.
             </p>
             <button
               onClick={() => window.location.reload()}
@@ -64,11 +74,17 @@ class ErrorBoundary extends React.Component {
 const AppContent = () => {
   const hideNavbar = false; // Always show navbar
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
+  useEffect(() => {
+    confetti({
+      particleCount: 200,
+      spread: 160
+    });
+  }, []);
 
   return (
     <div className="App">
       {!hideNavbar && <ModernNavbar />}
-      <main>
+      <main className="pt-10">
         <ErrorBoundary>
           <Suspense fallback={<PageLoader />}>
             <Routes>
