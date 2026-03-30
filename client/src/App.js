@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 import AIAssistant from "./components/AIAssistant";
 import PromotionalPopup from "./components/PromotionalPopup";
 import "./index.css";
-import confetti from "canvas-confetti";
+// import confetti from "canvas-confetti";
 import { useEffect } from "react";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -74,12 +74,12 @@ class ErrorBoundary extends React.Component {
 const AppContent = () => {
   const hideNavbar = false; // Always show navbar
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
-  useEffect(() => {
-    confetti({
-      particleCount: 200,
-      spread: 160
-    });
-  }, []);
+  // useEffect(() => {
+  //   confetti({
+  //     particleCount: 200,
+  //     spread: 160
+  //   });
+  // }, []);
 
   return (
     <div className="App">
