@@ -356,10 +356,11 @@ const ModernNavbar = () => {
           </div>
         </div>
         <p className="relative flex items-center justify-center text-white text-lg mt-2">
-          <span className="bg-sale bg-cover bg-center pt-2 w-5/7 px-5 font-semibold py-1 rounded-full border border-white/70 shadow-sm">
-          <marquee behavior="" scrollamount="4" direction="" className="font-semibold transition-all smooth-marquee px-10">
-          SIDDHI'S Mega sale is live. Flat 30% off on all courses. Offer ends ON APRIL 07. Hurry Up and Enroll now!
-          </marquee>
+          <span className="bg-sale marquee bg-cover bg-center w-5/7 px-5 font-semibold py-1 rounded-full border border-white/70 shadow-sm">
+              <div className="marquee-content font-semibold transition-all  px-10">
+                SIDDHI'S Mega sale is live. Flat 30% off on all courses. Offer
+                ends ON APRIL 07. Hurry Up and Enroll now!
+              </div>
           </span>
         </p>
       </div>

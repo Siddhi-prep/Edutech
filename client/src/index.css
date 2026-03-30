@@ -189,3 +189,30 @@ body {
 .ring-primary {
   --tw-ring-color: var(--primary);
 }
+
+.marquee {
+  overflow: hidden;
+  position: relative;
+  /* width: 100%; */
+}
+
+.marquee-content {
+  display: flex;
+  /* width: max-content; */
+  animation: scroll 12s linear infinite;
+}
+
+.marquee-content span {
+  white-space: nowrap;
+  padding-right: 50px; /* spacing between repeats */
+  font-size: 16px; /* optional */
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

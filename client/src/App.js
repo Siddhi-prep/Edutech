@@ -11,7 +11,7 @@ import AIAssistant from "./components/AIAssistant";
 import PromotionalPopup from "./components/PromotionalPopup";
 import "./index.css";
 // import confetti from "canvas-confetti";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const CoursesPage = lazy(() => import("./pages/CoursesPage"));
