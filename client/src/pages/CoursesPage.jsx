@@ -105,20 +105,7 @@ const CoursesPage = () => {
       thumbnail: "/courses/project-cgl-2026.jpeg",
       link: "https://zbckzy.courses.store/782520",
       comingSoon: false,
-    },
-    {
-      id: 7,
-      title: "Test Series",
-      description: "Coming soon",
-      category: "All",
-      level: "Beginner",
-      duration: "TBA",
-      students: 0,
-      price: 0,
-      thumbnail: "",
-      link: "#",
-      comingSoon: true,
-    },
+    }
   ];
 
   const categories = ["All", "BrahMos Batch 2", "Subject Wise", "Modules"];
