@@ -16,7 +16,7 @@ const QuizzesPage = () => {
       description: 'Practice with actual SSC 2025 previous year question papers. Solve real exam questions to understand the pattern and difficulty level.',
       category: 'SSC 2025 Previous Papers',
       thumbnail: '/quizzes/ssc-previous-papers.png',
-      link: 'https://zbckzy.courses.store/freetest?testFolderId=6978b972c367ba783db0eb69'
+      link: 'https://zbckzy.courses.store/freetest?testFolderId=69cdb0f9bdbc62b6b2f9585b'
     },
     {
       id: 2,
