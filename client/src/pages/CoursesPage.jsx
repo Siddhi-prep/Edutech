@@ -18,21 +18,6 @@ const CoursesPage = () => {
   const allCourses = [
     {
       id: 1,
-      title: "BrahMos",
-      description:
-        "Siddhi's Flagship course that provides teaching, Notes & Topic wise practise Tests for Maths, GS and English. For Reasoning we provide Theory Notes & Practise Sheets for the entire Syllabus.",
-      category: "BrahMos",
-      level: "Beginner",
-      duration: "24 Weeks",
-      students: 500,
-      price: 3999,
-      salePrice: 2896,
-      thumbnail: "/courses/brahmos.png",
-      link: "https://zbckzy.courses.store/courses/821913",
-      comingSoon: false,
-    },
-    {
-      id: 2,
       title: "SSC SELECTION BATCH -CGL 2026(TIER 1)",
       description:
         "Stop studying randomly. Start following a system. This batch gives you daily structure, tests, and complete coverage for SSC CGL 2026. No confusion. No excuses. Only execution → Only selection.",
@@ -42,8 +27,23 @@ const CoursesPage = () => {
       students: 0,
       price: 1199,
       salePrice: 882,
-      thumbnail: "/courses/selection-batch.png",
+      thumbnail: "/courses/sale/selection-batch.png",
       link: "https://zbckzy.courses.store/courses/821926",
+      comingSoon: false,
+    },
+    {
+      id: 2,
+      title: "BrahMos",
+      description:
+        "Siddhi's Flagship course that provides teaching, Notes & Topic wise practise Tests for Maths, GS and English. For Reasoning we provide Theory Notes & Practise Sheets for the entire Syllabus.",
+      category: "BrahMos",
+      level: "Beginner",
+      duration: "24 Weeks",
+      students: 500,
+      price: 3999,
+      salePrice: 2896,
+      thumbnail: "/courses/sale/brahmos.png",
+      link: "https://zbckzy.courses.store/courses/821913",
       comingSoon: false,
     },
 
@@ -58,13 +58,27 @@ const CoursesPage = () => {
       students: 500,
       price: 1699,
       salePrice: 1242,
-      thumbnail: "/courses/gs-1.0.png",
+      thumbnail: "/courses/sale/gs-1.0.png",
       link: "https://zbckzy.courses.store/717257",
       comingSoon: false,
     },
-
     {
       id: 4,
+      title: "WPME – Visual Learning Program",
+      description:
+        "English is a recorded course that comprehensively covers Vocabulary and Grammar. Special emphasis is given to Reading Comprehension, Cloze Test & Para Jumbles. Syllabus is covered based on the latest pattern.",
+      category: "Subject Wise",
+      level: "Beginner",
+      duration: "Recorded",
+      students: 300,
+      price: 799,
+      salePrice: 595,
+      thumbnail: "/courses/sale/english-1.0.png",
+      link: "https://zbckzy.courses.store/717259",
+      comingSoon: false,
+    },
+    {
+      id: 5,
       title: "WPME – Visual Learning Program",
       description:
         "Word Power Made Easy is a standard Book for Learning & Mastering Vocabulary. This course covers WPME extensively and offers 100+ Practise tests. Includes new words, Idioms & Phrases from SSC 2025 converted to visual slides — a one stop solution for vocabulary needs.",
@@ -75,21 +89,6 @@ const CoursesPage = () => {
       price: 99,
       thumbnail: "/courses/wpme.webp",
       link: "https://zbckzy.courses.store/797733",
-      comingSoon: false,
-    },
-    {
-      id: 5,
-      title: "English – VOD 1.0",
-      description:
-        "English is a recorded course that comprehensively covers Vocabulary and Grammar. Special emphasis is given to Reading Comprehension, Cloze Test & Para Jumbles. Syllabus is covered based on the latest pattern.",
-      category: "Subject Wise",
-      level: "Beginner",
-      duration: "Recorded",
-      students: 300,
-      price: 799,
-      salePrice: 595,
-      thumbnail: "/courses/english-1.0.png",
-      link: "https://zbckzy.courses.store/717259",
       comingSoon: false,
     },
     {
@@ -105,7 +104,7 @@ const CoursesPage = () => {
       thumbnail: "/courses/project-cgl-2026.jpeg",
       link: "https://zbckzy.courses.store/782520",
       comingSoon: false,
-    }
+    },
   ];
 
   const categories = ["All", "BrahMos Batch 2", "Subject Wise", "Modules"];
