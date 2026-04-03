@@ -27,6 +27,15 @@ const TestSeriesPage = () => {
       price: '₹49',
       thumbnail: '/test-series/arithmetic-math.jpeg',
       link: 'https://zbckzy.courses.store/courses/810788'
+    },
+    {
+      id: 3,
+      title: 'General Studies Test Series',
+      description: 'General Studies Test Series for SSC CGL 2025 with 100+ tests. Includes full-length mock tests, subject-wise tests, and detailed performance analysis. Perfect for comprehensive exam preparation.',
+      category: 'All',
+      price: '₹49',
+      thumbnail: '/test-series/general-studies.jpeg',
+      link: 'https://zbckzy.courses.store/courses/823519'
     }
   ];
 
