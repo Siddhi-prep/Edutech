@@ -84,7 +84,7 @@ const AppContent = () => {
   return (
     <div className="App">
       {!hideNavbar && <ModernNavbar />}
-      <main className="pt-10">
+      <main className="pt-4">
         <ErrorBoundary>
           <Suspense fallback={<PageLoader />}>
             <Routes>
