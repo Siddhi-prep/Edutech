@@ -60,6 +60,7 @@ const courses = [
       duration: "3 Weeks",
       students: 400,
       price: 99,
+      salePrice: 99,
       thumbnail: "/courses/wpme.webp",
       link: "https://zbckzy.courses.store/797733",
       comingSoon: false,
