@@ -64,7 +64,7 @@ const CoursesPage = () => {
     },
     {
       id: 4,
-      title: "WPME – Visual Learning Program",
+      title: "English Full Boot Camp - Complete SSC preparation",
       description:
         "English is a recorded course that comprehensively covers Vocabulary and Grammar. Special emphasis is given to Reading Comprehension, Cloze Test & Para Jumbles. Syllabus is covered based on the latest pattern.",
       category: "Subject Wise",
