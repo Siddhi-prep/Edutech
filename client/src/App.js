@@ -16,8 +16,8 @@ import "./index.css";
 const HomePage = lazy(() => import("./pages/HomePage"));
 const CoursesPage = lazy(() => import("./pages/CoursesPage"));
 const LeaderboardPage = lazy(() => import("./pages/LeaderboardPage"));
-const QuizzesPage = lazy(() => import("./pages/QuizzesPage"));
-const TestSeriesPage = lazy(() => import("./pages/TestSeriesPage"));
+// const QuizzesPage = lazy(() => import("./pages/QuizzesPage"));
+// const TestSeriesPage = lazy(() => import("./pages/TestSeriesPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const FAQPage = lazy(() => import("./pages/FAQPage"));
 

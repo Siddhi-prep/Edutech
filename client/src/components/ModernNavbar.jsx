@@ -10,9 +10,9 @@ import {
   MessageCircle,
   HelpCircle,
   Search,
-  User,
+  // User,
   TrendingUp,
-  Target,
+  // Target,
 } from "react-feather";
 
 const ModernNavbar = () => {
