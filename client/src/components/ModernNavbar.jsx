@@ -151,18 +151,18 @@ const ModernNavbar = () => {
       icon: <Book size={18} />,
       isRoute: true,
     },
-    {
-      name: "Tests",
-      path: "/test-series",
-      icon: <Target size={18} />,
-      isRoute: true,
-    },
-    {
-      name: "Free Quizzes",
-      path: "/quizzes",
-      icon: <HelpCircle size={18} />,
-      isRoute: true,
-    },
+    // {
+    //   name: "Tests",
+    //   path: "/test-series",
+    //   icon: <Target size={18} />,
+    //   isRoute: true,
+    // },
+    // {
+    //   name: "Free Quizzes",
+    //   path: "/quizzes",
+    //   icon: <HelpCircle size={18} />,
+    //   isRoute: true,
+    // },
     {
       name: "Leaderboard",
       path: "/leaderboard",
@@ -331,16 +331,29 @@ const ModernNavbar = () => {
 
                 {/* Login Button */}
                 <a
-                  href="https://web.classplusapp.com/login?orgCode=zbckzy"
+                  href="https://learn.siddhiprep.com/login/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hidden md:flex items-center space-x-2 px-5 py-2 bg-gradient-to-r from-primary/10 to-secondary/10 hover:from-primary/20 hover:to-secondary/20 border border-primary/20 rounded-full text-gray-700 font-medium transition-all duration-300 group"
                 >
-                  <User
+                  {/* <User
                     size={16}
                     className="group-hover:scale-110 transition-transform"
-                  />
+                  /> */}
                   <span>Login</span>
+                </a>
+                {/* Register Button */}
+                <a
+                  href="https://learn.siddhiprep.com/register/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hidden md:flex items-center space-x-2 px-5 py-2 bg-gradient-to-r from-primary/25 to-secondary/15 hover:from-primary/30 hover:to-secondary/20 border border-primary/20 rounded-full text-gray-700 font-medium transition-all duration-300 group"
+                >
+                  {/* <User
+                    size={16}
+                    className="group-hover:scale-110 transition-transform"
+                  /> */}
+                  <span>Register</span>
                 </a>
 
                 {/* Mobile Menu Button */}
@@ -459,14 +472,27 @@ const ModernNavbar = () => {
                 {/* Mobile Login Button */}
                 <div className="pt-3 mt-3 border-t border-gray-200">
                   <a
-                    href="https://web.classplusapp.com/login?orgCode=zbckzy"
+                    href="https://learn.siddhiprep.com/login/"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setIsOpen(false)}
                     className="w-full flex items-center justify-center space-x-2 px-6 py-4 bg-gradient-to-r from-primary/10 to-secondary/10 hover:from-primary/20 hover:to-secondary/20 border border-primary/20 rounded-2xl font-medium transition-all duration-300 text-gray-700"
                   >
-                    <User size={18} />
+                    {/* <User size={18} /> */}
                     <span>Login</span>
+                  </a>
+                </div>
+                {/* Mobile Register Button */}
+                <div className="pt-3 mt-3 border-t border-gray-200">
+                  <a
+                    href="https://learn.siddhiprep.com/register/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                    className="w-full flex items-center justify-center space-x-2 px-6 py-4 bg-gradient-to-r from-primary/25 to-secondary/15 hover:from-primary/30 hover:to-secondary/20 border border-primary/20 rounded-2xl font-medium transition-all duration-300 text-gray-700"
+                  >
+                    {/* <User size={18} /> */}
+                    <span>Register</span>
                   </a>
                 </div>
               </div>

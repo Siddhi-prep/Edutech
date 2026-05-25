@@ -13,29 +13,13 @@ const courses = [
       duration: "24 Weeks",
       students: 500,
       price: 3999,
-      salePrice: 2896,
+      // salePrice: 2896,
       thumbnail: "/courses/brahmos.png",
-      link: "https://zbckzy.courses.store/courses/821913",
+      link: "https://learn.siddhiprep.com/products/brahmos-for-all-ssc-exams/",
       comingSoon: false,
     },
     {
       id: 2,
-      title: "SSC SELECTION BATCH -CGL 2026(TIER 1)",
-      description:
-        "Stop studying randomly. Start following a system. This batch gives you daily structure, tests, and complete coverage for SSC CGL 2026. No confusion. No excuses. Only execution → Only selection.",
-      category: "All",
-      level: "Beginner",
-      duration: "Free Workshop",
-      students: 0,
-      price: 1199,
-      salePrice: 882,
-      thumbnail: "/courses/selection-batch.png",
-      link: "https://zbckzy.courses.store/courses/821926",
-      comingSoon: false,
-    },
-
-    {
-      id: 3,
       title: "GS 1.0 – Mastery with NCERTs",
       description:
         "Siddhi's GS Module includes Standard Subjects like History, Geography, Polity, Economy, Environment, Science alongside SSC Specific trending topics like Space Technology, Architecture, Culture, Books & Authors, Sports Etc. Includes current affairs at each module. Live classes with recordings available.",
@@ -43,57 +27,72 @@ const courses = [
       level: "Beginner",
       duration: "18 Weeks",
       students: 500,
-      price: 1699,
-      salePrice: 1242,
-      thumbnail: "/courses/gs-1.0.png",
-      link: "https://zbckzy.courses.store/717257",
+      price: 1099,
+      // salePrice: 1242,
+      thumbnail: "/courses/gs.png",
+      link: "https://learn.siddhiprep.com/products/siddhi-gs-from-ncerts-to-mastery/",
       comingSoon: false,
     },
-
+    {
+      id: 3,
+      title: "Advance Maths (VOD)",
+      description:
+        "Siddhi's Advance Maths course provides comprehensive coverage of the subject with recorded classes and practice materials.",
+      category: "Advanced Maths",
+      level: "Beginner",
+      duration: "24 Weeks",
+      students: 500,
+      price: 499,
+      // salePrice: 2896,
+      thumbnail: "/courses/adv-math.jpeg",
+      link: "https://learn.siddhiprep.com/products/advance-maths-vod/",
+      comingSoon: false,
+    },
     {
       id: 4,
-      title: "WPME – Visual Learning Program",
-      description:
-        "Word Power Made Easy is a standard Book for Learning & Mastering Vocabulary. This course covers WPME extensively and offers 100+ Practise tests. Includes new words, Idioms & Phrases from SSC 2025 converted to visual slides — a one stop solution for vocabulary needs.",
-      category: "Modules",
-      level: "Beginner",
-      duration: "3 Weeks",
-      students: 400,
-      price: 99,
-      salePrice: 99,
-      thumbnail: "/courses/wpme.webp",
-      link: "https://zbckzy.courses.store/797733",
-      comingSoon: false,
-    },
-    {
-      id: 5,
-      title: "English – VOD 1.0",
+      title: "English Full Boot Camp - Complete SSC preparation",
       description:
         "English is a recorded course that comprehensively covers Vocabulary and Grammar. Special emphasis is given to Reading Comprehension, Cloze Test & Para Jumbles. Syllabus is covered based on the latest pattern.",
       category: "Subject Wise",
       level: "Beginner",
       duration: "Recorded",
       students: 300,
-      price: 799,
-      salePrice: 595,
-      thumbnail: "/courses/english-1.0.png",
-      link: "https://zbckzy.courses.store/717259",
+      price: 499,
+      // salePrice: 595,
+      thumbnail: "/courses/eng.png",
+      link: "https://learn.siddhiprep.com/products/english-basics-to-advanced-vod/",
+      comingSoon: false,
+    },
+    {
+      id: 5,
+      title: "Arithmetic Maths (VOD)",
+      description:
+        "Siddhi's Arithmetic Maths course provides comprehensive coverage of the subject with recorded classes and practice materials.",
+      category: "Subject Wise",
+      level: "Beginner",
+      duration: "Recorded",
+      students: 300,
+      price: 499,
+      // salePrice: 595,
+      thumbnail: "/courses/arithmetic.jpeg",
+      link: "https://learn.siddhiprep.com/products/arithmetic-vod/",
       comingSoon: false,
     },
     {
       id: 6,
-      title: "Project CGL 2026",
+      title: "Siddhi Free Materials",
       description:
-        "This is a free workshop that offers you detailed Insights into the road map for SSC CGL 2026. You can register using your mobile Number and enjoy the session.",
-      category: "All",
+        "Siddhi's Free Materials include study notes, practice questions, and previous year papers for various subjects.",
+      category: "Subject Wise",
       level: "Beginner",
-      duration: "Free Workshop",
-      students: 7855,
+      duration: "Free Materials",
+      students: 300,
       price: 0,
-      thumbnail: "/courses/project-cgl-2026.jpeg",
-      link: "https://zbckzy.courses.store/782520",
+      thumbnail: "/courses/free.jpeg",
+      link: "https://learn.siddhiprep.com/products/siddhi-free-materials/",
       comingSoon: false,
     },
+
   ];
 
 const Courses = () => {
@@ -165,7 +164,7 @@ const Courses = () => {
                 {/* Footer */}
                 <div className="flex items-center justify-between pt-3 border-t border-gray-100 mt-auto">
                   <span className="text-lg font-bold text-gray-900 ">
-                    {course.comingSoon ? 'TBA' : course.price === 0 ? <span className="text-green-600">Free</span> : `₹${course.salePrice}`}
+                    {course.comingSoon ? 'TBA' : course.price === 0 ? <span className="text-green-600">Free</span> : `₹${course.price}`}
                   </span>
                   {course.comingSoon ? (
                     <span className="text-xs text-gray-400 font-medium">Coming Soon</span>
