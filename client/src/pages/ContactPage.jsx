@@ -64,7 +64,7 @@ const ContactPage = () => {
 
             {/* Telegram */}
             <a
-              href="https://t.me/Siddhi_SSC"
+              href="https://t.me/siddhiprep"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white border border-gray-200 rounded-2xl p-6 flex items-start space-x-4 hover:shadow-md hover:border-gray-300 transition-all duration-300"
@@ -74,7 +74,7 @@ const ContactPage = () => {
               </div>
               <div>
                 <h3 className="text-sm font-semibold text-gray-900 mb-1">Telegram</h3>
-                <p className="text-sm text-gray-500">Siddhi_SSC</p>
+                <p className="text-sm text-gray-500">siddhiprep</p>
               </div>
             </a>
 

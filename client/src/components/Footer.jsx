@@ -19,10 +19,10 @@ const Footer = () => {
   ];
 
   const courseLinks = [
-    { label: 'BrahMos', href: 'https://zbckzy.courses.store/781683' },
-    { label: 'GS Mastery', href: 'https://zbckzy.courses.store/717257' },
-    { label: 'English Mastery', href: 'https://zbckzy.courses.store/717259' },
-    { label: 'WPME Visual Learning', href: 'https://zbckzy.courses.store/797733' },
+    { label: 'BrahMos', href: 'https://learn.siddhiprep.com/products/brahmos-for-all-ssc-exams/' },
+    { label: 'GS Mastery', href: 'https://learn.siddhiprep.com/products/siddhi-gs-from-ncerts-to-mastery/' },
+    { label: 'English Mastery', href: 'https://learn.siddhiprep.com/products/english-basics-to-advanced-vod/' },
+    { label: 'Advance Maths', href: 'https://learn.siddhiprep.com/products/advance-maths-vod/' },
   ];
 
   return (

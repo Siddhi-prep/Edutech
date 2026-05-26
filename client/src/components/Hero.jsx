@@ -43,7 +43,7 @@ const Hero = () => {
   const parallaxOffset = useParallax(0.3);
 
   // Apple-inspired smooth counters
-  const ytLearners = useAnimatedCounter(35000, 6000);
+  const ytLearners = useAnimatedCounter(50000, 6000);
   const appLearners = useAnimatedCounter(25000, 5500);
   const credibleCourses = useAnimatedCounter(5, 4500);
 

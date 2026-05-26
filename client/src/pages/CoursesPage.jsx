@@ -18,6 +18,21 @@ const CoursesPage = () => {
   const allCourses = [
     {
       id: 1,
+      title: "SSC CGL 75 Days Challenge - The Final Push",
+      description:
+        "SSC CGL 2026 preparation enters its most important phase! Only 75 Days are left for Tier 1, and this is the FINAL PUSH that can completely change your result. we are launching the FREE 75 Day SSC CGL 2026 Challenge designed specially for aspirants scoring around 100–110 marks and aiming for 135+ in Tier 1.",
+      category: "BrahMos",
+      level: "Beginner",
+      duration: "Free Materials",
+      students: 300,
+      price: 0,
+      // salePrice: 2896,
+      thumbnail: "/courses/75days.png",
+      link: "https://learn.siddhiprep.com/products/cgl-75-days-challenge-the-final-push/",
+      comingSoon: false,
+    },
+    {
+      id: 2,
       title: "BrahMos",
       description:
         "Siddhi's Flagship course that provides teaching, Notes & Topic wise practise Tests for Maths, GS and English. For Reasoning we provide Theory Notes & Practise Sheets for the entire Syllabus.",
@@ -32,7 +47,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 2,
+      id: 3,
       title: "GS 1.0 – Mastery with NCERTs",
       description:
         "Siddhi's GS Module includes Standard Subjects like History, Geography, Polity, Economy, Environment, Science alongside SSC Specific trending topics like Space Technology, Architecture, Culture, Books & Authors, Sports Etc. Includes current affairs at each module. Live classes with recordings available.",
@@ -47,7 +62,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 3,
+      id: 4,
       title: "Advance Maths (VOD)",
       description:
         "Siddhi's Advance Maths course provides comprehensive coverage of the subject with recorded classes and practice materials.",
@@ -62,7 +77,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 4,
+      id: 5,
       title: "English Full Boot Camp - Complete SSC preparation",
       description:
         "English is a recorded course that comprehensively covers Vocabulary and Grammar. Special emphasis is given to Reading Comprehension, Cloze Test & Para Jumbles. Syllabus is covered based on the latest pattern.",
@@ -77,7 +92,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 5,
+      id: 6,
       title: "Arithmetic Maths (VOD)",
       description:
         "Siddhi's Arithmetic Maths course provides comprehensive coverage of the subject with recorded classes and practice materials.",
@@ -92,7 +107,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 6,
+      id: 7,
       title: "Siddhi Free Materials",
       description:
         "Siddhi's Free Materials include study notes, practice questions, and previous year papers for various subjects.",

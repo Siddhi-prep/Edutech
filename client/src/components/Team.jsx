@@ -12,8 +12,7 @@ const faculties = [
   { id: 2, name: 'Akshay Sir', role: 'Faculty – Science', image: '/team/akshay-sir.jpg', placeholder: true },
   { id: 3, name: 'Dr Sree Lakshmi Mam', role: 'Faculty – Science', image: '/team/dr-sree-lakshmi.png' },
   { id: 4, name: 'Dr Aparna Mam', role: 'Faculty – English', image: '/team/dr-aparna.png' },
-  { id: 5, name: 'Akhil Sir', role: 'Faculty – Maths', image: '/team/akhil-sir.jpg', placeholder: true },
-  { id: 6, name: 'Ritik Sir', role: 'Associate Faculty – Mathematics', image: '/team/rithik.jpeg' },
+  { id: 5, name: 'Ritik Sir', role: 'Associate Faculty – Mathematics', image: '/team/rithik.jpeg' },
 ];
 
 const PlaceholderAvatar = () => (
@@ -82,7 +81,7 @@ const Team = () => {
           <h3 className="text-center text-xl md:text-2xl font-bold text-gray-900 mb-6 md:mb-8">
             Our Expert Faculties & Mentors
           </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 max-w-5xl mx-auto">
             {faculties.map((member) => (
               <div
                 key={member.id}
