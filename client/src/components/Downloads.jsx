@@ -1,5 +1,4 @@
 import React from 'react';
-import { Mail, Phone, Send } from 'react-feather';
 
 
 
