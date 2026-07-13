@@ -328,7 +328,18 @@ const ModernNavbar = () => {
                     </div>
                   )}
                 </div>
-
+                  {/* <a
+                  href="https://learn.siddhiprep.com/login/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hidden md:flex items-center space-x-2 px-5 py-2 bg-gradient-to-r from-primary/10 to-secondary/10 hover:from-primary/20 hover:to-secondary/20 border border-primary/20 rounded-full text-gray-700 font-medium transition-all duration-300 group"
+                > */}
+                  {/* <User
+                    size={16}
+                    className="group-hover:scale-110 transition-transform"
+                  /> */}
+                  {/* <span>RankRadar</span>
+                </a> */}
                 {/* Login Button */}
                 <a
                   href="https://learn.siddhiprep.com/login/"

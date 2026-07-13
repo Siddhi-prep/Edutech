@@ -18,6 +18,21 @@ const CoursesPage = () => {
   const allCourses = [
     {
       id: 1,
+      title: "GS 1.0 – Mastery with NCERTs",
+      description:
+        "Siddhi's GS Module includes Standard Subjects like History, Geography, Polity, Economy, Environment, Science alongside SSC Specific trending topics like Space Technology, Architecture, Culture, Books & Authors, Sports Etc. Includes current affairs at each module. Live classes with recordings available.",
+      category: "Subject Wise",
+      level: "Beginner",
+      duration: "18 Weeks",
+      students: 500,
+      price: 1699,
+      salePrice: 849,
+      thumbnail: "/courses/gs-50.jpeg",
+      link: "https://learn.siddhiprep.com/products/siddhi-gs-from-ncerts-to-mastery/",
+      comingSoon: false,
+    },
+    {
+      id: 2,
       title: "SSC CGL 75 Days Challenge - The Final Push",
       description:
         "SSC CGL 2026 preparation enters its most important phase! Only 75 Days are left for Tier 1, and this is the FINAL PUSH that can completely change your result. we are launching the FREE 75 Day SSC CGL 2026 Challenge designed specially for aspirants scoring around 100–110 marks and aiming for 135+ in Tier 1.",
@@ -32,7 +47,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 2,
+      id: 3,
       title: "BrahMos",
       description:
         "Siddhi's Flagship course that provides teaching, Notes & Topic wise practise Tests for Maths, GS and English. For Reasoning we provide Theory Notes & Practise Sheets for the entire Syllabus.",
@@ -44,21 +59,6 @@ const CoursesPage = () => {
       // salePrice: 2896,
       thumbnail: "/courses/brahmos.png",
       link: "https://learn.siddhiprep.com/products/brahmos-for-all-ssc-exams/",
-      comingSoon: false,
-    },
-    {
-      id: 3,
-      title: "GS 1.0 – Mastery with NCERTs",
-      description:
-        "Siddhi's GS Module includes Standard Subjects like History, Geography, Polity, Economy, Environment, Science alongside SSC Specific trending topics like Space Technology, Architecture, Culture, Books & Authors, Sports Etc. Includes current affairs at each module. Live classes with recordings available.",
-      category: "Subject Wise",
-      level: "Beginner",
-      duration: "18 Weeks",
-      students: 500,
-      price: 1099,
-      // salePrice: 1242,
-      thumbnail: "/courses/gs.png",
-      link: "https://learn.siddhiprep.com/products/siddhi-gs-from-ncerts-to-mastery/",
       comingSoon: false,
     },
     {
