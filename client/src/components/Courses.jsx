@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import { Clock, Users, ArrowRight, BookOpen } from 'react-feather';
 
 const courses = [
-    {
+{
       id: 1,
       title: "BrahMos",
       description:
         "Siddhi's Flagship course that provides teaching, Notes & Topic wise practise Tests for Maths, GS and English. For Reasoning we provide Theory Notes & Practise Sheets for the entire Syllabus.",
-      category: "BrahMos",
+      category: "SSC",
       level: "Beginner",
       duration: "24 Weeks",
       students: 500,
@@ -23,13 +23,13 @@ const courses = [
       title: "GS 1.0 – Mastery with NCERTs",
       description:
         "Siddhi's GS Module includes Standard Subjects like History, Geography, Polity, Economy, Environment, Science alongside SSC Specific trending topics like Space Technology, Architecture, Culture, Books & Authors, Sports Etc. Includes current affairs at each module. Live classes with recordings available.",
-      category: "Subject Wise",
+      category: "SSC",
       level: "Beginner",
       duration: "18 Weeks",
       students: 500,
       price: 1699,
-      salePrice: 849,
-      thumbnail: "/courses/gs-50.jpeg",
+      // salePrice: 849,
+      thumbnail: "/courses/gs.png",
       link: "https://learn.siddhiprep.com/products/siddhi-gs-from-ncerts-to-mastery/",
       comingSoon: false,
     },
@@ -53,13 +53,13 @@ const courses = [
       title: "English Full Boot Camp - Complete SSC preparation",
       description:
         "English is a recorded course that comprehensively covers Vocabulary and Grammar. Special emphasis is given to Reading Comprehension, Cloze Test & Para Jumbles. Syllabus is covered based on the latest pattern.",
-      category: "Subject Wise",
+      category: "SSC",
       level: "Beginner",
       duration: "Recorded",
       students: 300,
       price: 499,
       // salePrice: 595,
-      thumbnail: "/courses/eng.png",
+      thumbnail: "/courses/english.jpeg",
       link: "https://learn.siddhiprep.com/products/english-basics-to-advanced-vod/",
       comingSoon: false,
     },
@@ -68,7 +68,7 @@ const courses = [
       title: "Arithmetic Maths (VOD)",
       description:
         "Siddhi's Arithmetic Maths course provides comprehensive coverage of the subject with recorded classes and practice materials.",
-      category: "Subject Wise",
+      category: "SSC",
       level: "Beginner",
       duration: "Recorded",
       students: 300,
@@ -80,16 +80,17 @@ const courses = [
     },
     {
       id: 6,
-      title: "Siddhi Free Materials",
+      title: "Word Power Made Easy",
       description:
-        "Siddhi's Free Materials include study notes, practice questions, and previous year papers for various subjects.",
-      category: "Subject Wise",
+        "This WPME course is built specifically for competitive exams. It includes detailed video lectures for every session and specially prepared slides with many more words per root than the original book. The course is designed to give you a high hit ratio in exams—typically covering 3–4 out of 6 vocabulary questions in SSC CGL and 5–6 out of 6–7 vocabulary questions in SSC MTS, based on recent trends. Learn roots, expand your vocabulary systematically, and improve your confidence in English with an exam-focused approach.",
+      category: "SSC",
       level: "Beginner",
-      duration: "Free Materials",
+      duration: "Recorded",
       students: 300,
-      price: 0,
-      thumbnail: "/courses/free.jpeg",
-      link: "https://learn.siddhiprep.com/products/siddhi-free-materials/",
+      price: 99,
+      // salePrice: 595,
+      thumbnail: "/courses/word-power.png",
+      link: "https://learn.siddhiprep.com/products/word-power-made-easy/",
       comingSoon: false,
     },
 

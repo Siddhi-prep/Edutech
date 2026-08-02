@@ -16,41 +16,12 @@ const CoursesPage = () => {
   const [viewMode, setViewMode] = useState("grid");
 
   const allCourses = [
-    {
+        {
       id: 1,
-      title: "GS 1.0 – Mastery with NCERTs",
-      description:
-        "Siddhi's GS Module includes Standard Subjects like History, Geography, Polity, Economy, Environment, Science alongside SSC Specific trending topics like Space Technology, Architecture, Culture, Books & Authors, Sports Etc. Includes current affairs at each module. Live classes with recordings available.",
-      category: "Subject Wise",
-      level: "Beginner",
-      duration: "18 Weeks",
-      students: 500,
-      price: 1699,
-      // salePrice: 849,
-      thumbnail: "/courses/gs.png",
-      link: "https://learn.siddhiprep.com/products/siddhi-gs-from-ncerts-to-mastery/",
-      comingSoon: false,
-    },
-    {
-      id: 2,
-      title: "Math Arena - Play with Maths",
-      description:
-        "Siddhi's Math Arena course makes learning mathematics fun. It is designed to enhance problem-solving skills and mathematical thinking.",
-      category: "Subject Wise",
-      level: "Beginner",
-      duration: "Free Materials",
-      students: 300,
-      price: 0,
-      thumbnail: "/courses/math-arena.png",
-      link: "https://learn.siddhiprep.com/products/maths_arena/",
-      comingSoon: false,
-    },
-    {
-      id: 3,
       title: "BrahMos",
       description:
         "Siddhi's Flagship course that provides teaching, Notes & Topic wise practise Tests for Maths, GS and English. For Reasoning we provide Theory Notes & Practise Sheets for the entire Syllabus.",
-      category: "BrahMos",
+      category: "SSC",
       level: "Beginner",
       duration: "24 Weeks",
       students: 500,
@@ -61,7 +32,22 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 4,
+      id: 2,
+      title: "GS 1.0 – Mastery with NCERTs",
+      description:
+        "Siddhi's GS Module includes Standard Subjects like History, Geography, Polity, Economy, Environment, Science alongside SSC Specific trending topics like Space Technology, Architecture, Culture, Books & Authors, Sports Etc. Includes current affairs at each module. Live classes with recordings available.",
+      category: "SSC",
+      level: "Beginner",
+      duration: "18 Weeks",
+      students: 500,
+      price: 1699,
+      // salePrice: 849,
+      thumbnail: "/courses/gs.png",
+      link: "https://learn.siddhiprep.com/products/siddhi-gs-from-ncerts-to-mastery/",
+      comingSoon: false,
+    },
+    {
+      id: 3,
       title: "Advance Maths (VOD)",
       description:
         "Siddhi's Advance Maths course provides comprehensive coverage of the subject with recorded classes and practice materials.",
@@ -76,26 +62,26 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 5,
+      id: 4,
       title: "English Full Boot Camp - Complete SSC preparation",
       description:
         "English is a recorded course that comprehensively covers Vocabulary and Grammar. Special emphasis is given to Reading Comprehension, Cloze Test & Para Jumbles. Syllabus is covered based on the latest pattern.",
-      category: "Subject Wise",
+      category: "SSC",
       level: "Beginner",
       duration: "Recorded",
       students: 300,
       price: 499,
       // salePrice: 595,
-      thumbnail: "/courses/eng.png",
+      thumbnail: "/courses/english.jpeg",
       link: "https://learn.siddhiprep.com/products/english-basics-to-advanced-vod/",
       comingSoon: false,
     },
     {
-      id: 6,
+      id: 5,
       title: "Arithmetic Maths (VOD)",
       description:
         "Siddhi's Arithmetic Maths course provides comprehensive coverage of the subject with recorded classes and practice materials.",
-      category: "Subject Wise",
+      category: "SSC",
       level: "Beginner",
       duration: "Recorded",
       students: 300,
@@ -106,11 +92,86 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
+      id: 6,
+      title: "Word Power Made Easy",
+      description:
+        "This WPME course is built specifically for competitive exams. It includes detailed video lectures for every session and specially prepared slides with many more words per root than the original book. The course is designed to give you a high hit ratio in exams—typically covering 3–4 out of 6 vocabulary questions in SSC CGL and 5–6 out of 6–7 vocabulary questions in SSC MTS, based on recent trends. Learn roots, expand your vocabulary systematically, and improve your confidence in English with an exam-focused approach.",
+      category: "SSC",
+      level: "Beginner",
+      duration: "Recorded",
+      students: 300,
+      price: 99,
+      // salePrice: 595,
+      thumbnail: "/courses/word-power.png",
+      link: "https://learn.siddhiprep.com/products/word-power-made-easy/",
+      comingSoon: false,
+    },
+    {
       id: 7,
+      title: "Static GK (Kavach) Combo",
+      description:
+        "Prepare smarter with the Static GK Ultimate Combo, crafted specifically for SSC 2026. Get 700+ exam-oriented Static GK questions with topic-wise tests along with easy-to-read, topic-wise Short Notes (PDFs) for quick revision. This combo is designed to help you learn, practice, revise, and score with confidence.",
+      category: "SSC(Tests + Short Notes)",
+      level: "Beginner",
+      duration: "45 days",
+      students: 300,
+      price: 99,
+      // salePrice: 595,
+      thumbnail: "/courses/tests-and-notes/combo.png",
+      link: "https://learn.siddhiprep.com/products/static-gk-kavach-short-notes-for-all-ssc-2026/",
+      comingSoon: false,
+    },
+    {
+      id: 8,
+      title: "Static GK (Kavach) Test Series",
+      description:
+        "Master Static GK with 700+ carefully curated questions, organized topic-wise to help you practice systematically and improve your exam performance.",
+      category: "SSC(Tests + Short Notes)",
+      level: "Beginner",
+      duration: "45 days",
+      students: 300,
+      price: 75,
+      // salePrice: 595,
+      thumbnail: "/courses/tests-and-notes/tests.png",
+      link: "https://learn.siddhiprep.com/products/static-gk-kavach-test-series-for-all-ssc-2026/",
+      comingSoon: false,
+    },
+    {
+      id: 9,
+      title: "Static GK (Kavach) Short Notes",
+      description:
+        "Revise smarter with Kavach Topic-wise Static GK Short Notes (PDFs), crafted specifically for SSC 2026 to help you revise the most important concepts quickly and effectively.",
+      category: "SSC(Tests + Short Notes)",
+      level: "Beginner",
+      duration: "30 days",
+      students: 300,
+      price: 39,
+      // salePrice: 595,
+      thumbnail: "/courses/tests-and-notes/short-notes.png",
+      link: "https://learn.siddhiprep.com/products/static-gk-kavach-short-notes-for-all-ssc-2026/",
+      comingSoon: false,
+    },
+
+    {
+      id: 10,
+      title: "Math Arena - Play with Maths",
+      description:
+        "Siddhi's Math Arena course makes learning mathematics fun. It is designed to enhance problem-solving skills and mathematical thinking.",
+      category: "SSC Free",
+      level: "Beginner",
+      duration: "Free Materials",
+      students: 300,
+      price: 0,
+      thumbnail: "/courses/math-arena.png",
+      link: "https://learn.siddhiprep.com/products/maths_arena/",
+      comingSoon: false,
+    },
+    {
+      id: 11,
       title: "Siddhi Free Materials",
       description:
         "Siddhi's Free Materials include study notes, practice questions, and previous year papers for various subjects.",
-      category: "Subject Wise",
+      category: "SSC Free",
       level: "Beginner",
       duration: "Free Materials",
       students: 300,
@@ -120,11 +181,11 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 8,
+      id: 12,
       title: "SSC CGL 75 Days Challenge - The Final Push",
       description:
         "SSC CGL 2026 preparation enters its most important phase! Only 75 Days are left for Tier 1, and this is the FINAL PUSH that can completely change your result. we are launching the FREE 75 Day SSC CGL 2026 Challenge designed specially for aspirants scoring around 100–110 marks and aiming for 135+ in Tier 1.",
-      category: "BrahMos",
+      category: "SSC Free",
       level: "Beginner",
       duration: "Free Materials",
       students: 300,
@@ -137,7 +198,7 @@ const CoursesPage = () => {
 
   ];
 
-  const categories = ["All", "BrahMos Batch 2", "Subject Wise", "Modules"];
+  const categories = ["All", "SSC", "SSC Free", "SSC(Tests + Short Notes)"];
 
   // Filter courses
   const filteredCourses = allCourses.filter((course) => {
