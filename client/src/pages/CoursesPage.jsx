@@ -33,7 +33,7 @@ const CoursesPage = () => {
     },
     {
       id: 2,
-      title: "GS 1.0 – Mastery with NCERTs",
+      title: "GS: From NCERT to Mastery",
       description:
         "Siddhi's GS Module includes Standard Subjects like History, Geography, Polity, Economy, Environment, Science alongside SSC Specific trending topics like Space Technology, Architecture, Culture, Books & Authors, Sports Etc. Includes current affairs at each module. Live classes with recordings available.",
       category: "SSC",
@@ -42,7 +42,7 @@ const CoursesPage = () => {
       students: 500,
       price: 1699,
       // salePrice: 849,
-      thumbnail: "/courses/gs.png",
+      thumbnail: "/courses/gs-new.png",
       link: "https://learn.siddhiprep.com/products/siddhi-gs-from-ncerts-to-mastery/",
       comingSoon: false,
     },
