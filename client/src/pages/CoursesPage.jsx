@@ -118,7 +118,7 @@ const CoursesPage = () => {
       price: 99,
       // salePrice: 595,
       thumbnail: "/courses/tests-and-notes/combo.png",
-      link: "https://learn.siddhiprep.com/products/static-gk-kavach-short-notes-for-all-ssc-2026/",
+      link: "https://learn.siddhiprep.com/products/static-gk-kavach-combo-test-series-short-notes-for-all-ssc-2026/",
       comingSoon: false,
     },
     {
