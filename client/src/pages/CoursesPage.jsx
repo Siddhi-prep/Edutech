@@ -16,19 +16,19 @@ const CoursesPage = () => {
   const [viewMode, setViewMode] = useState("grid");
 
   const allCourses = [
-        {
+    {
       id: 1,
-      title: "BrahMos",
+      title: "BrahMos (All SSC Exams - 2027)",
       description:
-        "Siddhi's Flagship course that provides teaching, Notes & Topic wise practise Tests for Maths, GS and English. For Reasoning we provide Theory Notes & Practise Sheets for the entire Syllabus.",
+        "Siddhi BrahMos 2027 - is our flagship SSC preparation program for 2027 Cycle, designed to help you stay consistent and exam-ready. The course covers Maths, General Studies, and English through high-quality recorded classes, supported by regular mentorship sessions, structured study schedules, and frequent tests. We continuously track your preparation, monitor your progress, identify areas for improvement, and guide you at every step. More than just a course, BrahMos is a complete mentorship program that keeps you disciplined, accountable, and focused until you achieve your SSC goal.",
       category: "SSC",
       level: "Beginner",
       duration: "24 Weeks",
       students: 500,
       price: 3999,
       // salePrice: 2896,
-      thumbnail: "/courses/brahmos.png",
-      link: "https://learn.siddhiprep.com/products/brahmos-for-all-ssc-exams/",
+      thumbnail: "/courses/brahmos-27.png",
+      link: "https://learn.siddhiprep.com/products/ssc_2027_course/",
       comingSoon: false,
     },
     {
@@ -195,7 +195,6 @@ const CoursesPage = () => {
       link: "https://learn.siddhiprep.com/products/cgl-75-days-challenge-the-final-push/",
       comingSoon: false,
     },
-
   ];
 
   const categories = ["All", "SSC", "SSC Free", "SSC(Tests + Short Notes)"];
