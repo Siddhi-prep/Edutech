@@ -25,7 +25,7 @@ const CoursesPage = () => {
       level: "Beginner",
       duration: "24 Weeks",
       students: 500,
-      price: 3999,
+      price: 2500,
       // salePrice: 2896,
       thumbnail: "/courses/brahmos-27.png",
       link: "https://learn.siddhiprep.com/products/ssc_2027_course/",
