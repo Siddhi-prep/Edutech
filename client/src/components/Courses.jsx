@@ -34,7 +34,22 @@ const courses = [
     comingSoon: false,
   },
   {
-    id: 3,
+      id: 3,
+      title: "Maths Combo Course",
+      description:
+        "A comprehensive course covering all the essential topics in Mathematics, designed to help you build a strong foundation and excel in your exams.",
+      category: "Advanced Maths",
+      level: "Beginner",
+      duration: "24 Weeks",
+      students: 500,
+      price: 599,
+      // salePrice: 2896,
+      thumbnail: "/courses/math-combo.png",
+      link: "https://learn.siddhiprep.com/products/maths-combo-course/",
+      comingSoon: false,
+    },
+  {
+    id: 4,
     title: "Advance Maths (VOD)",
     description:
       "Siddhi's Advance Maths course provides comprehensive coverage of the subject with recorded classes and practice materials.",
@@ -49,7 +64,7 @@ const courses = [
     comingSoon: false,
   },
   {
-    id: 4,
+    id: 5,
     title: "English Full Boot Camp - Complete SSC preparation",
     description:
       "English is a recorded course that comprehensively covers Vocabulary and Grammar. Special emphasis is given to Reading Comprehension, Cloze Test & Para Jumbles. Syllabus is covered based on the latest pattern.",
@@ -64,7 +79,7 @@ const courses = [
     comingSoon: false,
   },
   {
-    id: 5,
+    id: 6,
     title: "Arithmetic Maths (VOD)",
     description:
       "Siddhi's Arithmetic Maths course provides comprehensive coverage of the subject with recorded classes and practice materials.",
@@ -78,21 +93,21 @@ const courses = [
     link: "https://learn.siddhiprep.com/products/arithmetic-vod/",
     comingSoon: false,
   },
-  {
-    id: 6,
-    title: "Word Power Made Easy",
-    description:
-      "This WPME course is built specifically for competitive exams. It includes detailed video lectures for every session and specially prepared slides with many more words per root than the original book. The course is designed to give you a high hit ratio in exams—typically covering 3–4 out of 6 vocabulary questions in SSC CGL and 5–6 out of 6–7 vocabulary questions in SSC MTS, based on recent trends. Learn roots, expand your vocabulary systematically, and improve your confidence in English with an exam-focused approach.",
-    category: "SSC",
-    level: "Beginner",
-    duration: "Recorded",
-    students: 300,
-    price: 99,
-    // salePrice: 595,
-    thumbnail: "/courses/word-power.png",
-    link: "https://learn.siddhiprep.com/products/word-power-made-easy/",
-    comingSoon: false,
-  },
+  // {
+  //   id: 6,
+  //   title: "Word Power Made Easy",
+  //   description:
+  //     "This WPME course is built specifically for competitive exams. It includes detailed video lectures for every session and specially prepared slides with many more words per root than the original book. The course is designed to give you a high hit ratio in exams—typically covering 3–4 out of 6 vocabulary questions in SSC CGL and 5–6 out of 6–7 vocabulary questions in SSC MTS, based on recent trends. Learn roots, expand your vocabulary systematically, and improve your confidence in English with an exam-focused approach.",
+  //   category: "SSC",
+  //   level: "Beginner",
+  //   duration: "Recorded",
+  //   students: 300,
+  //   price: 99,
+  //   // salePrice: 595,
+  //   thumbnail: "/courses/word-power.png",
+  //   link: "https://learn.siddhiprep.com/products/word-power-made-easy/",
+  //   comingSoon: false,
+  // },
 ];
 
 const Courses = () => {
