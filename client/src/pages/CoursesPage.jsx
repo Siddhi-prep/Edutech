@@ -33,6 +33,21 @@ const CoursesPage = () => {
     },
     {
       id: 2,
+      title: "CGL 2026 - PAPER LEAK SERIES",
+      description:
+        "This series provides you with the latest question papers from previous years, helping you understand the exam pattern and improve your performance.",
+      category: "SSC",
+      level: "Beginner",
+      duration: "18 Weeks",
+      students: 500,
+      price: 0,
+      // salePrice: 849,
+      thumbnail: "/courses/paper-leak.png",
+      link: "https://learn.siddhiprep.com/products/cgl-2026-paper-leak-series/",
+      comingSoon: false,
+    },
+    {
+      id: 3,
       title: "GS: From NCERT to Mastery",
       description:
         "Siddhi's GS Module includes Standard Subjects like History, Geography, Polity, Economy, Environment, Science alongside SSC Specific trending topics like Space Technology, Architecture, Culture, Books & Authors, Sports Etc. Includes current affairs at each module. Live classes with recordings available.",
@@ -47,7 +62,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 3,
+      id: 4,
       title: "Maths Combo Course",
       description:
         "A comprehensive course covering all the essential topics in Mathematics, designed to help you build a strong foundation and excel in your exams.",
@@ -62,7 +77,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 4,
+      id: 5,
       title: "GS VAJRA TEST SERIES",
       description:
         "Every test in GS VAJRA is carefully crafted after a detailed analysis of SSC PYQs, ensuring that your practice stays focused on what truly matters for the exam.",
@@ -77,7 +92,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 5,
+      id: 6,
       title: "40 DAY FREE SMART REVISION BATCH",
       description:
         "A structured 40-day revision plan designed for SSC CGL 2026 aspirants who want to revise smartly without wasting time deciding what to study, where to study, and how to revise.",
@@ -92,7 +107,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 6,
+      id: 7,
       title: "Advance Maths (VOD)",
       description:
         "Siddhi's Advance Maths course provides comprehensive coverage of the subject with recorded classes and practice materials.",
@@ -122,7 +137,7 @@ const CoursesPage = () => {
     //   comingSoon: false,
     // },
     {
-      id: 7,
+      id: 8,
       title: "Arithmetic Maths (VOD)",
       description:
         "Siddhi's Arithmetic Maths course provides comprehensive coverage of the subject with recorded classes and practice materials.",
@@ -137,7 +152,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 8,
+      id: 9,
       title: "Word Power Made Easy",
       description:
         "This WPME course is built specifically for competitive exams. It includes detailed video lectures for every session and specially prepared slides with many more words per root than the original book. The course is designed to give you a high hit ratio in exams—typically covering 3–4 out of 6 vocabulary questions in SSC CGL and 5–6 out of 6–7 vocabulary questions in SSC MTS, based on recent trends. Learn roots, expand your vocabulary systematically, and improve your confidence in English with an exam-focused approach.",
@@ -152,7 +167,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 9,
+      id: 10,
       title: "Static GK (Kavach) Combo",
       description:
         "Prepare smarter with the Static GK Ultimate Combo, crafted specifically for SSC 2026. Get 700+ exam-oriented Static GK questions with topic-wise tests along with easy-to-read, topic-wise Short Notes (PDFs) for quick revision. This combo is designed to help you learn, practice, revise, and score with confidence.",
@@ -167,7 +182,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 10,
+      id: 11,
       title: "Static GK (Kavach) Test Series",
       description:
         "Master Static GK with 700+ carefully curated questions, organized topic-wise to help you practice systematically and improve your exam performance.",
@@ -182,7 +197,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 11,
+      id: 12,
       title: "Static GK (Kavach) Short Notes",
       description:
         "Revise smarter with Kavach Topic-wise Static GK Short Notes (PDFs), crafted specifically for SSC 2026 to help you revise the most important concepts quickly and effectively.",
@@ -198,7 +213,7 @@ const CoursesPage = () => {
     },
 
     {
-      id: 12,
+      id: 13,
       title: "Math Arena - Play with Maths",
       description:
         "Siddhi's Math Arena course makes learning mathematics fun. It is designed to enhance problem-solving skills and mathematical thinking.",
@@ -212,7 +227,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 13,
+      id: 14,
       title: "Siddhi Free Materials",
       description:
         "Siddhi's Free Materials include study notes, practice questions, and previous year papers for various subjects.",
