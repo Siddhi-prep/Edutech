@@ -26,28 +26,60 @@ const CoursesPage = () => {
       duration: "24 Weeks",
       students: 500,
       price: 3299,
-      // salePrice: 2896,
+      salePrice: 2799,
       thumbnail: "/courses/brahmos-27(o).jpeg",
       link: "https://learn.siddhiprep.com/products/ssc_2027_course/",
       comingSoon: false,
     },
+    
     {
       id: 2,
-      title: "CGL 2026 - PAPER LEAK SERIES",
+      title: "COMPUTER COURSE | For SSC & RRB",
       description:
-        "This series provides you with the latest question papers from previous years, helping you understand the exam pattern and improve your performance.",
+        "This course is designed to help you master computer concepts and skills required for SSC and RRB exams. It covers essential topics such as Internet Basics, Computer Hardware & Software, Networking, and more. The course includes video lectures, practice exercises, and mock tests to ensure you are well-prepared for the computer section of your exams.",
       category: "SSC",
       level: "Beginner",
-      duration: "18 Weeks",
+      duration: "180 days",
       students: 500,
-      price: 0,
-      // salePrice: 849,
-      thumbnail: "/courses/paper-leak.png",
-      link: "https://learn.siddhiprep.com/products/cgl-2026-paper-leak-series/",
+      price: 499,
+      salePrice: 299,
+      thumbnail: "/courses/computer-course.png",
+      link: "https://learn.siddhiprep.com/products/computer-course-for-ssc-rrb/",
       comingSoon: false,
     },
     {
       id: 3,
+      title: "GS CRASH COURSE - FOR CGL MAINS | CHSL | MTS",
+      description:
+        "Prepare strategically for SSC CGL Mains, CHSL & MTS with exam-focused General Studies preparation designed to help you study what matters most. This course includes high-quality recorded classes, practice exercises, and mock tests to ensure you are well-prepared for the General Studies section of your exams.",
+      category: "SSC",
+      level: "Beginner",
+      duration: "180 days",
+      students: 500,
+      price: 449,
+      salePrice: 299,
+      thumbnail: "/courses/gs-crash.png",
+      link: "https://learn.siddhiprep.com/products/gs-crash-course-for-cgl-mains-chsl-mts/",
+      comingSoon: false,
+    },
+    
+    {
+      id: 4,
+      title: "SSC GS Crash course + Computer Combo Course 2026",
+      description:
+        "Prepare for SSC CGL Mains, CHSL & MTS with a powerful combo covering both General Studies and Computer Awareness. This course includes high-quality recorded classes, practice exercises, and mock tests to ensure you are well-prepared for both sections of your exams.",
+      category: "SSC",
+      level: "Beginner",
+      duration: "180 days",
+      students: 500,
+      price: 849,
+      salePrice: 549,
+      thumbnail: "/courses/computer-gs.png",
+      link: "https://learn.siddhiprep.com/products/ssc-gs-crash-course-computer-combo-course-2026/",
+      comingSoon: false,
+    },
+    {
+      id: 5,
       title: "GS: From NCERT to Mastery",
       description:
         "Siddhi's GS Module includes Standard Subjects like History, Geography, Polity, Economy, Environment, Science alongside SSC Specific trending topics like Space Technology, Architecture, Culture, Books & Authors, Sports Etc. Includes current affairs at each module. Live classes with recordings available.",
@@ -62,7 +94,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 4,
+      id: 6,
       title: "Maths Combo Course",
       description:
         "A comprehensive course covering all the essential topics in Mathematics, designed to help you build a strong foundation and excel in your exams.",
@@ -77,7 +109,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 5,
+      id: 7,
       title: "GS VAJRA TEST SERIES",
       description:
         "Every test in GS VAJRA is carefully crafted after a detailed analysis of SSC PYQs, ensuring that your practice stays focused on what truly matters for the exam.",
@@ -91,23 +123,9 @@ const CoursesPage = () => {
       link: "https://learn.siddhiprep.com/products/gs-vajra-test-series/",
       comingSoon: false,
     },
+    
     {
-      id: 6,
-      title: "40 DAY FREE SMART REVISION BATCH",
-      description:
-        "A structured 40-day revision plan designed for SSC CGL 2026 aspirants who want to revise smartly without wasting time deciding what to study, where to study, and how to revise.",
-      category: "SSC Free",
-      level: "Beginner",
-      duration: "24 Weeks",
-      students: 500,
-      price: 0,
-      // salePrice: 2896,
-      thumbnail: "/courses/40-day.png",
-      link: "https://learn.siddhiprep.com/products/40-day-free-smart-revision-program/",
-      comingSoon: false,
-    },
-    {
-      id: 7,
+      id: 8,
       title: "Advance Maths (VOD)",
       description:
         "Siddhi's Advance Maths course provides comprehensive coverage of the subject with recorded classes and practice materials.",
@@ -121,23 +139,8 @@ const CoursesPage = () => {
       link: "https://learn.siddhiprep.com/products/advance-maths-vod/",
       comingSoon: false,
     },
-    // {
-    //   id: 4,
-    //   title: "English Full Boot Camp - Complete SSC preparation",
-    //   description:
-    //     "English is a recorded course that comprehensively covers Vocabulary and Grammar. Special emphasis is given to Reading Comprehension, Cloze Test & Para Jumbles. Syllabus is covered based on the latest pattern.",
-    //   category: "SSC",
-    //   level: "Beginner",
-    //   duration: "Recorded",
-    //   students: 300,
-    //   price: 499,
-    //   // salePrice: 595,
-    //   thumbnail: "/courses/english.jpeg",
-    //   link: "https://learn.siddhiprep.com/products/english-basics-to-advanced-vod/",
-    //   comingSoon: false,
-    // },
     {
-      id: 8,
+      id: 9,
       title: "Arithmetic Maths (VOD)",
       description:
         "Siddhi's Arithmetic Maths course provides comprehensive coverage of the subject with recorded classes and practice materials.",
@@ -152,7 +155,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 9,
+      id: 10,
       title: "Word Power Made Easy",
       description:
         "This WPME course is built specifically for competitive exams. It includes detailed video lectures for every session and specially prepared slides with many more words per root than the original book. The course is designed to give you a high hit ratio in exams—typically covering 3–4 out of 6 vocabulary questions in SSC CGL and 5–6 out of 6–7 vocabulary questions in SSC MTS, based on recent trends. Learn roots, expand your vocabulary systematically, and improve your confidence in English with an exam-focused approach.",
@@ -167,7 +170,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 10,
+      id: 11,
       title: "Static GK (Kavach) Combo",
       description:
         "Prepare smarter with the Static GK Ultimate Combo, crafted specifically for SSC 2026. Get 700+ exam-oriented Static GK questions with topic-wise tests along with easy-to-read, topic-wise Short Notes (PDFs) for quick revision. This combo is designed to help you learn, practice, revise, and score with confidence.",
@@ -182,7 +185,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 11,
+      id: 12,
       title: "Static GK (Kavach) Test Series",
       description:
         "Master Static GK with 700+ carefully curated questions, organized topic-wise to help you practice systematically and improve your exam performance.",
@@ -197,7 +200,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 12,
+      id: 13,
       title: "Static GK (Kavach) Short Notes",
       description:
         "Revise smarter with Kavach Topic-wise Static GK Short Notes (PDFs), crafted specifically for SSC 2026 to help you revise the most important concepts quickly and effectively.",
@@ -212,49 +215,6 @@ const CoursesPage = () => {
       comingSoon: false,
     },
 
-    {
-      id: 13,
-      title: "Math Arena - Play with Maths",
-      description:
-        "Siddhi's Math Arena course makes learning mathematics fun. It is designed to enhance problem-solving skills and mathematical thinking.",
-      category: "SSC Free",
-      level: "Beginner",
-      duration: "Free Materials",
-      students: 300,
-      price: 0,
-      thumbnail: "/courses/math-arena.png",
-      link: "https://learn.siddhiprep.com/products/maths_arena/",
-      comingSoon: false,
-    },
-    {
-      id: 14,
-      title: "Siddhi Free Materials",
-      description:
-        "Siddhi's Free Materials include study notes, practice questions, and previous year papers for various subjects.",
-      category: "SSC Free",
-      level: "Beginner",
-      duration: "Free Materials",
-      students: 300,
-      price: 0,
-      thumbnail: "/courses/free.jpeg",
-      link: "https://learn.siddhiprep.com/products/siddhi-free-materials/",
-      comingSoon: false,
-    },
-    // {
-    //   id: 12,
-    //   title: "SSC CGL 75 Days Challenge - The Final Push",
-    //   description:
-    //     "SSC CGL 2026 preparation enters its most important phase! Only 75 Days are left for Tier 1, and this is the FINAL PUSH that can completely change your result. we are launching the FREE 75 Day SSC CGL 2026 Challenge designed specially for aspirants scoring around 100–110 marks and aiming for 135+ in Tier 1.",
-    //   category: "SSC Free",
-    //   level: "Beginner",
-    //   duration: "Free Materials",
-    //   students: 300,
-    //   price: 0,
-    //   // salePrice: 2896,
-    //   thumbnail: "/courses/75days.png",
-    //   link: "https://learn.siddhiprep.com/products/cgl-75-days-challenge-the-final-push/",
-    //   comingSoon: false,
-    // },
   ];
 
   const categories = ["All", "SSC", "SSC Free", "SSC(Tests + Short Notes)"];

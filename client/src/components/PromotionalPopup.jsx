@@ -27,7 +27,7 @@ const PromotionalPopup = ({ isChatbotOpen }) => {
 
   const checkForPromotionalImage = async () => {
     const possibleImages = [
-      // "/promotional-images/april-sale.png",
+      "/promotional-images/navratri-sale.jpeg",
       "/promotional-images/offer.png",
       "/promotional-images/offer.jpeg",
       "/promotional-images/offer.webp",
@@ -121,7 +121,7 @@ const PromotionalPopup = ({ isChatbotOpen }) => {
               </button>
 
               <div className="relative rounded-xl md:rounded-2xl overflow-hidden shadow-2xl">
-                <a href="https://www.google.com">
+                <a href="https://www.siddhiprep.com/courses">
                   <img
                     src={imagePath}
                     alt="Special Promotional Offer"
