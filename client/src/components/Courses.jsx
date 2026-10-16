@@ -30,7 +30,7 @@ const courses = [
       students: 500,
       price: 299,
       salePrice: 299,
-      thumbnail: "/courses/computer-course.png",
+      thumbnail: "/courses/computer-crash.jpeg",
       link: "https://learn.siddhiprep.com/products/computer-course-for-ssc-rrb/",
       comingSoon: false,
     },
