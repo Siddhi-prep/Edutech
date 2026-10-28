@@ -36,6 +36,21 @@ const courses = [
     },
     {
       id: 3,
+      title: "RRB CA Test series",
+      description:
+        "This is a test series for RRB CA exams. It includes a variety of practice questions and mock tests to help you prepare for the actual exam.",
+      category: "SSC",
+      level: "Beginner",
+      duration: "120 days",
+      students: 500,
+      price: 79,
+      // salePrice: 299,
+      thumbnail: "/courses/rrb.png",
+      link: "https://learn.siddhiprep.com/products/rrb-ca-test-series/",
+      comingSoon: false,
+    },
+    {
+      id: 4,
       title: "GS CRASH COURSE - FOR CGL MAINS | CHSL | MTS",
       description:
         "Prepare strategically for SSC CGL Mains, CHSL & MTS with exam-focused General Studies preparation designed to help you study what matters most. This course includes high-quality recorded classes, practice exercises, and mock tests to ensure you are well-prepared for the General Studies section of your exams.",
@@ -51,7 +66,7 @@ const courses = [
     },
     
     {
-      id: 4,
+      id: 5,
       title: "SSC GS Crash course + Computer Combo Course 2026",
       description:
         "Prepare for SSC CGL Mains, CHSL & MTS with a powerful combo covering both General Studies and Computer Awareness. This course includes high-quality recorded classes, practice exercises, and mock tests to ensure you are well-prepared for both sections of your exams.",
@@ -66,7 +81,7 @@ const courses = [
       comingSoon: false,
     },
     {
-      id: 5,
+      id: 6,
       title: "GS: From NCERT to Mastery",
       description:
         "Siddhi's GS Module includes Standard Subjects like History, Geography, Polity, Economy, Environment, Science alongside SSC Specific trending topics like Space Technology, Architecture, Culture, Books & Authors, Sports Etc. Includes current affairs at each module. Live classes with recordings available.",
@@ -78,21 +93,6 @@ const courses = [
       // salePrice: 849,
       thumbnail: "/courses/gs-new.png",
       link: "https://learn.siddhiprep.com/products/siddhi-gs-from-ncerts-to-mastery/",
-      comingSoon: false,
-    },
-    {
-      id: 6,
-      title: "Maths Combo Course",
-      description:
-        "A comprehensive course covering all the essential topics in Mathematics, designed to help you build a strong foundation and excel in your exams.",
-      category: "Advanced Maths",
-      level: "Beginner",
-      duration: "24 Weeks",
-      students: 500,
-      price: 599,
-      // salePrice: 2896,
-      thumbnail: "/courses/math-combo.png",
-      link: "https://learn.siddhiprep.com/products/maths-combo-course/",
       comingSoon: false,
     },
 ];

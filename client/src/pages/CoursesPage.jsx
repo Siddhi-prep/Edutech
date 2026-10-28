@@ -49,6 +49,21 @@ const CoursesPage = () => {
     },
     {
       id: 3,
+      title: "RRB CA Test series",
+      description:
+        "This is a test series for RRB CA exams. It includes a variety of practice questions and mock tests to help you prepare for the actual exam.",
+      category: "SSC",
+      level: "Beginner",
+      duration: "120 days",
+      students: 500,
+      price: 79,
+      // salePrice: 299,
+      thumbnail: "/courses/rrb.png",
+      link: "https://learn.siddhiprep.com/products/rrb-ca-test-series/",
+      comingSoon: false,
+    },
+    {
+      id: 4,
       title: "GS CRASH COURSE - FOR CGL MAINS | CHSL | MTS",
       description:
         "Prepare strategically for SSC CGL Mains, CHSL & MTS with exam-focused General Studies preparation designed to help you study what matters most. This course includes high-quality recorded classes, practice exercises, and mock tests to ensure you are well-prepared for the General Studies section of your exams.",
@@ -64,7 +79,7 @@ const CoursesPage = () => {
     },
     
     {
-      id: 4,
+      id: 5,
       title: "SSC GS Crash course + Computer Combo Course 2026",
       description:
         "Prepare for SSC CGL Mains, CHSL & MTS with a powerful combo covering both General Studies and Computer Awareness. This course includes high-quality recorded classes, practice exercises, and mock tests to ensure you are well-prepared for both sections of your exams.",
@@ -79,7 +94,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 5,
+      id: 6,
       title: "GS: From NCERT to Mastery",
       description:
         "Siddhi's GS Module includes Standard Subjects like History, Geography, Polity, Economy, Environment, Science alongside SSC Specific trending topics like Space Technology, Architecture, Culture, Books & Authors, Sports Etc. Includes current affairs at each module. Live classes with recordings available.",
@@ -94,7 +109,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 6,
+      id: 7,
       title: "Maths Combo Course",
       description:
         "A comprehensive course covering all the essential topics in Mathematics, designed to help you build a strong foundation and excel in your exams.",
@@ -109,7 +124,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 7,
+      id: 8,
       title: "GS VAJRA TEST SERIES",
       description:
         "Every test in GS VAJRA is carefully crafted after a detailed analysis of SSC PYQs, ensuring that your practice stays focused on what truly matters for the exam.",
@@ -125,7 +140,7 @@ const CoursesPage = () => {
     },
     
     {
-      id: 8,
+      id: 9,
       title: "Advance Maths (VOD)",
       description:
         "Siddhi's Advance Maths course provides comprehensive coverage of the subject with recorded classes and practice materials.",
@@ -140,7 +155,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 9,
+      id: 10,
       title: "Arithmetic Maths (VOD)",
       description:
         "Siddhi's Arithmetic Maths course provides comprehensive coverage of the subject with recorded classes and practice materials.",
@@ -155,7 +170,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 10,
+      id: 11,
       title: "Word Power Made Easy",
       description:
         "This WPME course is built specifically for competitive exams. It includes detailed video lectures for every session and specially prepared slides with many more words per root than the original book. The course is designed to give you a high hit ratio in exams—typically covering 3–4 out of 6 vocabulary questions in SSC CGL and 5–6 out of 6–7 vocabulary questions in SSC MTS, based on recent trends. Learn roots, expand your vocabulary systematically, and improve your confidence in English with an exam-focused approach.",
@@ -170,7 +185,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 11,
+      id: 12,
       title: "Static GK (Kavach) Combo",
       description:
         "Prepare smarter with the Static GK Ultimate Combo, crafted specifically for SSC 2026. Get 700+ exam-oriented Static GK questions with topic-wise tests along with easy-to-read, topic-wise Short Notes (PDFs) for quick revision. This combo is designed to help you learn, practice, revise, and score with confidence.",
@@ -185,7 +200,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 12,
+      id: 13,
       title: "Static GK (Kavach) Test Series",
       description:
         "Master Static GK with 700+ carefully curated questions, organized topic-wise to help you practice systematically and improve your exam performance.",
@@ -200,7 +215,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 13,
+      id: 14,
       title: "Static GK (Kavach) Short Notes",
       description:
         "Revise smarter with Kavach Topic-wise Static GK Short Notes (PDFs), crafted specifically for SSC 2026 to help you revise the most important concepts quickly and effectively.",
