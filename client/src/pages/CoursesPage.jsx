@@ -26,14 +26,28 @@ const CoursesPage = () => {
       duration: "24 Weeks",
       students: 500,
       price: 3299,
-      // salePrice: 2799,
-      thumbnail: "/courses/brahmos-27(o).jpeg",
+      salePrice: 2999,
+      thumbnail: "/courses/diwali-brahmos.png",
       link: "https://learn.siddhiprep.com/products/ssc_2027_course/",
       comingSoon: false,
     },
-    
-    {
+        {
       id: 2,
+      title: "GS: From NCERT to Mastery",
+      description:
+        "Siddhi's GS Module includes Standard Subjects like History, Geography, Polity, Economy, Environment, Science alongside SSC Specific trending topics like Space Technology, Architecture, Culture, Books & Authors, Sports Etc. Includes current affairs at each module. Live classes with recordings available.",
+      category: "SSC",
+      level: "Beginner",
+      duration: "18 Weeks",
+      students: 500,
+      price: 1699,
+      salePrice: 1499,
+      thumbnail: "/courses/gs-diwali.png",
+      link: "https://learn.siddhiprep.com/products/siddhi-gs-from-ncerts-to-mastery/",
+      comingSoon: false,
+    },
+    {
+      id: 3,
       title: "COMPUTER COURSE | For SSC & RRB",
       description:
         "This course is designed to help you master computer concepts and skills required for SSC and RRB exams. It covers essential topics such as Internet Basics, Computer Hardware & Software, Networking, and more. The course includes video lectures, practice exercises, and mock tests to ensure you are well-prepared for the computer section of your exams.",
@@ -48,7 +62,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 3,
+      id: 4,
       title: "RRB CA Test series",
       description:
         "This is a test series for RRB CA exams. It includes a variety of practice questions and mock tests to help you prepare for the actual exam.",
@@ -63,7 +77,7 @@ const CoursesPage = () => {
       comingSoon: false,
     },
     {
-      id: 4,
+      id: 5,
       title: "GS CRASH COURSE - FOR CGL MAINS | CHSL | MTS",
       description:
         "Prepare strategically for SSC CGL Mains, CHSL & MTS with exam-focused General Studies preparation designed to help you study what matters most. This course includes high-quality recorded classes, practice exercises, and mock tests to ensure you are well-prepared for the General Studies section of your exams.",
@@ -79,7 +93,7 @@ const CoursesPage = () => {
     },
     
     {
-      id: 5,
+      id: 6,
       title: "SSC GS Crash course + Computer Combo Course 2026",
       description:
         "Prepare for SSC CGL Mains, CHSL & MTS with a powerful combo covering both General Studies and Computer Awareness. This course includes high-quality recorded classes, practice exercises, and mock tests to ensure you are well-prepared for both sections of your exams.",
@@ -91,21 +105,6 @@ const CoursesPage = () => {
       // salePrice: 549,
       thumbnail: "/courses/comp-gs.png",
       link: "https://learn.siddhiprep.com/products/ssc-gs-crash-course-computer-combo-course-2026/",
-      comingSoon: false,
-    },
-    {
-      id: 6,
-      title: "GS: From NCERT to Mastery",
-      description:
-        "Siddhi's GS Module includes Standard Subjects like History, Geography, Polity, Economy, Environment, Science alongside SSC Specific trending topics like Space Technology, Architecture, Culture, Books & Authors, Sports Etc. Includes current affairs at each module. Live classes with recordings available.",
-      category: "SSC",
-      level: "Beginner",
-      duration: "18 Weeks",
-      students: 500,
-      price: 1699,
-      // salePrice: 849,
-      thumbnail: "/courses/gs-new.png",
-      link: "https://learn.siddhiprep.com/products/siddhi-gs-from-ncerts-to-mastery/",
       comingSoon: false,
     },
     {
