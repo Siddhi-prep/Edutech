@@ -27,7 +27,7 @@ const PromotionalPopup = ({ isChatbotOpen }) => {
 
   const checkForPromotionalImage = async () => {
     const possibleImages = [
-      "/promotional-images/diwali.png",
+      // "/promotional-images/diwali.png",
 
       "/promotional-images/offer.png",
       "/promotional-images/offer.jpeg",
